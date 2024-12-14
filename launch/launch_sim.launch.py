@@ -1,15 +1,25 @@
 # STINGRAY
 import os
+import xacro
 
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
 
-from launch_ros.actions import Node, SetRemap
-from launch.actions import GroupAction, DeclareLaunchArgument, RegisterEventHandler, SetEnvironmentVariable
+from launch.substitutions import LaunchConfiguration #,Command
+
+from launch.actions import (
+    GroupAction, 
+    DeclareLaunchArgument,
+    IncludeLaunchDescription,
+    
+    RegisterEventHandler, 
+    SetEnvironmentVariable
+)
+
+
 from launch.event_handlers import OnProcessStart
 
 def generate_launch_description():
