@@ -1,5 +1,8 @@
 # HARDWARE
 
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray3.jpg" width="250"><img src="https://github.com/JHPHELAN/stingray/blob/main/images/Original%20to%20Acrylic.JPG" width="200">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stingray_in_acrylic.jpg" width="350">
+
 The body is a modification in acrylic of the (out of production) Parallax Stingray.
 
 2 Parallax motors (apparently) [Pololu 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder](https://www.pololu.com/product/4843)
