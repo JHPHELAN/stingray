@@ -76,3 +76,9 @@ ROS2 Jazzy
 Gazebo Harmonic
 
 (https://gazebosim.org/docs/harmonic/getstarted/)
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/nav2_logo.png" width="200">
+ROS2 Navigation2
+
+(https://github.com/ros-navigation/navigation2)
+
