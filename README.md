@@ -52,7 +52,9 @@ LiPo 14.8V 9000mAh 100C Zeee battery
 (https://www.amazon.com/Zeee-9000mAh-14-8V-100C-Connector/dp/B09NKCKWV3/ref=asc_df_B09NKCKWV3?mcid=f73e15122e793537aae149882d390812&hvocijid=6128132845496010429-B09NKCKWV3-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=6128132845496010429&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027693&hvtargid=pla-2281435177858&psc=1)
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/13%20Emergency%20Stop%20Button.jpg" width="200" >
+
 Emergency stop button
+
 (https://www.amazon.com/JMAF-Mushroom-Emergency-Button-Switch/dp/B07BCY7HGN/ref=sr_1_11?crid=1M3W9TZH7RQYU&dib=eyJ2IjoiMSJ9.KU17yQ3yLVYbD5Kg-pB8vnVNxC7MGL-8WxMZ8YrgAUN3wGFVHGICknwyeG0Mj8AkqXuRMOn2dX2L-7YXgkYiEnx94FPzkbh0ByNzRDbRy8eiVO7na59rhjjc675imtI1QLIoy9Aa&th=1
 )
 
