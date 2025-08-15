@@ -41,7 +41,14 @@ Intel RealSense 455
 (https://www.amazon.com/Intel-RealSense-D455-Webcam-3-1-1280/dp/B08KJCRCGG/ref=sr_1_1?crid=BSICQ530U89X&dib=eyJ2IjoiMSJ9.duQV2NDfQD5nknyVyAFALQYGQWTnTCcKIUa76CdZOFjjudxpAB8eKk6g4ws1A_tKy-KYlinv1IeOSZAgNYS3zfBwB9jIm938tY1YcwmU5DH28Gim7cek7ej7nLTpSKjfQnQcNf1H-FUgzOcGs7og-Q.KqH1AaUX6njKsrn01-kuS2fyuKLit1SKKwWViu_m77A&dib_tag=se&keywords=intel+realsense+455&qid=1749775015&sprefix=Intel+RealSen%2Caps%2C584&sr=8-1)
 
 ## Power
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/CZH-LABS%20low%20voltage%20disconnect%20photo.jpg" width="200">
+
+Low Voltage Disconnect
+
+(https://www.amazon.com/Electronics-Salon-Voltage-Disconnect-Protect-Prolong/dp/B019F3BEIO/ref=sr_1_3?dib=eyJ2IjoiMSJ9.MFR00rua67FbXgt5cVUuaoJQSFN0M4EhvuYqqyPu9BIFMvDOk0JJI_P3q8LbJBVy_127psVzsy6r_4oAli56S1jtgHLE5sTKChn5KOFdIsZNRjjiSQwwE2279vxq7DvK7kZKI-NkZX4_5)
+
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Buck%20Converter%2015A%20DC%204-32V%20to%2012V%20like%20Ali%20Express.jpg" width="200">
+
 Buck voltage converter
 
 (https://www.aliexpress.com/item/32881619997.html)
