@@ -66,12 +66,26 @@ Emergency stop button
 )
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/AnkerPoweredUSBHub.jpg" width="200">
-Powered USB hub to power Raspberry Pi and provide peripheral input to Pi (2 separate ports)
+
+**Powered USB hub**
+
+to power Raspberry Pi and provide peripheral input to Pi (2 separate ports)
+
 (https://www.amazon.com/Anker-7-Port-Adapter-Charging-iPhone/dp/B014ZQ07NE/ref=asc_df_B014ZQ07NE?mcid=dbaa364fb9c733eeb044038a55add1f7&hvocijid=14883402360339246539-B014ZQ07NE-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=14883402360339246539&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027693&hvtargid=pla-2281435179818&th=1)
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/PowerBusShuntReg.jpg" width="200"><img src="https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%203779%20Shunt%20Regulator.jpg" width="200">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%203779%20Shunt%20Regulator.jpg" width="200">
 
-12V power bus from buck converter to USB hub, Roboclaw power input, and 3 LED headlights
+**Shunt Regulator**
+
+<https://www.pololu.com/product/3779#:~:text=Quantity:,all%20products%20in%20Shunt%20Regulators>
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/PowerBusShuntReg.jpg" width="200">
+
+**12V power bus** 
+
+from buck converter to USB hub, Roboclaw power input, and 3 LED headlights
+
+from junk parts
 
 # SOFTWARE
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Ubuntu2404NobleNumbat.jpg" width="200">
