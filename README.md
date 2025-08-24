@@ -6,7 +6,22 @@
 The body is a modification in acrylic of the (out of production) Parallax Stingray.
 
 <img src= "https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="200">
-2 motors: Pololu 50:1 37Dx70L mm 12V 64 CPM Encoder 6mm D output shaft (https://www.pololu.com/product/4753)
+
+2 motors: Pololu 50:1 37Dx70L mm 12V 64 CPM Encoder 6mm D output shaft 
+
+(https://www.pololu.com/product/4753)
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stingray%20Wheel.jpg" width="200">
+
+2 Stingray 4 7/8" T81 hex hub wheels: (no longer available from Parallax)
+
+(https://banebots.com/banebots-wheel-4-7-8-x-0-8-hub-mount-50a-blue/)
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stingray%20Wheel%20Hub%20Adapter.jpg" width="200">
+
+6mm D to 12mm Hex snap ring hub adapter.  3D CAD file on source web site.
+
+(https://banebots.com/t81-hub-6mm-shaft/)
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Raspberry%20Pi%205%208GB.jpg" width="200" >
 Raspberry Pi 5 8GB 
@@ -20,9 +35,14 @@ Roboclaw 2x7A
 (https://www.basicmicro.com/Roboclaw-2x7A-Motor-Controller_p_55.html)
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/YDLIDAR.JPG" width="200" >
-YDLIDAR 
+YDLIDAR X2
 
 (https://www.amazon.com/gp/product/B07W613C1K/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1)
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="200">
+FHL-LD19 LIDAR
+
+(https://www.amazon.com/youyeetoo-D300-Resistant-Raspberry-Tutorial/dp/B0B1QCV4XR/ref=sr_1_9?crid=GBKQQ6TOP7I9&dib=eyJ2IjoiMSJ9.3NGNTEEsWwmKKzft2nw9PEsxL_a2fZEg8dWOCb5LINxSFW_i2Hot02zOYrE5bahnLaXCdAbxwit_ff-l1HdMJp9TILkw_Vlv9y362cKWiuGT64lehB9rtrfrTWqACO0WGPuC5XxdWpRxTYKJ751FqG9EIPmyVeML42rqj3dsKy8MNObA6mYIGqzbKA7oxb9ELgJ8ELM-B7TSC64fO2KthNZ76m7nEF_bYiy4-KpDZA8.Kd8XGydx2y4ZKHXdVJJTzJ6YGFxsGnmTSEBMjzXUOQo&dib_tag=se&keywords=lidar+19&qid=1756000148&sprefix=lidar+19%2Caps%2C126&sr=8-9)
 
 ## Camera options
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Spinel%20USB%20WDR%205MP%20camera.jpg" width="200" >
