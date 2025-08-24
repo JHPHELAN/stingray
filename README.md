@@ -5,8 +5,8 @@
 
 The body is a modification in acrylic of the (out of production) Parallax Stingray.
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Plololu%20Gearmotor%204752.jpg" width="200">
-2 Parallax motors (apparently) Pololu 20.4:1 Metal Gearmotor 25Dx65L mm HP 12V with 48 CPR Encoder (https://www.pololu.com/product/4843)
+<img src= "https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="200">
+2 motors: Pololu 50:1 37Dx70L mm 12V 64 CPM Encoder 6mm D output shaft (https://www.pololu.com/product/4753)
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Raspberry%20Pi%205%208GB.jpg" width="200" >
 Raspberry Pi 5 8GB 
