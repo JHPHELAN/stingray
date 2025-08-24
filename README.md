@@ -40,7 +40,7 @@ YDLIDAR X2
 (https://www.amazon.com/gp/product/B07W613C1K/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1)
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="200">
-FHL-LD19 LIDAR
+FHL-LD19 LIDAR alternative to belt driven YDLIDAR
 
 (https://www.amazon.com/youyeetoo-D300-Resistant-Raspberry-Tutorial/dp/B0B1QCV4XR/ref=sr_1_9?crid=GBKQQ6TOP7I9&dib=eyJ2IjoiMSJ9.3NGNTEEsWwmKKzft2nw9PEsxL_a2fZEg8dWOCb5LINxSFW_i2Hot02zOYrE5bahnLaXCdAbxwit_ff-l1HdMJp9TILkw_Vlv9y362cKWiuGT64lehB9rtrfrTWqACO0WGPuC5XxdWpRxTYKJ751FqG9EIPmyVeML42rqj3dsKy8MNObA6mYIGqzbKA7oxb9ELgJ8ELM-B7TSC64fO2KthNZ76m7nEF_bYiy4-KpDZA8.Kd8XGydx2y4ZKHXdVJJTzJ6YGFxsGnmTSEBMjzXUOQo&dib_tag=se&keywords=lidar+19&qid=1756000148&sprefix=lidar+19%2Caps%2C126&sr=8-9)
 
