@@ -1,7 +1,7 @@
 # HARDWARE
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray3.jpg" width="250"><img src="https://github.com/JHPHELAN/stingray/blob/main/images/Original%20to%20Acrylic.JPG" width="200">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stingray_in_acrylic.jpg" width="350">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray%20sage%20reflective%20background.png" width="350">
 
 The body is a modification in acrylic of the (out of production) Parallax Stingray.
 
