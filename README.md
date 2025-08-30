@@ -73,10 +73,20 @@ Buck voltage converter
 
 (https://www.aliexpress.com/item/32881619997.html)
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Zeee9000LiPoBattery.jpg" width="200" >
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Zeee9000LiPoBattery.jpg" width="200">
+
 LiPo 14.8V 9000mAh 100C Zeee battery
 
+(https://www.amazon.com/dp/B08YY5ZL93?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
+
 (https://www.amazon.com/Zeee-9000mAh-14-8V-100C-Connector/dp/B09NKCKWV3/ref=asc_df_B09NKCKWV3?mcid=f73e15122e793537aae149882d390812&hvocijid=6128132845496010429-B09NKCKWV3-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=6128132845496010429&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027693&hvtargid=pla-2281435177858&psc=1)
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/LiPo%20battery%20screamer.jpg" width="200">
+
+LiPo battery low voltage 'screamer'
+
+(https://www.amazon.com/dp/B08YY5ZL93?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/13%20Emergency%20Stop%20Button.jpg" width="200" >
 
