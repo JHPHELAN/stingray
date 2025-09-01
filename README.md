@@ -7,13 +7,28 @@ The body is a modification in acrylic of the (out of production) Parallax Stingr
 
 <img src= "https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="200">
 
-2 motors: Pololu 50:1 37Dx70L mm 12V 64 CPM Encoder 6mm D output shaft 
+2 motors: Pololu 50:1 37Dx70L mm 12V 64 CPM Encoder 6mm D output shaft
+
+50 x 64 =3200 counts / revolution
 
 (https://www.pololu.com/product/4753)
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stingray%20Wheel.jpg" width="200">
 
 2 Stingray 4 7/8" T81 hex hub wheels: (no longer available from Parallax)
+
+4 7/8" dia = 0.123825m dia
+
+wheel radius = 0.123825m dia / 2 = 0.0619125 = 0.062m
+
+wheel circumference = 0.123825m dia x Pi = 0.3890m circ = m/rev
+
+confirmed by tape measurement of circumference
+
+revolutions / meter = 1m / 0.39 m/R = 2.57 R/m
+
+counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
+
 
 (https://banebots.com/banebots-wheel-4-7-8-x-0-8-hub-mount-50a-blue/)
 
