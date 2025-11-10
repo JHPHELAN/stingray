@@ -153,3 +153,8 @@ ROS2 Navigation2
 
 (https://github.com/ros-navigation/navigation2)
 
+# MISSIONS
+
+https://github.com/JHPHELAN/stingray/blob/main/images/Floorbot%20challenge%202025-11-09%2016-37-51.mov
+
+Floorbot Challenge I
