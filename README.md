@@ -157,7 +157,4 @@ ROS2 Navigation2
 
 Floorbot Challenge I
 
-<video controls width="640">
-  <source src="https://raw.githubusercontent.com/JHPHELAN/stingray/main/images/Floorbot%20challenge%202025-11-09%2016-37-51.mov" type="video/quicktime">
-  Your browser does not support the video tag. Download it <a href="https://github.com/JHPHELAN/stingray/raw/main/images/Floorbot%20challenge%202025-11-09%2016-37-51.mov">here</a>.
-</video>
+[![Floorbot preview](https://raw.githubusercontent.com/JHPHELAN/stingray/main/images/Floorbot_preview.gif)](https://github.com/JHPHELAN/stingray/raw/main/images/Floorbot%20challenge%202025-11-09%2016-37-51.mov)
