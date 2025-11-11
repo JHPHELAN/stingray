@@ -128,7 +128,7 @@ to power Raspberry Pi and provide peripheral input to Pi (2 separate ports)
 
 **12V power bus** 
 
-from buck converter to USB hub, Roboclaw power input, and 3 LED headlights
+from buck converter to USB hub, Roboclaw power input, and 2-3 LED headlights
 
 from junk parts
 
@@ -157,4 +157,14 @@ ROS2 Navigation2
 
 Floorbot Challenge I
 
-[![Floorbot preview](https://raw.githubusercontent.com/JHPHELAN/stingray/main/images/Floorbot_preview.gif)](https://github.com/JHPHELAN/stingray/raw/main/images/Floorbot%20challenge%202025-11-09%2016-37-51.mov)
+View the Mission: Rviz2 screencast of the path plan
+
+https://www.youtube.com/watch?v=YAfdKwbhIpI
+
+View the Video: iPhone piggyback ride on Stormy 
+
+(between the pattery and the emergency stop button) 
+
+https://www.youtube.com/watch?v=Kj8ijCCRR4o
+
+
