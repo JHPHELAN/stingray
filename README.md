@@ -78,7 +78,7 @@ Intel RealSense 455
 ## Power
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/CZH-LABS%20low%20voltage%20disconnect%20photo.jpg" width="200">
 
-Low Voltage Disconnect
+Low Voltage Disconnect (not in use)
 
 (https://www.amazon.com/Electronics-Salon-Voltage-Disconnect-Protect-Prolong/dp/B019F3BEIO/ref=sr_1_3?dib=eyJ2IjoiMSJ9.MFR00rua67FbXgt5cVUuaoJQSFN0M4EhvuYqqyPu9BIFMvDOk0JJI_P3q8LbJBVy_127psVzsy6r_4oAli56S1jtgHLE5sTKChn5KOFdIsZNRjjiSQwwE2279vxq7DvK7kZKI-NkZX4_5)
 
