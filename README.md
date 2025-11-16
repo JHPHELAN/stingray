@@ -162,7 +162,7 @@ ROS2 Navigation2
 
 # MISSIONS
 
-Floorbot Challenge I
+Floorbot Challenge I Using Nav2 Goal Pose
 
 View the Mission: Rviz2 screencast of the path plan
 
@@ -170,8 +170,18 @@ https://www.youtube.com/watch?v=YAfdKwbhIpI
 
 View the Video: iPhone piggyback ride on Stormy 
 
-(between the pattery and the emergency stop button) 
+(between the battery and the emergency stop button) 
 
 https://www.youtube.com/watch?v=Kj8ijCCRR4o
 
+Floorbot Challenge II Using Waypoints
 
+
+
+View the Mission: Rviz2 screencast of the path plan
+
+https://studio.youtube.com/video/tqyFS87C4XA/edit
+
+View the Mission: Rvis2 scrdeencast of the path plan
+
+https://studio.youtube.com/video/uny75an7diY/edit
