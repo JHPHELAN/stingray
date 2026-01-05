@@ -1,3 +1,6 @@
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20angle.jpg" width="1000">
+
+
 # HARDWARE
 
 Stormy logo created by LogoDesignGen
