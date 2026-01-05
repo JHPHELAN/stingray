@@ -4,12 +4,10 @@
 # HARDWARE
 
 Stormy logo created by LogoDesignGen
-
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Logo.jpg" width="500">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Logo.jpg" width="300">
 
 Original Parallax Stingray robot, no longer in production
-
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray3.jpg" width="500">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray3.jpg" width="300">
 
 Recreating Stingray top/bottom plates in 1/4" acrylic
 
