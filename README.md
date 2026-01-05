@@ -1,16 +1,20 @@
 # HARDWARE
 
 Stormy logo created by LogoDesignGen
+
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Logo.jpg" width="500">
 
 Original Parallax Stingray robot, no longer in production
+
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray3.jpg" width="500">
 
 Recreating Stingray top/bottom plates in 1/4" acrylic
+
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Original%20to%20Acrylic.JPG" width="500">
 
 Assembled Stormy the Stingray robot
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray%20sage%20reflective%20background.png" width="500">
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Storym%20Portrait%20angle.jpg" width="1000">
 
 <img src= "https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="200">
 
