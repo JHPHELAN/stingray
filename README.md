@@ -127,13 +127,6 @@ Intel RealSense 455
 to replace the ones in the 52Pi Power expansion board as additional standoffs come below it for the PCIe card.
 
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Buck%20Converter%2015A%20DC%204-32V%20to%2012V%20like%20Ali%20Express.jpg" width="200">
-
-**Buck voltage converter**
-
-(https://www.aliexpress.com/item/32881619997.html)
-
-
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Emergency%20Stop%20Button.jpg" width="200" >
 
 **Emergency stop button**
@@ -247,4 +240,10 @@ to power Raspberry Pi and provide peripheral input to Pi (2 separate ports)
 
 (https://www.amazon.com/gp/product/B07W613C1K/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1)
 
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Buck%20Converter%2015A%20DC%204-32V%20to%2012V%20like%20Ali%20Express.jpg" width="200">
+
+**Buck voltage converter** Replaced by 51Pi power hat
+
+(https://www.aliexpress.com/item/32881619997.html)
 
