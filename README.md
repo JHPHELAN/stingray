@@ -134,7 +134,7 @@ to replace the ones in the 52Pi Power expansion board as additional standoffs co
 (https://www.aliexpress.com/item/32881619997.html)
 
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/13%20Emergency%20Stop%20Button.jpg" width="200" >
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Emergency%20Stop%20Button.jpg" width="200" >
 
 **Emergency stop button**
 
