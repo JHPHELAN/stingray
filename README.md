@@ -16,13 +16,15 @@ Assembled Stormy the Stingray robot
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Storym%20Portrait%20angle.jpg" width="500">
 
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Left.jpg" width="300">
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Right.jpg" width="300">
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Front.jpg" width="300">
 
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Rear.jpg" width="300">
 
-<img src="" width="300">
-<img src="" width="300">
-<img src="" width="300">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Top.jpg" width="300">
 
 <img src= "https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="200">
 
