@@ -15,7 +15,7 @@ Recreating Stingray top/bottom plates in 1/4" acrylic
 **Assembled Stormy the Stingray robot**
 
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Storym%20Portrait%20angle.jpg" width="500">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20angle.jpg" width="500">
 
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Left.jpg" width="300">
