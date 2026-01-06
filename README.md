@@ -90,6 +90,8 @@ revolutions / meter = 1m / 0.39 m/R = 2.57 R/m
 
 counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 
+## CPU
+
 <table>
 <tr>
 <td width="33%" align="center">
@@ -116,9 +118,22 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 </tr>
 </table>
 
+**PCIe Memory**
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Ediloca%20EN600%20PRO%20M.2%20SSD%20PCle%203.0x4.png" width="300">
+
+(https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title)
+
+**PCIe Hat**
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/PCIe%20to%20NVME%20SSD%20memory%20hat.jpg" width="300">
+
+(https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title)
+
+
 **FHL-LD19 LIDAR alternative to belt driven YDLIDAR**
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="900">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="300">
 
 (https://www.amazon.com/youyeetoo-D300-Resistant-Raspberry-Tutorial/dp/B0B1QCV4XR/ref=sr_1_9?crid=GBKQQ6TOP7I9&dib=eyJ2IjoiMSJ9.3NGNTEEsWwmKKzft2nw9PEsxL_a2fZEg8dWOCb5LINxSFW_i2Hot02zOYrE5bahnLaXCdAbxwit_ff-l1HdMJp9TILkw_Vlv9y362cKWiuGT64lehB9rtrfrTWqACO0WGPuC5XxdWpRxTYKJ751FqG9EIPmyVeML42rqj3dsKy8MNObA6mYIGqzbKA7oxb9ELgJ8ELM-B7TSC64fO2KthNZ76m7nEF_bYiy4-KpDZA8.Kd8XGydx2y4ZKHXdVJJTzJ6YGFxsGnmTSEBMjzXUOQo&dib_tag=se&keywords=lidar+19&qid=1756000148&sprefix=lidar+19%2Caps%2C126&sr=8-9)
 
