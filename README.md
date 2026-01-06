@@ -22,10 +22,6 @@ Recreating Stingray top/bottom plates in 1/4" acrylic
 
 **Assembled Stormy the Stingray robot**
 
-
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20angle.jpg" width="500">
-
-
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Left.jpg" width="300">
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Right.jpg" width="300">
@@ -35,6 +31,8 @@ Recreating Stingray top/bottom plates in 1/4" acrylic
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Rear.jpg" width="300">
 
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Top.jpg" width="300">
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Bottom.jpg" width="300">
 
 <img src= "https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="200">
 
