@@ -94,73 +94,35 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 
 <table>
 <tr>
-<td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Raspberry%20Pi%205%208GB.jpg" width="100%" style="max-width:200px">
+<td width="50%" align="center">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/52Pi%20PD%20Power%20Expansion%20Board.jpg" width="100%" style="max-width:300px">
+<br>
+<b>GeeekPi PD Power Expansion Board</b>
+<br>
+<a href="https://52pi.com/collections/raspberry-pi-1/products/52pi-pd-power-extension-adapter-board-for-raspberry-pi-5">Product Link</a>
+</td>
+<td width="50%" align="center">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Raspberry%20Pi%205%208GB.jpg" width="100%" style="max-width:300px">
 <br>
 <b>Raspberry Pi 5 8GB</b>
 <br>
 <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">Product Link</a>
 </td>
-<td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/RoboClaw2x7A.jpg" width="100%" style="max-width:200px">
-<br>
-<b>Roboclaw 2x7A</b>
-<br>
-<a href="https://www.basicmicro.com/Roboclaw-2x7A-Motor-Controller_p_55.html">Product Link</a>
-</td>
-<td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/MiniRemoteRelay1.jpg" width="100%" style="max-width:200px">
-<br>
-<b>Remote kill switch</b>
-<br>
-<a href="https://www.amazon.com/dp/B08D39XWS5?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2">Product Link</a>
-</td>
 </tr>
-</table>
-
-**PCIe Memory**
-
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Ediloca%20EN600%20PRO%20M.2%20SSD%20PCle%203.0x4.png" width="300">
-
-(https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title)
-
-**PCIe Hat**
-
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/PCIe%20to%20NVME%20SSD%20memory%20hat.jpg" width="300">
-
-(https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title)
-
-
-**FHL-LD19 LIDAR alternative to belt driven YDLIDAR**
-
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="300">
-
-(https://www.amazon.com/youyeetoo-D300-Resistant-Raspberry-Tutorial/dp/B0B1QCV4XR/ref=sr_1_9?crid=GBKQQ6TOP7I9&dib=eyJ2IjoiMSJ9.3NGNTEEsWwmKKzft2nw9PEsxL_a2fZEg8dWOCb5LINxSFW_i2Hot02zOYrE5bahnLaXCdAbxwit_ff-l1HdMJp9TILkw_Vlv9y362cKWiuGT64lehB9rtrfrTWqACO0WGPuC5XxdWpRxTYKJ751FqG9EIPmyVeML42rqj3dsKy8MNObA6mYIGqzbKA7oxb9ELgJ8ELM-B7TSC64fO2KthNZ76m7nEF_bYiy4-KpDZA8.Kd8XGydx2y4ZKHXdVJJTzJ6YGFxsGnmTSEBMjzXUOQo&dib_tag=se&keywords=lidar+19&qid=1756000148&sprefix=lidar+19%2Caps%2C126&sr=8-9)
-
-## Camera options
-
-<table>
 <tr>
-<td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Spinel%20USB%20WDR%205MP%20camera.jpg" width="100%" style="max-width:200px">
+<td width="50%" align="center">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/PCIe%20to%20NVME%20SSD%20memory%20hat.jpg" width="100%" style="max-width:300px">
 <br>
-Fisheye camera
+<b>PCIe Hat</b>
 <br>
-<a href="https://www.spinelelectronics.com/product/uc50mpb/">Product Link</a>
+<a href="https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title">Product Link</a>
 </td>
-<td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/OAK-D.jpg" width="100%" style="max-width:200px">
+<td width="50%" align="center">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Ediloca%20EN600%20PRO%20M.2%20SSD%20PCle%203.0x4.png" width="100%" style="max-width:300px">
 <br>
-OAK-D
+<b>PCIe Memory</b>
 <br>
-<a href="https://shop.luxonis.com/products/oak-d?srsltid=AfmBOopBxDIulDyNvR966PJcUbHrZJljUuQ1s4Y_cAZlwJeJTxqQkb2F">Product Link</a>
-</td>
-<td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Intel_RealSense_D455_Amazon.jpg" width="100%" style="max-width:200px">
-<br>
-Intel RealSense 455
-<br>
-<a href="https://www.amazon.com/Intel-RealSense-D455-Webcam-3-1-1280/dp/B08KJCRCGG/ref=sr_1_1?crid=BSICQ530U89X&dib=eyJ2IjoiMSJ9.duQV2NDfQD5nknyVyAFALQYGQWTnTCcKIUa76CdZOFjjudxpAB8eKk6g4ws1A_tKy-KYlinv1IeOSZAgNYS3zfBwB9jIm938tY1YcwmU5DH28Gim7cek7ej7nLTpSKjfQnQcNf1H-FUgzOcGs7og-Q.KqH1AaUX6njKsrn01-kuS2fyuKLit1SKKwWViu_m77A&dib_tag=se&keywords=intel+realsense+455&qid=1749775015&sprefix=Intel+RealSen%2Caps%2C584&sr=8-1">Product Link</a>
+<a href="https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title">Product Link</a>
 </td>
 </tr>
 </table>
@@ -207,25 +169,20 @@ from junk parts
 <a href="https://www.pololu.com/product/3779#:~:text=Quantity:,all%20products%20in%20Shunt%20Regulators">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/52Pi%20PD%20Power%20Expansion%20Board.jpg" width="100%" style="max-width:200px">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/RoboClaw2x7A.jpg" width="100%" style="max-width:200px">
 <br>
-<b>GeeekPi PD Power Expansion Board</b>
+<b>Roboclaw 2x7A</b>
 <br>
-<a href="https://52pi.com/collections/raspberry-pi-1/products/52pi-pd-power-extension-adapter-board-for-raspberry-pi-5">Product Link</a>
+<a href="https://www.basicmicro.com/Roboclaw-2x7A-Motor-Controller_p_55.html">Product Link</a>
 </td>
 </tr>
-</table>
-
-## ACCESSORIES
-
-<table>
 <tr>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/standoffs%20male%20female%20M2.5%2018mm.jpg" width="100%" style="max-width:200px">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/MiniRemoteRelay1.jpg" width="100%" style="max-width:200px">
 <br>
-<b>Standoffs, hex, M2.5 x 18mm, 1/4 male-female</b>
+<b>Remote kill switch</b>
 <br>
-to replace the ones in the 52Pi Power expansion board as additional standoffs come below it for the PCIe card.
+<a href="https://www.amazon.com/dp/B08D39XWS5?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2">Product Link</a>
 </td>
 <td width="33%" align="center">
 <img src="https://github.com/JHPHELAN/stingray/blob/main/images/Carlits%20LED%20Headlight.jpg" width="100%" style="max-width:200px">
@@ -243,6 +200,49 @@ to replace the ones in the 52Pi Power expansion board as additional standoffs co
 </td>
 </tr>
 </table>
+
+**FHL-LD19 LIDAR alternative to belt driven YDLIDAR**
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="300">
+
+(https://www.amazon.com/youyeetoo-D300-Resistant-Raspberry-Tutorial/dp/B0B1QCV4XR/ref=sr_1_9?crid=GBKQQ6TOP7I9&dib=eyJ2IjoiMSJ9.3NGNTEEsWwmKKzft2nw9PEsxL_a2fZEg8dWOCb5LINxSFW_i2Hot02zOYrE5bahnLaXCdAbxwit_ff-l1HdMJp9TILkw_Vlv9y362cKWiuGT64lehB9rtrfrTWqACO0WGPuC5XxdWpRxTYKJ751FqG9EIPmyVeML42rqj3dsKy8MNObA6mYIGqzbKA7oxb9ELgJ8ELM-B7TSC64fO2KthNZ76m7nEF_bYiy4-KpDZA8.Kd8XGydx2y4ZKHXdVJJTzJ6YGFxsGnmTSEBMjzXUOQo&dib_tag=se&keywords=lidar+19&qid=1756000148&sprefix=lidar+19%2Caps%2C126&sr=8-9)
+
+## Camera options
+
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Spinel%20USB%20WDR%205MP%20camera.jpg" width="100%" style="max-width:200px">
+<br>
+Fisheye camera
+<br>
+<a href="https://www.spinelelectronics.com/product/uc50mpb/">Product Link</a>
+</td>
+<td width="33%" align="center">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/OAK-D.jpg" width="100%" style="max-width:200px">
+<br>
+OAK-D
+<br>
+<a href="https://shop.luxonis.com/products/oak-d?srsltid=AfmBOopBxDIulDyNvR966PJcUbHrZJljUuQ1s4Y_cAZlwJeJTxqQkb2F">Product Link</a>
+</td>
+<td width="33%" align="center">
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Intel_RealSense_D455_Amazon.jpg" width="100%" style="max-width:200px">
+<br>
+Intel RealSense 455
+<br>
+<a href="https://www.amazon.com/Intel-RealSense-D455-Webcam-3-1-1280/dp/B08KJCRCGG/ref=sr_1_1?crid=BSICQ530U89X&dib=eyJ2IjoiMSJ9.duQV2NDfQD5nknyVyAFALQYGQWTnTCcKIUa76CdZOFjjudxpAB8eKk6g4ws1A_tKy-KYlinv1IeOSZAgNYS3zfBwB9jIm938tY1YcwmU5DH28Gim7cek7ej7nLTpSKjfQnQcNf1H-FUgzOcGs7og-Q.KqH1AaUX6njKsrn01-kuS2fyuKLit1SKKwWViu_m77A&dib_tag=se&keywords=intel+realsense+455&qid=1749775015&sprefix=Intel+RealSen%2Caps%2C584&sr=8-1">Product Link</a>
+</td>
+</tr>
+</table>
+
+
+## ACCESSORIES
+
+**Standoffs, hex, M2.5 x 18mm, 1/4 male-female**
+
+<img src="https://github.com/JHPHELAN/stingray/blob/main/images/standoffs%20male%20female%20M2.5%2018mm.jpg" width="200">
+
+to replace the ones in the 52Pi Power expansion board as additional standoffs come below it for the PCIe card.
 
 # SOFTWARE
 
