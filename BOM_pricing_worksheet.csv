@@ -1,0 +1,59 @@
+Category,Item,URL,Qty,UnitPrice,LineTotal,Notes
+Structural,"Novabright cast acrylic 1/4"" x 12"" x 12""",https://www.amazon.com/dp/B0GSVXQC45,6,$8.17,$48.99,One sheet cuts full plate set
+Rear caster,Omni wheel (nearest similar),https://www.amazon.com/dp/B0DDVJS42J,1,$12.21,$12.21,Aspirational for builder; not on Stormy - set Qty=1 if you are building fresh
+Drivetrain,Pololu #4753 50:1 37Dx70L 12V + 64 CPR encoder motor,https://www.pololu.com/product/4753,2,$60.95,$121.90
+Drivetrain,"BaneBots wheel 4-7/8"" x 0.8"" 50A blue",https://banebots.com/banebots-wheel-4-7-8-x-0-8-hub-mount-50a-blue/,2,$5.00,$10.00
+Drivetrain,BaneBots T81 hub 6mm shaft,https://banebots.com/t81-hub-6mm-shaft/,2,$4.50,$9.00
+CPU,52Pi PD power extension board,https://52pi.com/collections/raspberry-pi-1/products/52pi-pd-power-extension-adapter-board-for-raspberry-pi-5,1,$22.94,$22.94
+CPU,Raspberry Pi 5 8GB,https://www.raspberrypi.com/products/raspberry-pi-5/,1,$169.99,$169.99
+CPU,PCIe HAT (Geekworm X1001),https://www.amazon.com/dp/B0CPPGGDQT,1,$13.90,$13.90
+CPU,Ediloca EN600 PRO 256GB NVMe SSD,https://www.amazon.com/dp/B0C5D6C1YQ,1,$54.99,$54.99
+Power,Zeee 14.8V 9000mAh 4S LiPo,https://www.amazon.com/dp/B09NKCKWV3,2,$76.50,$152.99
+Power,LiPo low-voltage screamer,https://www.amazon.com/dp/B08YY5ZL93,4,$2.15,$8.59
+Power,Emergency stop mushroom (JMAF equivalent),https://www.amazon.com/dp/B07BCY7HGN,2,$5.00,$9.99,Actual on Stormy is Chinese-labelled; this is US-sourced equivalent
+Power,Pololu 3779 shunt regulator,https://www.pololu.com/product/3779,1,$23.33,$23.33
+Power,RoboClaw 2x7A V5c,https://www.basicmicro.com/Roboclaw-2x7A-Motor-Controller_p_55.html,1,$79.95,$79.95
+Power,Remote kill switch RF receiver + 2 fobs,https://www.amazon.com/dp/B08D39XWS5,1,$9.99,$9.99
+Power,Eagle Eye Led Light Bulbs 9W DC12V 12mm,https://www.amazon.com/dp/B06ZYKWQZC,10,$1.35,$13.50,2 needed
+Power,DPDT slide switch (headlights + RoboClaw reset),https://www.amazon.com/dp/B09V77VCF7,20,$0.35,$6.99,3 needed
+Bus protection,15 A slow-blow 5x20 mm ceramic fuse,https://www.amazon.com/dp/B0CRVLV5LY,10,$0.60,$5.99
+Bus protection,Panel-mount fuse holder (Jameco 18703),https://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?storeId=10001&langId=-1&catalogId=10001&pa=18703&productId=18703,1,$1.75,$1.75
+Bus protection,Schottky STPS10L25D,https://www.digikey.com/en/products/detail/STPS10L25D/497-2738-5-ND/603763,1,$2.66,$2.66
+Battery maintenance,LiPo balance charger / discharger,https://www.amazon.com/dp/B0GSKJYK1B,1,$31.99,$31.99
+LIDAR,Youyeetoo FHL-LD19,https://www.amazon.com/dp/B0B1QCV4XR,1,$71.90,$71.90,Youyeetoo direct: https://www.youyeetoo.com
+IMU,Adafruit BNO085 STEMMA QT breakout,https://www.adafruit.com/product/4754,1,$24.95,$24.95
+Camera,Luxonis OAK-D,https://shop.luxonis.com/products/oak-d,1,$329.00,$329.00,Currently installed
+Camera,Fisheye (Spinel UC50MPB) - historical,https://www.spinelelectronics.com/product/uc50mpb/,0,$71.00,$0.00,Historical alternate - not on Stormy
+Camera,Intel RealSense D455 - historical,https://www.amazon.com/dp/B08KJCRCGG,0,$549.00,$0.00,Historical alternate - not on Stormy
+Indicators,Sabrent USB audio DAC,https://www.amazon.com/dp/B00IRVQ0F8,1,$8.99,$8.99
+Indicators,Mini 8-ohm speaker (4-pack),https://www.amazon.com/dp/B0B4D1BN4F,4,$2.50,$9.99,Only 1 speaker used
+Indicators,IRLZ44N logic-level MOSFET,https://www.amazon.com/dp/B0CBKH4XGL,10,$1.00,$9.99,"3 used, From Builder's Manual"
+Indicators,6 color x 20 ea 5mm LED assortment,https://www.amazon.com/dp/B08G4XCQSW,120,$0.11,$12.99,4 amber used From Builder's Manual
+Indicators,Custom indicators PCB (JLCPCB fabrication),https://jlcpcb.com/,5,$0.40,$54.85,inc shipping & duty
+Networking,Realtek RTL8812BU USB WiFi + 5 dBi antenna,https://www.amazon.com/dp/B078NSSM7W,1,$18.98,$18.98
+Connectors,PowerPole 150-piece assortment case,https://powerwerx.com/150-piece-anderson-powerpole-connector-case,1,$49.99,$49.99
+Connectors,PowerPole TriCrimp crimper,https://powerwerx.com/tricrimp-powerpole-connector-crimping-tool,1,$39.99,$39.99,Tool - one-time
+Connectors,PowerPole insertion / removal / extraction tool,https://powerwerx.com/powerpole-insertion-removal-extraction-tool,1,$9.99,$9.99,Tool - one-time
+Connectors,EC5 LiPo battery connectors male/female,https://www.amazon.com/dp/B08M3WND19,10,$0.80,$7.99
+Connectors,Ferrule crimper + assorted-color ferrule kit,https://www.amazon.com/dp/B0G1TSPZ93,1,$13.99,$13.99,Tool + consumables
+Connectors,Taiss ratcheting DuPont crimper + connector kit,https://www.amazon.com/dp/B0B11RLGDZ,1,$21.99,$21.99,Tool + consumables
+Connectors,Twidec spade connector assortment 22-10 AWG + crimper,https://www.amazon.com/dp/B0CNRP9MT6,1,$17.99,$17.99,Tool + consumables
+Connectors,DC power plugs / barrel plug pigtails,https://www.amazon.com/dp/B01G6EB99E,10,$0.80,$7.99,2 needed
+Wire,14 AWG silicone parallel wire (LiPo bus),https://www.amazon.com/dp/B07RSRBZZD,1,$19.98,$19.98
+Wire,16 AWG silicone parallel wire (subsystem feeds),https://www.amazon.com/dp/B07FMLVF84,1,$17.88,$17.88
+Wire,18 AWG silicone parallel wire (signal),https://www.amazon.com/dp/B07RVMHSK4,1,$10.98,$10.98
+Wire,20 AWG silicone parallel wire (signal),https://www.amazon.com/dp/B07K9JKXM9,1,$21.98,$21.98
+Fasteners,M2.5 x 18mm + 6mm brass hex standoffs (52Pi stack),https://www.amazon.com/dp/B0FP2QGTD4,10,$0.57,$5.69,4 used
+Fasteners,"Nylon 1.5"" x 1/4"" 4-40 standoffs (McMaster)",https://www.mcmaster.com/products/nylon-spacers/standoffs-2~/standoffs-2~shape~hex/thread-size~4-40/length~1-500/length~1-1-2/?s=nylon-spacers,3,$0.67,$2.01,LiDAR triangle mount
+Fasteners,Essentra nylon thumbscrew (DigiKey 090440037T),https://www.digikey.com/en/products/detail/essentra-components/090440037T/10243363,25,$0.19,$4.64
+Fasteners,uxcell titanium tapping / threading kit,https://www.amazon.com/dp/B0CX87WR49,1,$13.89,$13.89,Tool - one alternative
+Fasteners,Century Drill & Tool 13-piece tap set,https://www.amazon.com/dp/B0G845TP6Y,1,$30.50,$30.50,Tool - one alternative
+Fasteners,IRWIN Hanson 13-pack SAE tap & drill set (Lowes),https://www.lowes.com/pd/IRWIN-All-Purpose-SAE-13-Pack-Tap-and-Drill-Set/1003019164,1,$29.98,$29.98,Tool - one alternative
+Fasteners,Snap-ring pliers set,https://www.amazon.com/dp/B09LVCV93Q,1,$15.85,$15.85,Tool - required for wheel install; safety glasses
+Mounting,Foam tape,https://www.amazon.com/dp/B007Y7ITMS,1,$6.98,$6.98
+Mounting,Velcro straps,https://www.amazon.com/dp/B071DGMNMX,20,$0.45,$8.95,2 used
+Mounting,Velcro mounting squares,https://www.amazon.com/dp/B09S163TNK,1,$4.67,$4.67
+Labeling,Swordfish 61190 heat-shrink assorted-color kit,https://www.amazon.com/dp/B00VDVT7IG,1,$14.99,$14.99
+Labeling,SEEKONE 350W heat gun w/ reflector nozzle,https://www.amazon.com/dp/B08VFY8THD,1,$15.29,$15.29,Tool - one-time
+Labeling,DYMO Industrial label maker,https://www.amazon.com/dp/B005MR516Y,1,$127.00,$127.00,Tool - one-time; heat-shrink label tubing available through DYMO ecosystem
+,,,,,"$1,874.46"
