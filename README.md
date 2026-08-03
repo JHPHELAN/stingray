@@ -258,7 +258,9 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 <br>
 <b>12V power bus</b>
 <br>
-from junk parts
+<a href="https://www.amazon.com/dp/B097R5J66D">Product Link (bus bar)</a>
+<br>
+<img src="images/bus%20bar.png" width="100%" style="max-width:160px">
 </td>
 <td width="33%" align="center">
 <img src="images/Pololu%203779%20Shunt%20Regulator.jpg" width="100%" style="max-width:200px">
@@ -333,6 +335,10 @@ from junk parts
 </td>
 </tr>
 </table>
+
+<img src="images/bus%20protection%20protoboard.png" width="300">
+<br>
+<i>Bus-protection protoboard - fuse holder, Schottky, and bus taps on a single board for improved connections.</i>
 
 ### Battery maintenance
 
@@ -552,8 +558,8 @@ being filled in over time._
 - **Ferrule crimper + assorted-color ferrule kit** -
   <a href="https://www.amazon.com/dp/B0G1TSPZ93">Product Link</a>
   <br><img src="images/Ferrule%20crimping%20kit.png" width="200">
-- **DuPont jumper connectors + crimper** (0.1" pitch) - Pi GPIO to
-  BNO085, to the indicators PCB, and to other external boards.
+- **DuPont jumper connectors + crimper** (0.1" pitch) - GPIO
+  connections to RoboClaw, BNO085 IMU, Indicators PCB.
   <br><a href="https://www.amazon.com/dp/B0B11RLGDZ">Product Link (Taiss ratcheting crimper + connector kit)</a>
   <br><img src="images/DuPont%20Connector%20Kit.png" width="200">
 - **Spade connectors, 22-10 AWG assortment + crimper** - fuse
@@ -569,35 +575,19 @@ being filled in over time._
 ### Wire
 
 - **Silicone parallel wire, assorted gauges** - multiple sizes used
-  across the build; do not standardize on a single AWG.  Larger gauges
-  for the LiPo bus, smaller for signal.  All gauges look nearly
-  identical in hand; the 14 / 16 AWG photos below stand in for the
-  full range.
-  <br>
-  <table>
-  <tr>
-  <td width="50%" align="center">
-  <img src="images/14AWG%20silicone%20power%20wire.jpg" width="100%" style="max-width:200px">
-  <br>14 AWG - LiPo bus
-  </td>
-  <td width="50%" align="center">
-  <img src="images/16AWG%20silicone%20power%20wire.jpg" width="100%" style="max-width:200px">
-  <br>16 AWG - subsystem feeds
-  </td>
-  </tr>
-  </table>
+  across the build.
+  <br><img src="images/16AWG%20silicone%20power%20wire.jpg" width="200">
   <br>Representative sources (2-conductor silicone parallel):
-  <br><a href="https://www.amazon.com/dp/B07RSRBZZD">14 AWG (LiPo bus)</a>
-  <br><a href="https://www.amazon.com/dp/B07FMLVF84">16 AWG (subsystem feeds)</a>
-  <br><a href="https://www.amazon.com/dp/B07RVMHSK4">18 AWG (signal / logic)</a>
-  <br><a href="https://www.amazon.com/dp/B07K9JKXM9">20 AWG (signal / logic)</a>
+  <br><a href="https://www.amazon.com/dp/B07RSRBZZD">14 AWG</a>
+  <br><a href="https://www.amazon.com/dp/B07FMLVF84">16 AWG</a>
+  <br><a href="https://www.amazon.com/dp/B07RVMHSK4">18 AWG</a>
+  <br><a href="https://www.amazon.com/dp/B07K9JKXM9">20 AWG</a>
 
 ### Fasteners
 
 - **M2.5 x 18mm + 6mm brass hex standoffs, male-female** - stack the
-  52Pi PD power extension board above the Pi 5 with clearance for the
-  PCIe HAT to slot in below.  Replace the shorter standoffs that ship
-  with the 52Pi board.
+  52Pi PD power extension board above the Pi 5.  Use included shorter
+  standoffs for clearance for the PCIe HAT below.
   <br><a href="https://www.amazon.com/dp/B0FP2QGTD4">Product Link</a>
   <br><img src="images/standoffs%20male%20female%20M2.5%2018mm.jpg" width="200">
 - **Nylon standoffs, 1.5" x 1/4" round, female-female, 4-40** -
@@ -645,15 +635,15 @@ being filled in over time._
   <br><a href="https://www.amazon.com/dp/B071DGMNMX">Product Link</a>
   <br><img src="images/velcro%20straps.jpg" width="200">
 - **Velcro fasteners** (adhesive-back hook-and-loop mounting squares)
-  - reversible mounting for USB hub, USB WiFi dongle, and other
-  movable peripherals.
+  - reversible mounting for mini speaker, LIDAR USB adapter, LiPo
+  screamer.
   <br><a href="https://www.amazon.com/dp/B09S163TNK">Product Link</a>
   <br><img src="images/Velcro%20mounting%20squares.png" width="200">
 
 ### Labeling
 
-- **Heat-shrink tubing, assorted sizes** - insulation and strain
-  relief on all crimped connections.
+- **Heat-shrink tubing, assorted sizes** - insulation, strain
+  relief, polarity, or identification on connections.
   <br><a href="https://www.amazon.com/dp/B00VDVT7IG">Product Link (Swordfish 61190 assorted-color heat-shrink kit)</a>
   <br><img src="images/heat%20shrink%20assortment.png" width="200">
 - **Heat gun** (with reflector nozzle) - shrinks the tubing above and
