@@ -677,10 +677,25 @@ reach for it, or crimp with it while working on Stormy, add it here._
 Rough cost to buy every part and tool listed above from scratch, as
 of **2026-08-02**: **approximately $1,890.**
 
-Category subtotals below.  Individual line items, unit prices, and
-quantities live in the companion worksheet
-[`BOM_pricing_worksheet.csv`](BOM_pricing_worksheet.csv) in this
-repo - restart from that file when you reprice, and update this
+### Split by type
+
+The CSV is organized into three sections via the `Type` column, so a
+reader can tell at a glance what fraction of the cost is one-time
+tooling vs. actual parts on the robot:
+
+| Type | Items | Subtotal | What it is |
+|---|---:|---:|---|
+| **Components** | 29 | $1,265.31 | Actual parts installed on Stormy - one of each per robot |
+| **Supplies** | 17 | $256.69 | Consumables: raw acrylic stock, wire, connector assortments, fastener packs, tape, heat-shrink |
+| **Tools** | 12 | $368.45 | One-time bench purchases: crimpers, tap sets, snap-ring pliers, heat gun, DYMO, LiPo balance charger |
+| **Grand total** | 58 | **$1,890.45** | |
+
+### Split by subsystem
+
+Individual line items, unit prices, and quantities live in the
+companion worksheet [`BOM_pricing_worksheet.csv`](BOM_pricing_worksheet.csv)
+in this repo (sorted with Components first, Supplies second, Tools
+last) - restart from that file when you reprice, and update this
 table to match.
 
 | Subsystem | Subtotal |
@@ -710,16 +725,19 @@ Caveats:
   to buy even when Stormy only uses a fraction of it - the
   headlights are a 10-pack, the DPDT switches a 20-pack, and so on.
   If you build a second robot, most consumable subtotals go to zero.
-- **Alternates included.**  The Fasteners row lists three
+- **Alternates included.**  The Fasteners rows list three
   tap-and-drill kits (uxcell, Century, IRWIN); pick one to save
   ~$44.  The Indicators PCB row assumes JLCPCB's five-board
   minimum + shipping + duty.
-- **Tools vs. consumables.**  A large fraction of the total is
-  tools you own forever (TriCrimp, ferrule crimper, DuPont crimper,
-  spade crimper, insertion/removal tool, heat gun, DYMO label maker,
-  snap-ring pliers, tap+drill set, LiPo balance charger).  A rough
-  parts-only build cost - with tools already on the bench - lands
-  around $1,200.
+- **Tools vs. parts.**  Concretely:
+    - If you already own the tools listed in the Tools section
+      (crimpers, tap sets, heat gun, DYMO, snap-ring pliers, LiPo
+      balance charger), the components + supplies come to
+      **$1,522.00**.
+    - If your bench is also already stocked with wire, connector
+      assortments, ferrules, heat-shrink, standoff assortments,
+      Velcro, tape, and cast acrylic sheet stock, the pure
+      component-only cost drops to **$1,265.31**.
 - **Historical camera alternates** (Spinel fisheye, Intel RealSense
   D455) are excluded from the total; Stormy runs on the OAK-D.
 
