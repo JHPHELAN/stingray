@@ -98,11 +98,41 @@ a separate repo:
 >
 > <img src="images/Omniwheel%20Caster%20replacement.jpg" width="200">
 >
+> **Alternative under consideration — Pololu 3/4" metal ball caster**
+>
+> Mounted directly under the rear bottom plate.  Load rating ~10 lb
+> (well within Stormy's measured 0.549 kg / 1.21 lb rear-caster load;
+> total robot mass 3.269 kg).  Height 0.83" would tip the nose down;
+> two candidate compensations:
+>
+> 1. **Rotate each drive motor 180°** so the asymmetric shaft sits at
+>    the lower position, dropping the wheel ~1 cm, and lower the side-
+>    plate motor hole to match.  With the existing ~1 cm clearance
+>    below the motors that gives ~2 cm of adjustment to work with.
+> 2. **Acrylic riser mount** — a short piece of laser-cut 1/4" acrylic
+>    rounded to complement the caster, with spacers as needed, placed
+>    on top of the lower plate to raise the ball caster to the correct
+>    height without touching the drive wheels.
+>
+> <img src="images/Pololu%20ball%20caster%203-4in.png" width="200">
+>
+> [Product Link (Robotshop)](https://www.robotshop.com/products/pololu-ball-caster-3-4-in-metal-ball)
+>
 > Reference material for the bracket design:
-> - Original Parallax exploded diagram: [`images/Parallax-StingRay-Robot-exploded.JPG`](images/Parallax-StingRay-Robot-exploded.JPG)
-> - Current Stormy bottom view: [`images/Stormy Portrait Bottom.jpg`](images/Stormy%20Portrait%20Bottom.jpg)
-> - *TODO: add close-up photos of the current bracket in place, with
->   measured dimensions.*
+>
+> Original Parallax exploded diagram:
+>
+> <img src="images/Parallax-StingRay-Robot-exploded.JPG" width="400">
+>
+> Current Stormy bottom view:
+>
+> <img src="images/Stormy%20Portrait%20Bottom.jpg" width="400">
+>
+> Current bracket, measured with ruler:
+>
+> <img src="images/caster%20bracket%20right.png" width="300">
+> <img src="images/caster%20bracket%20rear.png" width="300">
+> <img src="images/caster%20bracket%20top.png" width="300">
 >
 > ---
 >
