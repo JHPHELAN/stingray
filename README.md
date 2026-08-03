@@ -1,13 +1,13 @@
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20angle.jpg" width="1000">
+<img src="images/Stormy%20Portrait%20angle.jpg" width="1000">
 
 <table>
 <tr>
 <td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Logo.jpg" width="100%">
+<img src="images/Stormy%20Logo.jpg" width="100%">
 Stormy logo created by LogoDesignGen
 </td>
 <td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/stingray3.jpg" width="100%">
+<img src="images/stingray3.jpg" width="100%">
 Original Parallax Stingray robot, no longer in production
 </td>
 </tr>
@@ -15,43 +15,140 @@ Original Parallax Stingray robot, no longer in production
 
 Recreating Stingray top/bottom plates in 1/4" acrylic
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Original%20to%20Acrylic.JPG" width="500">
+<img src="images/Original%20to%20Acrylic.JPG" width="500">
 
 **Assembled Stormy the Stingray robot**
 
 <table>
 <tr>
 <td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Left.jpg" width="100%">
+<img src="images/Stormy%20Portrait%20Left.jpg" width="100%">
 </td>
 <td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Right.jpg" width="100%">
-</td>
-</tr>
-<tr>
-<td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Front.jpg" width="100%">
-</td>
-<td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Rear.jpg" width="100%">
+<img src="images/Stormy%20Portrait%20Right.jpg" width="100%">
 </td>
 </tr>
 <tr>
 <td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Top.jpg" width="100%">
+<img src="images/Stormy%20Portrait%20Front.jpg" width="100%">
 </td>
 <td width="50%">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Portrait%20Bottom.jpg" width="100%">
+<img src="images/Stormy%20Portrait%20Rear.jpg" width="100%">
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="images/Stormy%20Portrait%20Top.jpg" width="100%">
+</td>
+<td width="50%">
+<img src="images/Stormy%20Portrait%20Bottom.jpg" width="100%">
 </td>
 </tr>
 </table>
 
+## Documentation
+
+Full build and rebuild procedures for Stormy - subsystem chapters,
+wiring, RoboClaw configuration, ROS 2 setup, Nav2 / SLAM tuning, and
+diagnostics - live in the companion **Builder's Manual**:
+
+- **`Stingray_Builders_Manual.txt`** - 22 chapters + 6 appendices,
+  plain text, present-tense procedures.
+
+  *TODO: commit the Manual to this repo (currently held in the
+  author's documentation workspace on a different machine).*
+
+This `README` is the hardware **photo + sourcing catalog** - "what does
+it look like and where do I buy it".  The Manual is the build guide -
+"how do I put it together, configure it, and rebuild it after
+disaster".
+
+Additional companion documents may follow (still deciding which belong
+here vs. staying private):
+- `Stingray_Field_Notes.txt` - 103 numbered field-tested lessons
+- `Stingray_Curation_Notes.txt` - stardated distillate of the source log
+
+**Software** (ROS 2 drivers, launch files, URDF, Nav2 params) lives in
+a separate repo:
+
+- https://github.com/JHPHELAN/articubot_one - branch `exploration` is
+  the current work.
+
+---
+
 ## HARDWARE
+
+> [!WARNING]
+> **Two Parallax originals no longer available**
+>
+> ---
+>
+> **1. Rear caster**
+>
+> The original Parallax omni-wheel rear caster and its bracket are
+> both out of production and there is no drop-in substitute today.
+> If you intend to build this robot, you will have to solve the rear-
+> caster problem yourself: source or 3D-print a small omni-wheel and
+> design a bracket that holds it at the correct height to keep the
+> chassis level with the drive wheels.
+>
+> Closest similar omni on Amazon as of 2026-08 is
+> [B0DDVJS42J](https://www.amazon.com/dp/B0DDVJS42J), but it will
+> require a custom bracket.
+>
+> <img src="images/Omniwheel%20Caster%20replacement.jpg" width="200">
+>
+> Reference material for the bracket design:
+> - Original Parallax exploded diagram: [`images/Parallax-StingRay-Robot-exploded.JPG`](images/Parallax-StingRay-Robot-exploded.JPG)
+> - Current Stormy bottom view: [`images/Stormy Portrait Bottom.jpg`](images/Stormy%20Portrait%20Bottom.jpg)
+> - *TODO: add close-up photos of the current bracket in place, with
+>   measured dimensions.*
+>
+> ---
+>
+> **2. Motor / wheel side support brackets**
+>
+> The two side brackets that hold the drive-motor / wheel assemblies
+> are also Parallax originals and out of production.  They are NOT
+> reproducible in 1/4" cast acrylic - the tolerances are too tight -
+> so they must be fabricated in sheet metal.  The originals have
+> captive nuts pressed into the flap, which is very convenient;
+> replacements with plain bolt-and-nut hardware work but are less
+> handy.  A local maker space with a sheet-metal brake can probably
+> make these to order.
+>
+> Dimensions (measured off the originals):
+> - Side panel: 3" wide x 3" high, center-drilled for the 1/4"
+>   motor output shaft.
+> - Top and bottom right-angle flaps: 5/8" wide.
+> - Inset captive nuts: 1 3/4" apart, 3/8" from the outer edge.
+>
+> *TODO: add photo of an original bracket + a dimensioned drawing.*
+
+### Structural stock
+
+Top plate, side plates, and bottom plate are all laser-cut from 1/4"
+cast acrylic sheet.  One 12" x 12" sheet is enough for a full set.
 
 <table>
 <tr>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="100%" style="max-width:200px">
+<img src="images/acrylic%20sheet%200.25x12x12%20cast%20clear.png" width="100%" style="max-width:200px">
+<br>
+<b>Novabright clear cast acrylic, 1/4" x 12" x 12"</b>
+<br>
+<a href="https://www.amazon.com/dp/B0GSVXQC45">Product Link</a>
+</td>
+</tr>
+</table>
+
+*TODO: publish the top / bottom / side-plate CorelDraw (.cdr) files
+in a CAD/ subfolder of this repo so others can cut their own.*
+
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="images/Pololu%2037D%2070mm%2012V%2050-1%2064%20CPR%20gearmotor.jpg" width="100%" style="max-width:200px">
 <br>
 2 motors: Pololu 50:1 37Dx70L mm 12V 64 CPR Encoder 6mm D output shaft
 <br>
@@ -60,14 +157,14 @@ Recreating Stingray top/bottom plates in 1/4" acrylic
 <a href="https://www.pololu.com/product/4753">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stingray%20Wheel.jpg" width="100%" style="max-width:200px">
+<img src="images/Stingray%20Wheel.jpg" width="100%" style="max-width:200px">
 <br>
-2 Stingray 4 7/8" T81 hex hub wheels (no longer available from Parallax)
+2 BaneBots 4 7/8" T81 hex hub wheels (no longer available from Parallax)
 <br>
 <a href="https://banebots.com/banebots-wheel-4-7-8-x-0-8-hub-mount-50a-blue/">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stingray%20Wheel%20Hub%20Adapter.jpg" width="100%" style="max-width:200px">
+<img src="images/Stingray%20Wheel%20Hub%20Adapter.jpg" width="100%" style="max-width:200px">
 <br>
 6mm D to 12mm Hex snap ring hub adapter. 3D CAD file on source web site.
 <br>
@@ -95,14 +192,14 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 <table>
 <tr>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/52Pi%20PD%20Power%20Expansion%20Board.jpg" width="100%" style="max-width:300px">
+<img src="images/52Pi%20PD%20Power%20Expansion%20Board.jpg" width="100%" style="max-width:300px">
 <br>
 <b>GeeekPi PD Power Expansion Board</b>
 <br>
 <a href="https://52pi.com/collections/raspberry-pi-1/products/52pi-pd-power-extension-adapter-board-for-raspberry-pi-5">Product Link</a>
 </td>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Raspberry%20Pi%205%208GB.jpg" width="100%" style="max-width:300px">
+<img src="images/Raspberry%20Pi%205%208GB.jpg" width="100%" style="max-width:300px">
 <br>
 <b>Raspberry Pi 5 8GB</b>
 <br>
@@ -111,18 +208,18 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 </tr>
 <tr>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/PCIe%20to%20NVME%20SSD%20memory%20hat.jpg" width="100%" style="max-width:300px">
+<img src="images/PCIe%20to%20NVME%20SSD%20memory%20hat.jpg" width="100%" style="max-width:300px">
 <br>
 <b>PCIe Hat</b>
 <br>
-<a href="https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title">Product Link</a>
+<a href="https://www.amazon.com/dp/B0CPPGGDQT">Product Link</a>
 </td>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Ediloca%20EN600%20PRO%20M.2%20SSD%20PCle%203.0x4.png" width="100%" style="max-width:300px">
+<img src="images/Ediloca%20EN600%20PRO%20M.2%20SSD%20PCle%203.0x4.png" width="100%" style="max-width:300px">
 <br>
 <b>PCIe Memory</b>
 <br>
-<a href="https://www.amazon.com/dp/B0CPPGGDQT?ref=ppx_yo2ov_dt_b_fed_asin_title">Product Link</a>
+<a href="https://www.amazon.com/dp/B0C5D6C1YQ">Product Link</a>
 </td>
 </tr>
 </table>
@@ -132,44 +229,46 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 <table>
 <tr>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Zeee9000LiPoBattery.jpg" width="100%" style="max-width:200px">
+<img src="images/Zeee9000LiPoBattery.jpg" width="100%" style="max-width:200px">
 <br>
 <b>LiPo 14.8V 9000mAh 100C Zeee battery</b>
 <br>
-<a href="https://www.amazon.com/Zeee-9000mAh-14-8V-100C-Connector/dp/B09NKCKWV3/ref=asc_df_B09NKCKWV3?mcid=f73e15122e793537aae149882d390812&hvocijid=6128132845496010429-B09NKCKWV3-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=6128132845496010429&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027693&hvtargid=pla-2281435177858&psc=1">Product Link</a>
+<a href="https://www.amazon.com/dp/B09NKCKWV3">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/LiPo%20battery%20screamer.jpg" width="100%" style="max-width:200px">
+<img src="images/LiPo%20battery%20screamer.jpg" width="100%" style="max-width:200px">
 <br>
 <b>LiPo battery low voltage 'screamer'</b>
 <br>
-<a href="https://www.amazon.com/dp/B08YY5ZL93?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1">Product Link</a>
+<a href="https://www.amazon.com/dp/B08YY5ZL93">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Emergency%20Stop%20Button.jpg" width="100%" style="max-width:200px">
+<img src="images/Emergency%20Stop%20Button.jpg" width="100%" style="max-width:200px">
 <br>
 <b>Emergency stop button</b>
 <br>
-<a href="https://www.amazon.com/JMAF-Mushroom-Emergency-Button-Switch/dp/B07BCY7HGN/ref=sr_1_11?crid=1M3W9TZH7RQYU&dib=eyJ2IjoiMSJ9.KU17yQ3yLVYbD5Kg-pB8vnVNxC7MGL-8WxMZ8YrgAUN3wGFVHGICknwyeG0Mj8AkqXuRMOn2dX2L-7YXgkYiEnx94FPzkbh0ByNzRDbRy8eiVO7na59rhjjc675imtI1QLIoy9Aa&th=1">Product Link</a>
+<i>Breaks the LiPo &rarr; bus.<br>See Manual &sect;3.2.</i>
+<br>
+<a href="https://www.amazon.com/dp/B07BCY7HGN">Product Link</a>
 </td>
 </tr>
 <tr>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/PowerBusShuntReg.jpg" width="100%" style="max-width:200px">
+<img src="images/PowerBusShuntReg.jpg" width="100%" style="max-width:200px">
 <br>
 <b>12V power bus</b>
 <br>
 from junk parts
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Pololu%203779%20Shunt%20Regulator.jpg" width="100%" style="max-width:200px">
+<img src="images/Pololu%203779%20Shunt%20Regulator.jpg" width="100%" style="max-width:200px">
 <br>
 <b>Shunt Regulator</b>
 <br>
-<a href="https://www.pololu.com/product/3779#:~:text=Quantity:,all%20products%20in%20Shunt%20Regulators">Product Link</a>
+<a href="https://www.pololu.com/product/3779">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/RoboClaw2x7A.jpg" width="100%" style="max-width:200px">
+<img src="images/RoboClaw2x7A.jpg" width="100%" style="max-width:200px">
 <br>
 <b>Roboclaw 2x7A</b>
 <br>
@@ -178,85 +277,474 @@ from junk parts
 </tr>
 <tr>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/MiniRemoteRelay1.jpg" width="100%" style="max-width:200px">
+<img src="images/MiniRemoteRelay1.jpg" width="100%" style="max-width:200px">
 <br>
 <b>Remote kill switch</b>
 <br>
-<a href="https://www.amazon.com/dp/B08D39XWS5?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2">Product Link</a>
+<i>Kills RoboClaw power to motors only.<br>Bus remains live.<br>See Manual &sect;3.2.</i>
+<br>
+<a href="https://www.amazon.com/dp/B08D39XWS5">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Carlits%20LED%20Headlight.jpg" width="100%" style="max-width:200px">
+<img src="images/Carlits%20LED%20Headlight.jpg" width="100%" style="max-width:200px">
 <br>
 <b>headlights</b>
 <br>
-<a href="https://www.amazon.com/dp/B00SOK4702?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_38">Product Link</a>
+<i>Eagle-Eye style, 9W 12V, 12mm - sold in 10-packs.  Two used on Stormy.</i>
+<br>
+<a href="https://www.amazon.com/dp/B06ZYKWQZC">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Switch%20DPDT%20slide%20panel%20mount.jpg" width="100%" style="max-width:200px">
+<img src="images/Switch%20DPDT%20slide%20panel%20mount.jpg" width="100%" style="max-width:200px">
 <br>
-<b>Slide switch DPDT to control headlights</b>
+<b>Slide switch DPDT to control headlights and RoboClaw reset</b>
 <br>
-<a href="https://www.amazon.com/dp/B09V77VCF7?ref=ppx_yo2ov_dt_b_fed_asin_title">Product Link</a>
+<a href="https://www.amazon.com/dp/B09V77VCF7">Product Link</a>
 </td>
 </tr>
 </table>
 
-**FHL-LD19 LIDAR alternative to belt driven YDLIDAR**
-
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="300">
-
-(https://www.amazon.com/youyeetoo-D300-Resistant-Raspberry-Tutorial/dp/B0B1QCV4XR/ref=sr_1_9?crid=GBKQQ6TOP7I9&dib=eyJ2IjoiMSJ9.3NGNTEEsWwmKKzft2nw9PEsxL_a2fZEg8dWOCb5LINxSFW_i2Hot02zOYrE5bahnLaXCdAbxwit_ff-l1HdMJp9TILkw_Vlv9y362cKWiuGT64lehB9rtrfrTWqACO0WGPuC5XxdWpRxTYKJ751FqG9EIPmyVeML42rqj3dsKy8MNObA6mYIGqzbKA7oxb9ELgJ8ELM-B7TSC64fO2KthNZ76m7nEF_bYiy4-KpDZA8.Kd8XGydx2y4ZKHXdVJJTzJ6YGFxsGnmTSEBMjzXUOQo&dib_tag=se&keywords=lidar+19&qid=1756000148&sprefix=lidar+19%2Caps%2C126&sr=8-9)
-
-## Camera options
+### Bus protection
 
 <table>
 <tr>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Spinel%20USB%20WDR%205MP%20camera.jpg" width="100%" style="max-width:200px">
+<img src="images/fuse%2015A%20slow%20blow%205x20mm.png" width="100%" style="max-width:200px">
 <br>
-Fisheye camera
+<b>15 A slow-blow 5x20 mm ceramic fuse</b>
+<br>
+<a href="https://www.amazon.com/dp/B0CRVLV5LY">Product Link</a>
+</td>
+<td width="33%" align="center">
+<img src="images/fuse%20holder.jpg" width="100%" style="max-width:200px">
+<br>
+<b>Panel-mount fuse holder, 5x20 mm</b>
+<br>
+<a href="https://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?storeId=10001&langId=-1&catalogId=10001&pa=18703&productId=18703">Product Link (Jameco 18703)</a>
+</td>
+<td width="33%" align="center">
+<img src="images/Schottky%20diode.jpg" width="100%" style="max-width:200px">
+<br>
+<b>Schottky diode STPS10L25D</b>
+<br>
+<i>Across the fuse - handles the fuse-blown case when the shunt loses bus reference.  See Manual &sect;3.1.</i>
+<br>
+<a href="https://www.digikey.com/en/products/detail/STPS10L25D/497-2738-5-ND/603763">Product Link (DigiKey)</a>
+</td>
+</tr>
+</table>
+
+### Battery maintenance
+
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="images/LiPo%20balance%20charger.jpg" width="100%" style="max-width:200px">
+<br>
+<b>LiPo balance charger / discharger</b>
+<br>
+<a href="https://www.amazon.com/dp/B0GSKJYK1B">Product Link</a>
+</td>
+</tr>
+</table>
+
+**FHL-LD19 LIDAR** - replaced the belt-driven YDLIDAR X2.  See Manual
+Chapter 7 for the udev symlink rule, the ldlidar_ros2 driver build fix
+(pthread include), and the SLAM Toolbox tuning that goes with it.
+
+<img src="images/FHL-LD19%20Lidar%20youyeetoo.jpg" width="300">
+
+Amazon: https://www.amazon.com/dp/B0B1QCV4XR
+
+Youyeetoo direct: https://www.youyeetoo.com
+
+## IMU
+
+Adafruit BNO085 breakout, mounted at base_link, wired to the Pi's
+I2C bus 1 at address 0x4A.  Uses game-rotation-vector mode
+(magnetometer disabled) for indoor stability.  See Manual Chapter 6
+for the driver, EKF integration, and verification recipes.
+
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="images/BNO085%20Adafruit%20breakout.png" width="100%" style="max-width:200px">
+<br>
+<b>BNO085 STEMMA QT breakout</b>
+<br>
+<a href="https://www.adafruit.com/product/4754">Product Link (Adafruit)</a>
+</td>
+<td width="33%" align="center">
+<img src="images/BNO085%20wiring.jpg" width="100%" style="max-width:200px">
+<br>
+<b>Wiring</b>
+<br>
+<i>Pi pin 3 SDA (blue), pin 5 SCL (yellow), pin 4 3V3 (red), pin 6 GND (black).  If i2cdetect shows nothing, try swapping SDA / SCL - some breakouts' silk-screens are reversed.</i>
+</td>
+<td width="33%" align="center">
+<img src="images/IMU%20mount.jpg" width="100%" style="max-width:200px">
+<br>
+<b>IMU mount</b>
+<br>
+<i>1/4" cast acrylic sheet, laser-cut to size with markers and text laser-etched, edges drill-pressed and hand-tapped.  Front (+x) edge of the breakout attached with M2.5 nylon screws.  Mount fastened to the bottom plate with nylon thumbscrews to place the IMU at base_link.</i>
+</td>
+</tr>
+</table>
+
+## Camera
+
+Currently installed on Stormy: **OAK-D**.  The fisheye and Intel
+RealSense D455 shown below are historical alternates evaluated during
+development and left in this README for reference.
+
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="images/OAK-D.jpg" width="100%" style="max-width:200px">
+<br>
+OAK-D (currently installed)
+<br>
+<a href="https://shop.luxonis.com/products/oak-d">Product Link</a>
+</td>
+<td width="33%" align="center">
+<img src="images/Spinel%20USB%20WDR%205MP%20camera.jpg" width="100%" style="max-width:200px">
+<br>
+Fisheye camera (historical alternate)
 <br>
 <a href="https://www.spinelelectronics.com/product/uc50mpb/">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/OAK-D.jpg" width="100%" style="max-width:200px">
+<img src="images/Intel_RealSense_D455_Amazon.jpg" width="100%" style="max-width:200px">
 <br>
-OAK-D
+Intel RealSense 455 (historical alternate)
 <br>
-<a href="https://shop.luxonis.com/products/oak-d?srsltid=AfmBOopBxDIulDyNvR966PJcUbHrZJljUuQ1s4Y_cAZlwJeJTxqQkb2F">Product Link</a>
-</td>
-<td width="33%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Intel_RealSense_D455_Amazon.jpg" width="100%" style="max-width:200px">
-<br>
-Intel RealSense 455
-<br>
-<a href="https://www.amazon.com/Intel-RealSense-D455-Webcam-3-1-1280/dp/B08KJCRCGG/ref=sr_1_1?crid=BSICQ530U89X&dib=eyJ2IjoiMSJ9.duQV2NDfQD5nknyVyAFALQYGQWTnTCcKIUa76CdZOFjjudxpAB8eKk6g4ws1A_tKy-KYlinv1IeOSZAgNYS3zfBwB9jIm938tY1YcwmU5DH28Gim7cek7ej7nLTpSKjfQnQcNf1H-FUgzOcGs7og-Q.KqH1AaUX6njKsrn01-kuS2fyuKLit1SKKwWViu_m77A&dib_tag=se&keywords=intel+realsense+455&qid=1749775015&sprefix=Intel+RealSen%2Caps%2C584&sr=8-1">Product Link</a>
+<a href="https://www.amazon.com/dp/B08KJCRCGG">Product Link</a>
 </td>
 </tr>
 </table>
 
 
-## ACCESSORIES
+## Indicators
 
-**Standoffs, hex, M2.5 x 18mm, 1/4 male-female**
+Headlights, amber-LED beacon, and USB-audio speaker for WAV alerts,
+all driven from Pi GPIO through a custom PCB.  See Manual Chapter 16
+for the ROS 2 node behaviour, joystick button mapping, and Nav2
+alert logic.
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/standoffs%20male%20female%20M2.5%2018mm.jpg" width="200">
+### Parts
 
-to replace the ones in the 52Pi Power expansion board as additional standoffs come below it for the PCIe card.
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="images/USB%20Audio%20Adapter%20Sabrent.png" width="100%" style="max-width:200px">
+<br>
+<b>Sabrent USB audio DAC</b>
+<br>
+<a href="https://www.amazon.com/dp/B00IRVQ0F8">Product Link</a>
+</td>
+<td width="50%" align="center">
+<img src="images/Speaker%20mini%208ohm.png" width="100%" style="max-width:200px">
+<br>
+<b>Mini 8-ohm speaker (4-pack)</b>
+<br>
+<a href="https://www.amazon.com/dp/B0B4D1BN4F">Product Link</a>
+</td>
+</tr>
+</table>
+
+*TODO: add remaining indicators BoM items with photos and links:
+IRLZ44N MOSFET (Amazon B0CBKH4XGL), amber LED assortment for the
+beacon, and the custom JLCPCB PCB fabrication.*
+
+### Design journey
+
+The current PCB is Rev 3 - two IRLZ44N logic-level MOSFETs driven
+directly from Pi GPIO, no NPN inverter stage.  Two earlier revisions
+and a Flux.ai adventure preceded it.
+
+**Original schematic** (before the piezo beeper was dropped).  Both
+amber-LED lines are on the same GPIO circuit; the second line is
+unused on the current PCB.
+
+<img src="images/indicators%20schematic%20pre-beeper-drop.png" width="500">
+
+**Unsuccessful protoboard attempt.**
+
+<img src="images/indicators%20unsuccessful%20protoboard.png" width="400">
+
+**Flux.ai PCB layout.**
+
+<img src="images/indicators%20PCB%20layout.png" width="500">
+
+**Completed PCB** (JLCPCB).
+
+<img src="images/indicators%20PCB%20completed.png" width="400">
+
+**Populated PCB installed inside the upper plate** (view from below).
+
+<img src="images/indicators%20PCB%20installed.png" width="400">
+
+**Indicators in action:** headlights on, amber LEDs illuminated,
+speaker between the LiDAR supports (later moved to the rear caster
+bracket).
+
+<img src="images/indicators%20in%20action.png" width="400">
+
+**Lesson learned.**  I spent way too much time and money nudging
+Flux.ai as it obsessed and dithered over a simple circuit.  Would
+have been better off designing by hand or with one of the free online
+tools from the PCB makers (EasyEDA at JLCPCB, KiCad).  A second
+protoboard attempt would likely have succeeded.
+
+## Networking
+
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="images/USB%20WiFi%20antenna.png" width="100%" style="max-width:300px">
+<br>
+<b>USB WiFi dongle - Realtek RTL8812BU with 5 dBi antenna</b>
+<br>
+<i>Stormy uses this dongle in preference to the Pi 5's internal wlan0, which is broken by design at 2.4 GHz.  See Manual Chapter 9.</i>
+<br>
+<a href="https://www.amazon.com/dp/B078NSSM7W">Product Link</a>
+</td>
+<td width="50%" align="center">
+<img src="images/Acer%20USB%20hub.jpg" width="100%" style="max-width:300px">
+<br>
+<b>Powered USB 3.0 hub, 4-port (Acer)</b>
+<br>
+<i>Feeds the USB WiFi dongle, LD19 LiDAR, USB audio DAC, and drydock keyboard/mouse.  Power-capable but currently running bus-powered from the Pi; powering it from the LiPo bus is an open question.  See Manual &sect;3.1.</i>
+<br>
+<a href="https://www.amazon.com/dp/B0CPSSD43L">Product Link</a>
+</td>
+</tr>
+</table>
+
+
+## Accessories and tools
+
+_A running list of the smaller parts and the tools that shape them.
+Everything here is used in the current build; sources and photos are
+being filled in over time._
+
+### Connectors
+
+- **PowerPole housings + contacts** (Anderson Powerpole, sold by
+  Powerwerx) - main bus, battery, and subsystem connections
+  throughout the robot.
+  <br><a href="https://powerwerx.com/150-piece-anderson-powerpole-connector-case">Product Link (150-piece assortment case)</a>
+  <br><img src="images/Powerpole%20connector%20assortment.png" width="200">
+- **PowerPole crimper** (Powerwerx TriCrimp - MUST BUY, no
+  substitutes).
+  <br><a href="https://powerwerx.com/tricrimp-powerpole-connector-crimping-tool">Product Link (TriCrimp)</a>
+  <br><img src="images/powerpole-crimping-tool.png" width="200">
+- **PowerPole insertion / removal / extraction tool** - very useful
+  for reworking existing bundles without cutting them apart.
+  <br><a href="https://powerwerx.com/powerpole-insertion-removal-extraction-tool">Product Link</a>
+  <br><img src="images/powerwerx-powerpole-insertion-removal-extraction-tool.png" width="200">
+- **LiPo battery connectors, EC5 male / female** - battery-side
+  plug pair.  The Zeee LiPo ships with EC5 pigtails; a matching pair
+  on the bus side lets the battery come off cleanly for balance
+  charging.
+  <br><a href="https://www.amazon.com/dp/B08M3WND19">Product Link</a>
+  <br><img src="images/EC5%20Battery%20Connectors.png" width="200">
+- **Ferrule crimper + assorted-color ferrule kit** -
+  <a href="https://www.amazon.com/dp/B0G1TSPZ93">Product Link</a>
+  <br><img src="images/Ferrule%20crimping%20kit.png" width="200">
+- **DuPont jumper connectors + crimper** (0.1" pitch) - Pi GPIO to
+  BNO085, to the indicators PCB, and to other external boards.
+  <br><a href="https://www.amazon.com/dp/B0B11RLGDZ">Product Link (Taiss ratcheting crimper + connector kit)</a>
+  <br><img src="images/DuPont%20Connector%20Kit.png" width="200">
+- **Spade connectors, 22-10 AWG assortment + crimper** - fuse
+  holder, DPDT switch, and legacy pigtails.
+  <br><a href="https://www.amazon.com/dp/B0CNRP9MT6">Product Link (Twidec insulated spade assortment)</a>
+  <br><img src="images/Spade%20Terminals%20and%20Crimper.png" width="200">
+- **DC power plugs** - inline barrel plug pigtails for:
+    - the LiPo bus &rarr; 52Pi PD board 12-24V input
+    - 52Pi 5V output &rarr; OAK-D aux power feed
+  <br><a href="https://www.amazon.com/dp/B01G6EB99E">Product Link</a>
+  <br><img src="images/power%20plug.png" width="200">
+
+### Wire
+
+- **Silicone parallel wire, assorted gauges** - multiple sizes used
+  across the build; do not standardize on a single AWG.  Larger gauges
+  for the LiPo bus, smaller for signal.  All gauges look nearly
+  identical in hand; the 14 / 16 AWG photos below stand in for the
+  full range.
+  <br>
+  <table>
+  <tr>
+  <td width="50%" align="center">
+  <img src="images/14AWG%20silicone%20power%20wire.jpg" width="100%" style="max-width:200px">
+  <br>14 AWG - LiPo bus
+  </td>
+  <td width="50%" align="center">
+  <img src="images/16AWG%20silicone%20power%20wire.jpg" width="100%" style="max-width:200px">
+  <br>16 AWG - subsystem feeds
+  </td>
+  </tr>
+  </table>
+  <br>Representative sources (2-conductor silicone parallel):
+  <br><a href="https://www.amazon.com/dp/B07RSRBZZD">14 AWG (LiPo bus)</a>
+  <br><a href="https://www.amazon.com/dp/B07FMLVF84">16 AWG (subsystem feeds)</a>
+  <br><a href="https://www.amazon.com/dp/B07RVMHSK4">18 AWG (signal / logic)</a>
+  <br><a href="https://www.amazon.com/dp/B07K9JKXM9">20 AWG (signal / logic)</a>
+
+### Fasteners
+
+- **M2.5 x 18mm + 6mm brass hex standoffs, male-female** - stack the
+  52Pi PD power extension board above the Pi 5 with clearance for the
+  PCIe HAT to slot in below.  Replace the shorter standoffs that ship
+  with the 52Pi board.
+  <br><a href="https://www.amazon.com/dp/B0FP2QGTD4">Product Link</a>
+  <br><img src="images/standoffs%20male%20female%20M2.5%2018mm.jpg" width="200">
+- **Nylon standoffs, 1.5" x 1/4" round, female-female, 4-40** -
+  LiDAR triangle mount on the top plate (see Manual Chapter 7.1).
+  <br><a href="https://www.mcmaster.com/products/nylon-spacers/standoffs-2~/standoffs-2~shape~hex/thread-size~4-40/length~1-500/length~1-1-2/?s=nylon-spacers">Product Link (McMaster-Carr)</a>
+  <br><img src="images/standoff%20nylon%201.5%20x%200.25in.png" width="200">
+- **Nylon thumbscrews** - tool-free access panels.
+  <br><a href="https://www.digikey.com/en/products/detail/essentra-components/090440037T/10243363">Product Link (DigiKey / Essentra 090440037T)</a>
+  <br><img src="images/Thumbscrew%20nylon.png" width="200">
+- **Drill bits and taps, assorted metric and imperial** - for the
+  top plate LiDAR mounts, indicator PCB mounting, and any hole that
+  needs threads.  Stormy uses both metric (M2.5, M3) and SAE (4-40)
+  threads, so you need both tap families on the bench.
+  <br><a href="https://www.amazon.com/dp/B0CX87WR49">uxcell titanium tapping / threading kit (metric)</a>
+  <br><a href="https://www.amazon.com/dp/B0G845TP6Y">Century Drill &amp; Tool 13-piece tap set</a>
+  <br><a href="https://www.lowes.com/pd/IRWIN-All-Purpose-SAE-13-Pack-Tap-and-Drill-Set/1003019164">IRWIN Hanson 13-pack SAE tap &amp; drill set (Lowes)</a>
+  <br>
+  <table>
+  <tr>
+  <td width="50%" align="center">
+  <img src="images/Taps%20metric.png" width="100%" style="max-width:200px">
+  <br>Metric taps
+  </td>
+  <td width="50%" align="center">
+  <img src="images/Tap%20and%20drill%20SAE%20Irwin.png" width="100%" style="max-width:200px">
+  <br>SAE taps &amp; drill bits
+  </td>
+  </tr>
+  </table>
+- **Snap-ring pliers** - the drive wheels are retained on the T81
+  hex hub adapters by snap rings.  Without proper pliers this is
+  nearly impossible and outright dangerous - a slipping snap ring
+  can fly at high speed.  **Wear safety glasses.**  This inexpensive
+  set is adequate.
+  <br><a href="https://www.amazon.com/dp/B09LVCV93Q">Product Link</a>
+  <br><img src="images/snap%20ring%20pliers.png" width="200">
+
+### Mounting adhesives and straps
+
+- **Foam tape** - mounts the fuse-holder proto-board to the rear side
+  panel; general-purpose vibration-damped mounting.
+  <br><a href="https://www.amazon.com/dp/B007Y7ITMS">Product Link</a>
+  <br><img src="images/foam%20tape.png" width="200">
+- **Velcro straps** - battery hold-down and cable management.
+  <br><a href="https://www.amazon.com/dp/B071DGMNMX">Product Link</a>
+  <br><img src="images/velcro%20straps.jpg" width="200">
+- **Velcro fasteners** (adhesive-back hook-and-loop mounting squares)
+  - reversible mounting for USB hub, USB WiFi dongle, and other
+  movable peripherals.
+  <br><a href="https://www.amazon.com/dp/B09S163TNK">Product Link</a>
+  <br><img src="images/Velcro%20mounting%20squares.png" width="200">
+
+### Labeling
+
+- **Heat-shrink tubing, assorted sizes** - insulation and strain
+  relief on all crimped connections.
+  <br><a href="https://www.amazon.com/dp/B00VDVT7IG">Product Link (Swordfish 61190 assorted-color heat-shrink kit)</a>
+  <br><img src="images/heat%20shrink%20assortment.png" width="200">
+- **Heat gun** (with reflector nozzle) - shrinks the tubing above and
+  the DYMO label tubing below.  The reflector nozzle protects nearby
+  wires from the direct blast.
+  <br><a href="https://www.amazon.com/dp/B08VFY8THD">Product Link (SEEKONE 350W mini, 2 temp settings)</a>
+  <br><img src="images/heat%20gun.png" width="200">
+- **Heat-shrink label maker + label tubing** - wire and connector
+  identification.  Compatible heat-shrink label tubing is available
+  through the DYMO ecosystem linked below.
+  <br><a href="https://www.amazon.com/dp/B005MR516Y">DYMO Industrial label maker</a>
+  <br><img src="images/DYMO%20heat%20shrink%20tubing%20label%20maker.png" width="200">
+
+_*TODO*: add anything else that belongs on this list - if you buy it,
+reach for it, or crimp with it while working on Stormy, add it here._
+
+---
+
+## Bill of materials
+
+Rough cost to buy every part and tool listed above from scratch, as
+of **2026-08-02**: **approximately $1,874.**
+
+Category subtotals below.  Individual line items, unit prices, and
+quantities live in the companion worksheet
+[`BOM_pricing_worksheet.csv`](BOM_pricing_worksheet.csv) in this
+repo - restart from that file when you reprice, and update this
+table to match.
+
+| Subsystem | Subtotal |
+|---|---:|
+| Structural (acrylic sheet stock) | $48.99 |
+| Rear caster (aspirational - see WARNING) | $12.21 |
+| Drivetrain (motors, wheels, hubs) | $140.90 |
+| CPU (Pi 5, 52Pi, PCIe HAT, SSD) | $261.82 |
+| Power (LiPo, e-stop, RoboClaw, shunt, indicators front-end) | $305.33 |
+| Bus protection (fuse, fuse holder, Schottky) | $10.40 |
+| Battery maintenance (balance charger) | $31.99 |
+| LIDAR (LD19) | $71.90 |
+| IMU (BNO085 breakout) | $24.95 |
+| Camera (OAK-D only; historical alternates excluded) | $329.00 |
+| Indicators (DAC, speaker, MOSFETs, LEDs, PCB) | $96.81 |
+| Networking (USB WiFi dongle) | $18.98 |
+| Connectors (PowerPole, EC5, DuPont, spade, ferrule, DC plugs, tools) | $169.92 |
+| Wire (14/16/18/20 AWG silicone) | $70.82 |
+| Fasteners (standoffs, thumbscrews, tap/drill kits, snap-ring pliers) | $102.56 |
+| Mounting (foam tape, Velcro straps, Velcro squares) | $20.60 |
+| Labeling (heat-shrink, heat gun, DYMO label maker) | $157.28 |
+| **Grand total (from `BOM_pricing_worksheet.csv`)** | **$1,874.46** |
+
+Caveats:
+
+- **Pack-size accounting.**  Prices reflect the full pack you have
+  to buy even when Stormy only uses a fraction of it - the
+  headlights are a 10-pack, the DPDT switches a 20-pack, and so on.
+  If you build a second robot, most consumable subtotals go to zero.
+- **Alternates included.**  The Fasteners row lists three
+  tap-and-drill kits (uxcell, Century, IRWIN); pick one to save
+  ~$44.  The Indicators PCB row assumes JLCPCB's five-board
+  minimum + shipping + duty.
+- **Tools vs. consumables.**  A large fraction of the total is
+  tools you own forever (TriCrimp, ferrule crimper, DuPont crimper,
+  spade crimper, insertion/removal tool, heat gun, DYMO label maker,
+  snap-ring pliers, tap+drill set, LiPo balance charger).  A rough
+  parts-only build cost - with tools already on the bench - lands
+  around $1,200.
+- **Historical camera alternates** (Spinel fisheye, Intel RealSense
+  D455) are excluded from the total; Stormy runs on the OAK-D.
+- **Powered USB hub (Acer, `B0CPSSD43L`)** is listed in the Networking
+  section but is not yet in the CSV subtotals - add it and re-total
+  before your next repricing pass.
+
+Prices last checked: **2026-08-02**.  Amazon prices drift; expect
+double-digit-percent swings on any given item.  When repricing,
+restart from the CSV, not from this table.
+
+---
 
 # SOFTWARE
 
 <table>
 <tr>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Ubuntu2404NobleNumbat.jpg" width="100%" style="max-width:200px">
+<img src="images/Ubuntu2404NobleNumbat.jpg" width="100%" style="max-width:200px">
 <br>
 <b>Ubuntu 24.04 Noble Numbat</b>
 <br>
 <a href="https://releases.ubuntu.com/noble/">Product Link</a>
 </td>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/ROS2_Jazzy.png" width="100%" style="max-width:200px">
+<img src="images/ROS2_Jazzy.png" width="100%" style="max-width:200px">
 <br>
 <b>ROS2 Jazzy</b>
 <br>
@@ -265,14 +753,14 @@ to replace the ones in the 52Pi Power expansion board as additional standoffs co
 </tr>
 <tr>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Gazebo%20Harmonic.png" width="100%" style="max-width:200px">
+<img src="images/Gazebo%20Harmonic.png" width="100%" style="max-width:200px">
 <br>
 <b>Gazebo Harmonic</b>
 <br>
 <a href="https://gazebosim.org/docs/harmonic/getstarted/">Product Link</a>
 </td>
 <td width="50%" align="center">
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/nav2_logo.png" width="100%" style="max-width:200px">
+<img src="images/nav2_logo.png" width="100%" style="max-width:200px">
 <br>
 <b>ROS2 Navigation2</b>
 <br>
@@ -298,42 +786,42 @@ https://www.youtube.com/watch?v=Kj8ijCCRR4o
 **Floorbot Challenge II Using Waypoints**
 
 
-View the Mission: Rviz2 screencast of the path plan
+View the Mission: RViz2 screencast of the path plan
 
-https://studio.youtube.com/video/tqyFS87C4XA/edit
+https://www.youtube.com/watch?v=tqyFS87C4XA
 
-View the Mission: Rvis2 scrdeencast of the path plan
+View the Video: RViz2 screencast of the path plan
 
-https://studio.youtube.com/video/uny75an7diY/edit
+https://www.youtube.com/watch?v=uny75an7diY
 
 **DISCONTINUED PARTS**
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/CZH-LABS%20low%20voltage%20disconnect%20photo.jpg" width="200">
+<img src="images/CZH-LABS%20low%20voltage%20disconnect%20photo.jpg" width="200">
 
 **Low Voltage Disconnect (not in use)**
 
-(https://www.amazon.com/Electronics-Salon-Voltage-Disconnect-Protect-Prolong/dp/B019F3BEIO/ref=sr_1_3?dib=eyJ2IjoiMSJ9.MFR00rua67FbXgt5cVUuaoJQSFN0M4EhvuYqqyPu9BIFMvDOk0JJI_P3q8LbJBVy_127psVzsy6r_4oAli56S1jtgHLE5sTKChn5KOFdIsZNRjjiSQwwE2279vxq7DvK7kZKI-NkZX4_5)
+(https://www.amazon.com/dp/B019F3BEIO)
 
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/AnkerPoweredUSBHub.jpg" width="200">
+<img src="images/AnkerPoweredUSBHub.jpg" width="200">
 
 **Powered USB hub NOT IN USE - NOT UP TO THE TASK!**
 
 to power Raspberry Pi and provide peripheral input to Pi (2 separate ports)
 
-(https://www.amazon.com/Anker-7-Port-Adapter-Charging-iPhone/dp/B014ZQ07NE/ref=asc_df_B014ZQ07NE?mcid=dbaa364fb9c733eeb044038a55add1f7&hvocijid=14883402360339246539-B014ZQ07NE-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=14883402360339246539&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9027693&hvtargid=pla-2281435179818&th=1)
+(https://www.amazon.com/dp/B014ZQ07NE)
 
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/YDLIDAR.JPG" width="200" >
+<img src="images/YDLIDAR.JPG" width="200" >
 
 **YDLIDAR X2 drive belt deteriorated after years with no easy replacement.  See LD19 (or LD27 replacement)**
 
-(https://www.amazon.com/gp/product/B07W613C1K/ref=ppx_od_dt_b_asin_title_s00?ie=UTF8&psc=1)
+(https://www.amazon.com/dp/B07W613C1K)
 
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Buck%20Converter%2015A%20DC%204-32V%20to%2012V%20like%20Ali%20Express.jpg" width="200">
+<img src="images/Buck%20Converter%2015A%20DC%204-32V%20to%2012V%20like%20Ali%20Express.jpg" width="200">
 
-**Buck voltage converter** Replaced by 51Pi power hat
+**Buck voltage converter** Replaced by 52Pi power hat
 
 (https://www.aliexpress.com/item/32881619997.html)
 
