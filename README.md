@@ -675,7 +675,7 @@ reach for it, or crimp with it while working on Stormy, add it here._
 ## Bill of materials
 
 Rough cost to buy every part and tool listed above from scratch, as
-of **2026-08-02**: **approximately $1,874.**
+of **2026-08-02**: **approximately $1,890.**
 
 Category subtotals below.  Individual line items, unit prices, and
 quantities live in the companion worksheet
@@ -696,13 +696,13 @@ table to match.
 | IMU (BNO085 breakout) | $24.95 |
 | Camera (OAK-D only; historical alternates excluded) | $329.00 |
 | Indicators (DAC, speaker, MOSFETs, LEDs, PCB) | $96.81 |
-| Networking (USB WiFi dongle) | $18.98 |
+| Networking (USB WiFi dongle, powered USB hub) | $34.97 |
 | Connectors (PowerPole, EC5, DuPont, spade, ferrule, DC plugs, tools) | $169.92 |
 | Wire (14/16/18/20 AWG silicone) | $70.82 |
 | Fasteners (standoffs, thumbscrews, tap/drill kits, snap-ring pliers) | $102.56 |
 | Mounting (foam tape, Velcro straps, Velcro squares) | $20.60 |
 | Labeling (heat-shrink, heat gun, DYMO label maker) | $157.28 |
-| **Grand total (from `BOM_pricing_worksheet.csv`)** | **$1,874.46** |
+| **Grand total (from `BOM_pricing_worksheet.csv`)** | **$1,890.45** |
 
 Caveats:
 
@@ -722,9 +722,6 @@ Caveats:
   around $1,200.
 - **Historical camera alternates** (Spinel fisheye, Intel RealSense
   D455) are excluded from the total; Stormy runs on the OAK-D.
-- **Powered USB hub (Acer, `B0CPSSD43L`)** is listed in the Networking
-  section but is not yet in the CSV subtotals - add it and re-total
-  before your next repricing pass.
 
 Prices last checked: **2026-08-02**.  Amazon prices drift; expect
 double-digit-percent swings on any given item.  When repricing,

@@ -31,6 +31,7 @@ Indicators,IRLZ44N logic-level MOSFET,https://www.amazon.com/dp/B0CBKH4XGL,10,$1
 Indicators,6 color x 20 ea 5mm LED assortment,https://www.amazon.com/dp/B08G4XCQSW,120,$0.11,$12.99,4 amber used From Builder's Manual
 Indicators,Custom indicators PCB (JLCPCB fabrication),https://jlcpcb.com/,5,$0.40,$54.85,inc shipping & duty
 Networking,Realtek RTL8812BU USB WiFi + 5 dBi antenna,https://www.amazon.com/dp/B078NSSM7W,1,$18.98,$18.98
+Networking,Powered USB 3.0 hub 4-port (Acer),https://www.amazon.com/dp/B0CPSSD43L,1,$15.99,$15.99,Currently bus-powered from Pi; power-capable
 Connectors,PowerPole 150-piece assortment case,https://powerwerx.com/150-piece-anderson-powerpole-connector-case,1,$49.99,$49.99
 Connectors,PowerPole TriCrimp crimper,https://powerwerx.com/tricrimp-powerpole-connector-crimping-tool,1,$39.99,$39.99,Tool - one-time
 Connectors,PowerPole insertion / removal / extraction tool,https://powerwerx.com/powerpole-insertion-removal-extraction-tool,1,$9.99,$9.99,Tool - one-time
@@ -56,4 +57,4 @@ Mounting,Velcro mounting squares,https://www.amazon.com/dp/B09S163TNK,1,$4.67,$4
 Labeling,Swordfish 61190 heat-shrink assorted-color kit,https://www.amazon.com/dp/B00VDVT7IG,1,$14.99,$14.99
 Labeling,SEEKONE 350W heat gun w/ reflector nozzle,https://www.amazon.com/dp/B08VFY8THD,1,$15.29,$15.29,Tool - one-time
 Labeling,DYMO Industrial label maker,https://www.amazon.com/dp/B005MR516Y,1,$127.00,$127.00,Tool - one-time; heat-shrink label tubing available through DYMO ecosystem
-,,,,,"$1,874.46"
+,,,,,"$1,890.45"
