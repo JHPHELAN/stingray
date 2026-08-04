@@ -174,10 +174,27 @@ cast acrylic sheet.  One 12" x 12" sheet is enough for a full set.
 
 CorelDRAW 2018 CAD drawings for laser cutting:
 
-- [Bottom plate](images/Stingray%20Bottom%20Plate.cdr)
-- [Top plate](images/Stingray%20Top%20Plate.cdr)
-- [Side panel](images/Stingray%20Side%20Panel%20Blank.cdr) — blank example
-  showing the fuse-holder hole
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="images/Stingray%20Bottom%20Plate.jpg" width="100%" style="max-width:250px">
+<br>
+<a href="images/Stingray%20Bottom%20Plate.cdr">Bottom plate (.cdr)</a>
+</td>
+<td width="33%" align="center">
+<img src="images/Stingray%20Top%20Plate.jpg" width="100%" style="max-width:250px">
+<br>
+<a href="images/Stingray%20Top%20Plate.cdr">Top plate (.cdr)</a>
+</td>
+<td width="33%" align="center">
+<img src="images/Stingray%20Side%20Panel%20Blank.jpg" width="100%" style="max-width:250px">
+<br>
+<a href="images/Stingray%20Side%20Panel%20Blank.cdr">Side panel (.cdr)</a>
+<br>
+<i>Blank example showing the fuse-holder hole</i>
+</td>
+</tr>
+</table>
 
 <table>
 <tr>

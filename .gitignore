@@ -1,3 +1,6 @@
 
 .vscode
 /build
+
+# CorelDRAW auto-backup files
+Backup_of_*.cdr
