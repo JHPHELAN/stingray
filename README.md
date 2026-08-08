@@ -50,23 +50,18 @@ Recreating Stingray top/bottom plates in 1/4" acrylic
 
 Full build and rebuild procedures for Stormy - subsystem chapters,
 wiring, RoboClaw configuration, ROS 2 setup, Nav2 / SLAM tuning, and
-diagnostics - live in the companion **Builder's Manual**:
+diagnostics - live in a separate companion repository:
 
-- **`Stingray_Builders_Manual.txt`** - 22 chapters + 6 appendices,
-  plain text, present-tense procedures.
-
-  *TODO: commit the Manual to this repo (currently held in the
-  author's documentation workspace on a different machine).*
+- **[stingray-builders-manual](https://github.com/JHPHELAN/stingray-builders-manual)**
+  (private) - contains the Builder's Manual (22 chapters + 7
+  appendices, plain text), the Field Notes (103 numbered
+  field-tested lessons), and the Curation Notes (stardated
+  distillate of the source log).
 
 This `README` is the hardware **photo + sourcing catalog** - "what does
 it look like and where do I buy it".  The Manual is the build guide -
 "how do I put it together, configure it, and rebuild it after
 disaster".
-
-Additional companion documents may follow (still deciding which belong
-here vs. staying private):
-- `Stingray_Field_Notes.txt` - 103 numbered field-tested lessons
-- `Stingray_Curation_Notes.txt` - stardated distillate of the source log
 
 **Software** (ROS 2 drivers, launch files, URDF, Nav2 params) lives in
 a separate repo:
