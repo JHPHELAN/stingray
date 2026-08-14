@@ -338,21 +338,13 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 <a href="https://www.amazon.com/dp/B08D39XWS5">Product Link</a>
 </td>
 <td width="33%" align="center">
-<img src="images/Carlits%20LED%20Headlight.jpg" width="100%" style="max-width:200px">
-<br>
-<b>headlights</b>
-<br>
-<i>Eagle-Eye style, 9W 12V, 12mm - sold in 10-packs.  Two used on Stormy.</i>
-<br>
-<a href="https://www.amazon.com/dp/B06ZYKWQZC">Product Link</a>
-</td>
-<td width="33%" align="center">
 <img src="images/Switch%20DPDT%20slide%20panel%20mount.jpg" width="100%" style="max-width:200px">
 <br>
 <b>Slide switch DPDT to control headlights and RoboClaw reset</b>
 <br>
 <a href="https://www.amazon.com/dp/B09V77VCF7">Product Link</a>
 </td>
+<td width="33%" align="center"></td>
 </tr>
 </table>
 
@@ -491,21 +483,32 @@ alert logic.
 
 <table>
 <tr>
-<td width="33%" align="center">
+<td width="50%" align="center">
 <img src="images/USB%20Audio%20Adapter%20Sabrent.png" width="100%" style="max-width:200px">
 <br>
 <b>Sabrent USB audio DAC</b>
 <br>
 <a href="https://www.amazon.com/dp/B00IRVQ0F8">Product Link</a>
 </td>
-<td width="33%" align="center">
+<td width="50%" align="center">
 <img src="images/Speaker%20mini%208ohm.png" width="100%" style="max-width:200px">
 <br>
 <b>Mini 8-ohm speaker (4-pack)</b>
 <br>
 <a href="https://www.amazon.com/dp/B0B4D1BN4F">Product Link</a>
 </td>
-<td width="33%" align="center">
+</tr>
+<tr>
+<td width="50%" align="center">
+<img src="images/Carlits%20LED%20Headlight.jpg" width="100%" style="max-width:200px">
+<br>
+<b>Headlights</b>
+<br>
+<i>Eagle-Eye style, 9W 12V, 12mm - sold in 10-packs.  Two used on Stormy.</i>
+<br>
+<a href="https://www.amazon.com/dp/B06ZYKWQZC">Product Link</a>
+</td>
+<td width="50%" align="center">
 <img src="images/LEDs%20Multicolor%20CHANZON.png" width="100%" style="max-width:200px">
 <br>
 <b>CHANZON multicolor 5&nbsp;mm LED assortment</b>
