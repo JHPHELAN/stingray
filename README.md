@@ -491,26 +491,33 @@ alert logic.
 
 <table>
 <tr>
-<td width="50%" align="center">
+<td width="33%" align="center">
 <img src="images/USB%20Audio%20Adapter%20Sabrent.png" width="100%" style="max-width:200px">
 <br>
 <b>Sabrent USB audio DAC</b>
 <br>
 <a href="https://www.amazon.com/dp/B00IRVQ0F8">Product Link</a>
 </td>
-<td width="50%" align="center">
+<td width="33%" align="center">
 <img src="images/Speaker%20mini%208ohm.png" width="100%" style="max-width:200px">
 <br>
 <b>Mini 8-ohm speaker (4-pack)</b>
 <br>
 <a href="https://www.amazon.com/dp/B0B4D1BN4F">Product Link</a>
 </td>
+<td width="33%" align="center">
+<img src="images/LEDs%20Multicolor%20CHANZON.png" width="100%" style="max-width:200px">
+<br>
+<b>CHANZON multicolor 5&nbsp;mm LED assortment</b>
+<br>
+<a href="https://www.amazon.com/dp/B08G4XCQSW">Product Link</a>
+</td>
 </tr>
 </table>
 
 *TODO: add remaining indicators BoM items with photos and links:
-IRLZ44N MOSFET (Amazon B0CBKH4XGL), amber LED assortment for the
-beacon, and the custom JLCPCB PCB fabrication.*
+IRLZ44N MOSFET (Amazon B0CBKH4XGL), and the custom JLCPCB PCB
+fabrication.*
 
 ### Design journey
 
