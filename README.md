@@ -1,5 +1,9 @@
 <img src="images/Stormy%20Portrait%20angle.jpg" width="1000">
 
+**Stormy full schematic** (KiCad 10.0, 2026-08-12)
+
+<img src="images/Stormy%20Schematic%202026-08-12.png" width="1000">
+
 <table>
 <tr>
 <td width="50%">
