@@ -836,6 +836,12 @@ restart from the CSV, not from this table.
 
 ## MISSIONS
 
+**Autonomous house exploration & mapping with WiFi signal strength**
+
+See Floorbot Challenge with extra features
+
+https://youtu.be/wo1sceOkqcI
+
 **Floorbot Challenge I Using Nav2 Goal Pose**
 
 View the Mission: Rviz2 screencast of the path plan
