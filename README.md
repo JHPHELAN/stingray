@@ -11,16 +11,22 @@
 Stormy logo created by LogoDesignGen
 </td>
 <td width="50%">
+<img src="images/Nespresso%20Stormio.jpg" width="500">
+Stormio the 'official' coffee of Stormy the Stingray Robot
+<br>
+<a href="https://www.nespresso.com/us/en/order/capsules/vertuo/stormio-vertuo-coffee-pods">Product Link (Nespresso)</a>
+</td>
+<tr>
+<td width="50%">
 <img src="images/stingray3.jpg" width="100%">
 Original Parallax Stingray robot, no longer in production
 </td>
+<td width="50%">
+<img src="images/Original%20to%20Acrylic.JPG" width="500">
+Recreating Stingray top/bottom plates in 1/4" acrylic
+</td>
 </tr>
 </table>
-
-Recreating Stingray top/bottom plates in 1/4" acrylic
-
-<img src="images/Original%20to%20Acrylic.JPG" width="500">
-
 **Assembled Stormy the Stingray robot**
 
 <table>
