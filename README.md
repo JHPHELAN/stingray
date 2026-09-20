@@ -348,7 +348,7 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 </tr>
 </table>
 
-### Bus protection
+### Power Input Panel permits crossover of power to/from Battery and Bench supplies
 
 <table>
 <tr>
@@ -367,20 +367,59 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 <a href="https://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?storeId=10001&langId=-1&catalogId=10001&pa=18703&productId=18703">Product Link (Jameco 18703)</a>
 </td>
 <td width="33%" align="center">
-<img src="images/Schottky%20diode.jpg" width="100%" style="max-width:200px">
+<img src="images/Schottky%20Diode%2015SQ045.jpg" width="100%" style="max-width:200px">
 <br>
-<b>Schottky diode STPS10L25D</b>
+<b>Schottky diode 15SQ045</b>
 <br>
-<i>Across the fuse - handles the fuse-blown case when the shunt loses bus reference.  See Manual &sect;3.1.</i>
+<i>ORing circuit blocks reverse current during power crossover</i>
 <br>
-<a href="https://www.digikey.com/en/products/detail/STPS10L25D/497-2738-5-ND/603763">Product Link (DigiKey)</a>
+<a href="https://www.amazon.com/dp/B0DQGSDM6K">Product Link (Amazon)</a>
 </td>
 </tr>
 </table>
 
-<img src="images/bus%20protection%20protoboard.png" width="300">
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="images/Power%20Input%20Side%20Panel%20Terminal%20Strip%20Schematic.png" width="500">
 <br>
-<i>Bus-protection protoboard - fuse holder, Schottky, and bus taps on a single board for improved connections.</i>
+</td>
+<td width="33%" align="center">
+<img src="images/Side%20Panel%20Wide%20Right%20Rear%20Fuse%20PowerPole%20Terminal%20Ethernet.png" width="500">
+<br>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center">
+<img src="images/Power%20Input%20front.png" width="300">
+<br>
+</td>
+<td width="33%" align="center">
+<img src="images/Power%20Input%20rear.png" width="300">
+<br>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center">
+<img src="images/PowerPolePanelMount.png" width="300">
+<br>
+<a href="https://www.amazon.com/dp/B0CCXSY3KD">Product Link (Amazon)</a>
+<br>
+</td>
+<td width="33%" align="center">
+<img src="images/TerminalStrip12PosHoriz.png" width="300">
+<br>
+<a href="https://www.amazon.com/dp/B0D4DFFWBF">Product Link (Amazon)</a>
+<br>
+</td>
+<td width="33%" align="center">
+<img src="images/RJ45%20Keystone%20Jack.png" width="300">
+<br>
+<a href="https://www.amazon.com/dp/B0CLV27V79">Product Link (Amazon)</a>
+<br>
+</tr>
+</table>
+
 
 ### Battery maintenance
 
@@ -566,7 +605,7 @@ protoboard attempt would likely have succeeded.
 
 <table>
 <tr>
-<td width="50%" align="center">
+<td width="33%" align="center">
 <img src="images/USB%20WiFi%20antenna.png" width="100%" style="max-width:300px">
 <br>
 <b>USB WiFi dongle - Realtek RTL8812BU with 5 dBi antenna</b>
@@ -575,7 +614,7 @@ protoboard attempt would likely have succeeded.
 <br>
 <a href="https://www.amazon.com/dp/B078NSSM7W">Product Link</a>
 </td>
-<td width="50%" align="center">
+<td width="33%" align="center">
 <img src="images/Acer%20USB%20hub.jpg" width="100%" style="max-width:300px">
 <br>
 <b>Powered USB 3.0 hub, 4-port (Acer)</b>
