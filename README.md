@@ -396,11 +396,11 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
   </tr>
   <tr>
     <td width="33%" align="center">
-      <img src="images/Power%20Input%20front.png" width="300">
+      <img src="images/Power%20Input%20Panel%20LED%20front.jpg" width="300">
       <br>
     </td>
     <td width="33%" align="center">
-      <img src="images/Power%20Input%20rear.png" width="300">
+      <img src="images/Power%20Input%20Panel%20LED%20back.jpg" width="300">
       <br>
     </td>
     <td width="33%" align="center">
