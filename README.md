@@ -2,7 +2,7 @@
 
 **Stormy full schematic** (KiCad 10.0, 2026-09-20)
 
-<img src="https://github.com/JHPHELAN/stingray/blob/main/images/Stormy%20Schematic%202026.09.20.png" width="1000">
+<img src="images/Stormy%20Schematic%20LED.png" width="1000">
 
 <table>
 <tr>
@@ -357,73 +357,77 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
 ### Power Input Panel permits crossover of power to/from Battery and Bench supplies
 
 <table>
-<tr>
-<td width="33%" align="center">
-<img src="images/fuse%2015A%20slow%20blow%205x20mm.png" width="100%" style="max-width:200px">
-<br>
-<b>15 A slow-blow 5x20 mm ceramic fuse</b>
-<br>
-<a href="https://www.amazon.com/dp/B0CRVLV5LY">Product Link</a>
-</td>
-<td width="33%" align="center">
-<img src="images/fuse%20holder.jpg" width="100%" style="max-width:200px">
-<br>
-<b>Panel-mount fuse holder, 5x20 mm</b>
-<br>
-<a href="https://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?storeId=10001&langId=-1&catalogId=10001&pa=18703&productId=18703">Product Link (Jameco 18703)</a>
-</td>
-<td width="33%" align="center">
-<img src="images/Schottky%20Diode%2015SQ045.jpg" width="100%" style="max-width:200px">
-<br>
-<b>Schottky diode 15SQ045</b>
-<br>
-<i>ORing circuit blocks reverse current during power crossover</i>
-<br>
-<a href="https://www.amazon.com/dp/B0DQGSDM6K">Product Link (Amazon)</a>
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="33%" align="center">
-<img src="images/Power%20Input%20Side%20Panel%20Terminal%20Strip%20Schematic.png" width="500">
-<br>
-</td>
-<td width="33%" align="center">
-<img src="images/Side%20Panel%20Wide%20Right%20Rear%20Fuse%20PowerPole%20Terminal%20Ethernet.png" width="500">
-<br>
-</td>
-</tr>
-<tr>
-<td width="33%" align="center">
-<img src="images/Power%20Input%20front.png" width="300">
-<br>
-</td>
-<td width="33%" align="center">
-<img src="images/Power%20Input%20rear.png" width="300">
-<br>
-</td>
-</tr>
-<tr>
-<td width="33%" align="center">
-<img src="images/PowerPolePanelMount.png" width="300">
-<br>
-<a href="https://www.amazon.com/dp/B0CCXSY3KD">Product Link (Amazon)</a>
-<br>
-</td>
-<td width="33%" align="center">
-<img src="images/TerminalStrip12PosHoriz.png" width="300">
-<br>
-<a href="https://www.amazon.com/dp/B0D4DFFWBF">Product Link (Amazon)</a>
-<br>
-</td>
-<td width="33%" align="center">
-<img src="images/RJ45%20Keystone%20Jack.png" width="300">
-<br>
-<a href="https://www.amazon.com/dp/B0CLV27V79">Product Link (Amazon)</a>
-<br>
-</tr>
+  <tr>
+    <td width="33%" align="center">
+      <img src="images/fuse%2015A%20slow%20blow%205x20mm.png" width="100%" style="max-width:200px">
+      <br>
+      <b>15 A slow-blow 5x20 mm ceramic fuse</b>
+      <br>    
+      <a href="https://www.amazon.com/dp/B0CRVLV5LY">Product Link</a>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/fuse%20holder.jpg" width="100%" style="max-width:200px">
+      <br>
+      <b>Panel-mount fuse holder, 5x20 mm</b>
+      <br>
+      <a href="https://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?storeId=10001&langId=-1&catalogId=10001&pa=18703&productId=18703">Product Link (Jameco 18703)       </a>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/Schottky%20Diode%2015SQ045.jpg" width="100%" style="max-width:200px">
+      <br>
+      <b>Schottky diode 15SQ045</b>
+      <br>
+      <i>ORing circuit blocks reverse current during power crossover</i>
+      <br>
+      <a href="https://www.amazon.com/dp/B0DQGSDM6K">Product Link (Amazon)</a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center">
+      <img src="images/Power%20Input%20Side%20Panel%20Terminal%20Strip%20LED%20Schematic.png" width="500">
+      <br>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/Side%20Panel%20Wide%20Right%20Rear%20Fuse%20PowerPole%20Terminal%20Ethernet.png" width="500">
+      <br>
+    </td>
+    <td width="33%" align="center">
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center">
+      <img src="images/Power%20Input%20front.png" width="300">
+      <br>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/Power%20Input%20rear.png" width="300">
+      <br>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/Power%20Input%20Side%20Panel%20LED.JPG" width="300">
+      <br>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center">
+      <img src="images/PowerPolePanelMount.png" width="300">
+      <br>
+      <a href="https://www.amazon.com/dp/B0CCXSY3KD">Product Link (Amazon)</a>
+      <br>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/TerminalStrip12PosHoriz.png" width="300">
+      <br>
+      <a href="https://www.amazon.com/dp/B0D4DFFWBF">Product Link (Amazon)</a>
+      <br>
+    </td>
+    <td width="33%" align="center">
+      <img src="images/RJ45%20Keystone%20Jack.png" width="300">
+      <br>
+      <a href="https://www.amazon.com/dp/B0CLV27V79">Product Link (Amazon)</a>
+      <br>
+    </td>
+  </tr>
 </table>
 
 
