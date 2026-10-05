@@ -2,7 +2,7 @@
 
 **Stormy full schematic** (KiCad 10.0, 2026-09-20)
 
-<img src="images/Stormy%20Schematic%20LED.png" width="1000">
+<img src="images/Schematic%20Power%20Input%202%20LEDs.png" width="1000">
 
 <table>
 <tr>
@@ -384,11 +384,11 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
   </tr>
   <tr>
     <td width="33%" align="center">
-      <img src="images/Power%20Input%20Side%20Panel%20Terminal%20Strip%20LED%20Schematic.png" width="500">
+      <img src="images/Power%20Input%20Panel%202%20LEDs.png" width="500">
       <br>
     </td>
     <td width="33%" align="center">
-      <img src="images/Side%20Panel%20Wide%20Right%20Rear%20Fuse%20PowerPole%20Terminal%20Ethernet.png" width="500">
+      <img src="images/Side%20Panel%20Wide%20Right%20Rear%20Fuse%20PowerPole%20Terminal%20Ethernet%202%20LEDs.png" width="500">
       <br>
     </td>
     <td width="33%" align="center">
@@ -404,7 +404,7 @@ counts / meter = 2.57 R/m x 3200 C/R = 8226 C/m
       <br>
     </td>
     <td width="33%" align="center">
-      <img src="images/Power%20Input%20Side%20Panel%20LED.JPG" width="300">
+      <img src="images/Power%20Input%20Panel%20Battery%20Blue%20LED%2050pct.jpg" width="300">
       <br>
     </td>
   </tr>
