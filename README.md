@@ -1,8 +1,10 @@
 <img src="images/Stormy%20Portrait%20angle.jpg" width="1000">
 
-**Stormy full schematic** (KiCad 10.0, 2026-09-20)
+**Stormy full schematic** (KiCad 10.0, 2026-10-14)
 
-<img src="images/Schematic%20Power%20Input%202%20LEDs.png" width="1000">
+<img src="images/Schematic%20Full%202026-10-14.png" width="1000">
+
+**Download the editable KiCad 10.0 project:** [`kicad/`](kicad) — open [`Stingray.kicad_pro`](kicad/Stingray.kicad_pro) in KiCad 10.0. To grab the whole project, [download the repo as a ZIP](https://github.com/JHPHELAN/stingray/archive/refs/heads/main.zip) and open the `kicad/` folder.
 
 <table>
 <tr>
