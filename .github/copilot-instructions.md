@@ -15,9 +15,10 @@ The ROS 2 workspace and robot code are in a **separate** repo, `JHPHELAN/articub
 
 The authoritative orientation file is **`context.txt`** in the articubot_one repo:
 `robots/stingray/context.txt`. It covers robot identity, the home LAN, hardware
-preflight, recovery, and the session rituals below. Prior session write-ups are in
-`robots/stingray/NOTES-YYYY-MM-DD-*.md`. A Pi-local skills library lives at
-`/home/ubuntu/.copilot/skills`.
+preflight, recovery, and the session rituals below. Prior session write-ups (handoff
+notes) are committed in **THIS** repo at `notes/NOTES-YYYY-MM-DD-*.md`
+(JHPHELAN/stingray) — HankRearden is the note-exchange point. A Pi-local skills library
+lives at `/home/ubuntu/.copilot/skills`.
 
 There is **no cross-machine AI memory** — orientation travels only through these
 committed files plus the Pi-local skills folder. If you (Copilot) cannot see
@@ -26,11 +27,15 @@ into the Pi, or to paste `context.txt`.
 
 ## Session rituals
 
-- **Startup = Read, Recall, Pull**: Read `context.txt`; Recall skills + the latest
-  `NOTES-*.md`; Pull latest on the repo(s) you will touch (`git pull --ff-only`).
+- **Startup = Read, Recall, Pull**: Read THIS file (`.github/copilot-instructions.md`)
+  AND `context.txt`; Recall skills + the NEWEST `notes/NOTES-*.md` BY DATE (not an older
+  one); Pull latest on the repo(s) you will touch (`git pull --ff-only`). Do this even if
+  the VS Code window opened on a different folder than this repo.
 - **Shutdown = Recap, Remember, Push**: Recap what changed and what was learned;
-  Remember it in a `NOTES-*.md` and update `context.txt`; Push to the correct
-  repo/branch.
+  Remember it in a NEW `notes/NOTES-YYYY-MM-DD-*.md` in THIS repo and update `context.txt`;
+  Push to the correct repo/branch (notes -> JHPHELAN/stingray `main`; robot code ->
+  JHPHELAN/articubot_one `exploration`). Session-state copies are DRAFTS only — if a note
+  isn't pushed here, the next session can't see it (this is what broke 2026-10-11..10-16).
 
 ## Working style (user preference)
 
