@@ -13,17 +13,18 @@ The ROS 2 workspace and robot code are in a **separate** repo, `JHPHELAN/articub
 
 ## Full orientation / AI "memory"
 
-The authoritative orientation file is **`context.txt`** in the articubot_one repo:
-`robots/stingray/context.txt`. It covers robot identity, the home LAN, hardware
-preflight, recovery, and the session rituals below. Prior session write-ups (handoff
-notes) are committed in **THIS** repo at `notes/NOTES-YYYY-MM-DD-*.md`
-(JHPHELAN/stingray) — HankRearden is the note-exchange point. A Pi-local skills library
-lives at `/home/ubuntu/.copilot/skills`.
+The authoritative orientation file is **`context.txt`** — now CANONICAL in **THIS**
+repo (JHPHELAN/stingray) at the repo root: `context.txt` (moved here 2026-10-17 from
+articubot_one so this Windows-local window can see it). A synced cc copy lives on the
+Pi at articubot_one `robots/stingray/context.txt` for Remote-SSH sessions. It covers
+robot identity, the home LAN, hardware preflight, recovery, and the session rituals
+below. Prior session write-ups (handoff notes) are committed in **THIS** repo at
+`notes/NOTES-YYYY-MM-DD-*.md` — HankRearden is the note-exchange point. A Pi-local
+skills library lives at `/home/ubuntu/.copilot/skills`.
 
 There is **no cross-machine AI memory** — orientation travels only through these
-committed files plus the Pi-local skills folder. If you (Copilot) cannot see
-`context.txt` from this Windows-local window, ask the user to open a Remote-SSH window
-into the Pi, or to paste `context.txt`.
+committed files plus the Pi-local skills folder. This window's workspace IS this repo,
+so `context.txt` and this file are directly readable; read them first.
 
 ## Session rituals
 
