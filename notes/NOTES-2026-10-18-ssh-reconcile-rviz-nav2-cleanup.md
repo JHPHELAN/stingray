@@ -161,20 +161,27 @@ dropped by 247e69c.
 Fix — folded the node back into articubot_one on exploration:
 - scripts/frontier_explorer_v2.py + scripts/record_explore.sh (copied from the Pi package via
   scp Stormy->linuxbox; Stormy->LinuxBox ssh is passwordless).
-- launch/explore.launch.py (repackaged: get_package_share_directory + Node package -> 'articubot_one';
-  executable stays frontier_explorer_v2.py).
+- launch/explore.launch.py (repackaged: get_package_share_directory + Node package -> 'articubot_one').
 - config/frontier_explorer.example.yaml (conservative robot-neutral default).
 - CMakeLists.txt installs the two scripts as executables; launch/ + config/ already auto-install.
 - README.md: links now resolve + new section "1a. Robot-agnostic design" (node is generic:
   /map + /global_costmap/costmap + Nav2; per-robot tuning lives in robots/<robot>/config/explore.yaml).
-Built + verified on LinuxBox: `ros2 pkg executables articubot_one` lists frontier_explorer_v2.py;
-`ros2 launch articubot_one explore.launch.py -s` introspects (params_file defaults to the example).
-LAUNCH COMMAND CHANGED -> `ros2 launch articubot_one explore.launch.py
+
+RENAMED frontier_explorer_v2 -> frontier_explorer (drop the version tag, more generic) —
+commits 9a61dad (git mv) + 954796f (contents). Changed CONSISTENTLY so params still bind:
+file scripts/frontier_explorer.py, class FrontierExplorer, node self-name "frontier_explorer",
+and the YAML top-level key frontier_explorer: in BOTH config/frontier_explorer.example.yaml and
+robots/stingray/config/explore.yaml (key MUST match node name), plus launch executable, CMakeLists,
+record_explore.sh, README. (Gotcha hit: `git add` with a stale `frontier_explorer_v2.py` pathspec
+failed the whole add, so 9a61dad committed only the rename with old contents; 954796f fixed it.
+git grep confirms committed tree has zero _v2.)
+Built + verified: `ros2 pkg executables articubot_one` lists frontier_explorer.py; launch introspects.
+LAUNCH COMMAND -> `ros2 launch articubot_one explore.launch.py
 params_file:=<pkg>/robots/stingray/config/explore.yaml` (was `ros2 launch frontier_explorer ...`).
 TODO: update Stormy's `explore` alias; the standalone ~/robot_ws/src/frontier_explorer is now redundant.
 
 ## State at end (checkpoint)
-- articubot_one (LinuxBox, exploration): HEAD 363381e, pushed to origin, working tree clean
+- articubot_one (LinuxBox, exploration): HEAD 954796f, pushed to origin, working tree clean
   except UNTRACKED config/main.rviz.bak + launch/drive_sim.launch.py.bak (intentional backups).
 - articubot_one (Stormy/Pi, exploration): BEHIND at 77dc083 — needs `git pull --ff-only` to get
   ALL of today's work (SSH/reconcile/rviz/nav2/house/explorer), then
