@@ -220,11 +220,39 @@ Baked relay_initialpose.py into the sim bringup so it auto-starts with drive_sim
 - On next drive_sim launch you'll see "initialpose relay up ..." in that terminal.
   ~/robot_ws/relay_initialpose.py is now redundant (kept as a manual fallback).
 
-## TODO / next time
-- Flesh out the two weak corners: resume RTAB-Map in MAPPING mode (localization:=false,
-  no delete_db) on the same DB, drive the corners slowly to loop-close, then save.
-- Reconcile navigation_launch.py (and nav2_params*) between Stormy and LinuxBox so they
-  don't drift again (cmd_vel_raw remap, collision_monitor out topic).
-- Tidy stale inline comments in nav2_params_sim.yaml (L19/L62 wording now wrong).
-- Backups to clean up once satisfied: *.bak, *.bak2 for warehouse.sdf,
-  navigation_launch.py, nav2_params_sim.yaml.
+## Map cleanup session (afternoon) — IN PROGRESS, not finished
+Goal: fix the warped warehouse map. Switched from the stale 167 MB DB to a FRESH SLAM map
+(localization:=false, delete_db_on_start:=true) driven by the LD19 scan for the grid
+(subscribe_scan:=true, --Grid/FromDepth false) — clean grid, not depth noise.
+Confirmed along the way (do NOT re-chase): Reg/Force3DoF already true; IMU already in via
+EKF /odometry/local (rtabmap's direct /imu/data is redundant, its "won't be added to graph"
+warning is harmless); occasional GTSAM "indeterminant / loop closure rejected" is normal.
+Only drove a short seed loop by joystick; coverage INCOMPLETE. Old DB backed up:
+~/.ros/rtabmap_warehouse_2026-10-16.db.bak. Nav2 was NOT up this bringup (mapping only).
+
+## Repo / notes / context reconciliation (evening) — DONE
+Root cause of today's re-tread: handoff notes weren't being pushed, and context.txt lived
+only in articubot_one on the Pi, so the HankRearden local VSCode window started blind and
+OPEN read an OLD session-state note (10-10) instead of the committed latest (10-16).
+Fixed, single source of truth now:
+- stingray repo (JHPHELAN/stingray, HankRearden + GitHub + Pi): canonical context.txt at
+  root; .github/copilot-instructions.md hardened (OPEN reads it + context.txt + NEWEST note);
+  notes/ holds all 8 handoffs (10-03,10-05x2,10-09 migrated from articubot_one; 10-11/16/17
+  backfilled from session-state). Commits e37a27b, f636181, 00d7d11.
+- articubot_one (exploration): today's sim code committed (8d38791); robots/stingray/
+  context.txt retired to a pointer + its 4 notes removed (77dc083). Pi pulled current.
+- Cleaned stale HankRearden copies (2 dead stubs deleted, Code\context.txt -> redirect).
+
+## TODO / next time (pick up refreshed)
+1. FINISH THE MAP: drive full warehouse coverage in SLAM mode (lidar grid, Force3DoF on),
+   revisit areas for loop closures, then SAVE the DB. Then try simultaneous nav+map via
+   Nav2 waypoints (needs planner allow_unknown to push into unmapped aisles).
+2. Set up HankRearden->LinuxBox SSH keys so Copilot can drive LinuxBox directly (user: yes).
+3. Reconcile LinuxBox's PRE-EXISTING uncommitted work (NOT today's): description/oakd.xacro,
+   launch/joystick.launch.py, robots/stingray/description/ldlidar.xacro (+ .bak), and
+   untracked robots/stingray/date_index.txt, stingray_log.rtf, scripts/WiFiQuality.xml —
+   decide commit vs discard.
+4. Remove the stale SlamToolbox panel from config/main.rviz (silences "Waiting for
+   slam_toolbox node configuration" spam + the /initialpose QoS-incompatibility warning).
+5. Tidy stale inline comments in nav2_params_sim.yaml (L19/L62 wording now wrong).
+6. Once the fresh map is solid: delete old DB backups.
