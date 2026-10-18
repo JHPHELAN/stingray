@@ -150,19 +150,54 @@ warehouse-style gui fix was needed. Decision: option B (lean repo).
   `ros2 launch articubot_one drive_sim.launch.py robot_model:=stingray robot_world:=small_house use_sim_time:=true`
   then rsp + rtabmap + nav2 per the 10-17 note.
 
+## frontier_explorer RESTORED into articubot_one (2026-10-18) — commit 363381e
+Root cause of "explore isn't on GitHub": commit 247e69c ("drop in-tree frontier_explorer_v2;
+move tuning to explore.yaml") had moved the explorer OUT of articubot_one into a standalone
+~/robot_ws/src/frontier_explorer package on the Pi that was NEVER put under git — so it existed
+ONLY on Stormy's disk (no backup), and articubot_one's README (which documents the node and links
+to scripts/frontier_explorer_v2.py) had broken links. The exploration branch's whole point was to
+host explore, so this was wrong. Git history confirmed it was in-tree (6753fcd..c4f792a) then
+dropped by 247e69c.
+Fix — folded the node back into articubot_one on exploration:
+- scripts/frontier_explorer_v2.py + scripts/record_explore.sh (copied from the Pi package via
+  scp Stormy->linuxbox; Stormy->LinuxBox ssh is passwordless).
+- launch/explore.launch.py (repackaged: get_package_share_directory + Node package -> 'articubot_one';
+  executable stays frontier_explorer_v2.py).
+- config/frontier_explorer.example.yaml (conservative robot-neutral default).
+- CMakeLists.txt installs the two scripts as executables; launch/ + config/ already auto-install.
+- README.md: links now resolve + new section "1a. Robot-agnostic design" (node is generic:
+  /map + /global_costmap/costmap + Nav2; per-robot tuning lives in robots/<robot>/config/explore.yaml).
+Built + verified on LinuxBox: `ros2 pkg executables articubot_one` lists frontier_explorer_v2.py;
+`ros2 launch articubot_one explore.launch.py -s` introspects (params_file defaults to the example).
+LAUNCH COMMAND CHANGED -> `ros2 launch articubot_one explore.launch.py
+params_file:=<pkg>/robots/stingray/config/explore.yaml` (was `ros2 launch frontier_explorer ...`).
+TODO: update Stormy's `explore` alias; the standalone ~/robot_ws/src/frontier_explorer is now redundant.
+
 ## State at end (checkpoint)
-- articubot_one (LinuxBox, exploration): HEAD 27e9e67, pushed to origin, working tree clean
+- articubot_one (LinuxBox, exploration): HEAD 363381e, pushed to origin, working tree clean
   except UNTRACKED config/main.rviz.bak + launch/drive_sim.launch.py.bak (intentional backups).
-  Pi can `git pull --ff-only` (then run fetch_small_house_world.py to get the house models).
+- articubot_one (Stormy/Pi, exploration): BEHIND at 77dc083 — needs `git pull --ff-only` to get
+  ALL of today's work (SSH/reconcile/rviz/nav2/house/explorer), then
+  fetch_small_house_world.py for the house models.
 - stingray repo (HankRearden): this note added + pushed to main.
 - Nav2 autonomous nav in warehouse sim = WORKING (from 2026-10-17); not re-run today.
 - House world = imported, loads in Harmonic, committed (models fetched separately).
-- SSH HankRearden->LinuxBox = working passwordless.
+- frontier_explorer = restored in-tree; sim explore stack now UNBLOCKED (not yet run).
+- SSH HankRearden->LinuxBox AND HankRearden->Stormy(.66 WiFi) = working passwordless.
 
 ## NEXT TIME / TODO
-1. HOUSE WORLD (imported + loads): pick a robot SPAWN POSE inside the house (origin may be in a
-   wall) via drive_sim initial_x/y/yaw; then build a FRESH RTAB-Map DB driving the house (lidar
-   grid, Force3DoF), SAVE it, and switch sim nav from warehouse to house.
+0. EXPLORE THE HOUSE (the goal we were heading to): wire the sim explore stack — rsp +
+   drive_sim(robot_world:=small_house, spawn by the Door at ~x=6.0 y=-5.55, facing inward) +
+   RTAB-Map MAPPING mode (lidar grid, publishes the occupancy grid; explorer reads /map so may
+   need /rtabmap/map -> /map remap) + Nav2 (navigation_launch + nav2_params_sim.yaml; NOTE
+   planner allow_unknown is currently FALSE, may need TRUE so the explorer doesn't starve) +
+   `ros2 launch articubot_one explore.launch.py params_file:=.../robots/stingray/config/explore.yaml`.
+   Goal: autonomously map the house AND tune explore.yaml for the sim house (explore.yaml is tuned
+   for the REAL house — Study/French doors — so filters like goal_max_cost/clearance will differ).
+1. Update Stormy's `explore` alias to `ros2 launch articubot_one explore.launch.py ...`; after the
+   Pi pulls, delete the redundant standalone ~/robot_ws/src/frontier_explorer package.
+2. HOUSE WORLD: pick/confirm the spawn pose inside the house; build a FRESH RTAB-Map DB driving the
+   house (lidar grid, Force3DoF), SAVE it, and switch sim nav from warehouse to house.
 2. FINISH THE MAP (if staying on warehouse): drive full coverage in SLAM mode (lidar grid,
    Force3DoF on), get loop closures, SAVE the DB; then try simultaneous nav+map via Nav2
    waypoints (planner allow_unknown to push into unmapped aisles).
