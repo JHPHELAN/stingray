@@ -123,16 +123,46 @@ the warehouse port fixes:
 The ros2 branch is still Classic-oriented (ROS2 wrapper, not Ignition), so it won't save the
 Harmonic port work. Fallback if it fights: a Fuel/Ignition-native house or hand-built rooms.
 
+## House world IMPORTED + validated (2026-10-18) — commit 27e9e67 (articubot_one exploration)
+Turned out to be an EASY port (predictions mostly held, and better): no OGRE material scripts,
+no classic <plugin> tags, and the `<gui>` had only a camera (no legacy GzScene3D), so NO
+warehouse-style gui fix was needed. Decision: option B (lean repo).
+- assets/worlds/small_house.sdf: AWS world (Apache-2.0; attribution header added). Loads in
+  Harmonic gz-sim 8.15.0 — all 68 models resolve, Collada .DAE meshes with embedded materials
+  (no grey surfaces), headless load exits 0.
+- Harmonic port fixes (Classic tolerated, Harmonic/DART rejects):
+  * 29 non-static models marked <static>1</static> (static house scenery).
+  * aws_robomaker_residential_ShoeRack_01 inertia bug: duplicate <ixx> + missing <izz> let izz
+    default to 1.0, violating the moment-of-inertia triangle inequality -> fixed <izz>0.05</izz>.
+  * One harmless residual DART warning "Invalid entry (1,1): 0" on a static body; load still OK.
+- MODELS ARE GITIGNORED (option B): assets/models/aws_robomaker_residential_* (~106 MB) NOT
+  committed. Regenerate with `python3 scripts/fetch_small_house_world.py` (clones AWS ros1
+  branch, copies 68 models, re-applies static + ShoeRack patches) then
+  `colcon build --symlink-install --packages-select articubot_one`.
+- launch/drive_sim.launch.py: added `assets/models` to GZ_SIM_RESOURCE_PATH so the house
+  model:// refs resolve. Backup .bak (untracked).
+- Worlds PRUNED (unused, same commit): obstacle.world, obstacle_gz.sdf, obstacle_gz.world,
+  obstacles.world, sonoma_racetrack.sdf, phelan.sdf ('pretty_lawn' hand-built test). KEPT:
+  test_robot_world.sdf (default), warehouse.sdf (current stingray), empty_world.sdf,
+  baylands.sdf (dragger), small_house.sdf.
+- Peeked live via `gz sim -r <world>` GUI on LinuxBox (DISPLAY=:0 + mutter XAUTHORITY) — looks good.
+- Bring up (once models fetched + built):
+  `ros2 launch articubot_one drive_sim.launch.py robot_model:=stingray robot_world:=small_house use_sim_time:=true`
+  then rsp + rtabmap + nav2 per the 10-17 note.
+
 ## State at end (checkpoint)
-- articubot_one (LinuxBox, exploration): HEAD bd18a37, pushed to origin, working tree clean
-  except UNTRACKED config/main.rviz.bak (intentional backup). Pi can `git pull --ff-only`.
-- stingray repo (HankRearden): this note being added + pushed to main.
+- articubot_one (LinuxBox, exploration): HEAD 27e9e67, pushed to origin, working tree clean
+  except UNTRACKED config/main.rviz.bak + launch/drive_sim.launch.py.bak (intentional backups).
+  Pi can `git pull --ff-only` (then run fetch_small_house_world.py to get the house models).
+- stingray repo (HankRearden): this note added + pushed to main.
 - Nav2 autonomous nav in warehouse sim = WORKING (from 2026-10-17); not re-run today.
+- House world = imported, loads in Harmonic, committed (models fetched separately).
 - SSH HankRearden->LinuxBox = working passwordless.
 
 ## NEXT TIME / TODO
-1. HOUSE WORLD: try the AWS small_house.world in Gazebo Harmonic (steps above). If it loads,
-   switch sim nav from warehouse to house and build a fresh RTAB-Map DB in it.
+1. HOUSE WORLD (imported + loads): pick a robot SPAWN POSE inside the house (origin may be in a
+   wall) via drive_sim initial_x/y/yaw; then build a FRESH RTAB-Map DB driving the house (lidar
+   grid, Force3DoF), SAVE it, and switch sim nav from warehouse to house.
 2. FINISH THE MAP (if staying on warehouse): drive full coverage in SLAM mode (lidar grid,
    Force3DoF on), get loop closures, SAVE the DB; then try simultaneous nav+map via Nav2
    waypoints (planner allow_unknown to push into unmapped aisles).
