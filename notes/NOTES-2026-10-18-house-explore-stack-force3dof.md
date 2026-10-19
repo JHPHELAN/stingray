@@ -177,6 +177,11 @@ User stopped for the night. Full disk backup of HankRearden taken today. Robot c
 - stingray repo (HankRearden): this note + context.txt update pushed to main.
 
 ## NEXT TIME / TODO
+DECISION (user, 2026-10-18 PM): go with **(B) the REAL robot in the REAL house** next session —
+"we've beaten the sim horse sufficiently." Sim stays as-is (skew unresolved, that's fine);
+focus shifts to hardware, where real texture should make loop closures accept. Items 4/7
+(sim-only fixes) are parked; item 5 is the plan; item 6 (gz world from a real scan) is the
+stretch goal once there's a clean real-house map.
 0. DONE this session — robot code committed + PUSHED (articubot_one exploration 5bf48bf):
    rtabmap.launch.py (Force3DoF/Slam2D append), small_house.sdf (system plugins + gz-gui),
    drive_sim.launch.py (-s headless), nav2_params_sim.yaml, explore.yaml, scripts/map_relay.py.
