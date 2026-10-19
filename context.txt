@@ -191,3 +191,36 @@ Safe recovery sequence after any crash:
   approx_sync:=true, then rtabmap_viz.
 - LinuxBox: Software Updater auto-updates disabled; update manually with apt. Mesa +
   plotjuggler currently held by Ubuntu phased updates.
+===============================================================================
+2026-10-18 — HankRearden drives LinuxBox directly; sim HOUSE explore stack; Force3DoF fix
+===============================================================================
+- NEW CAPABILITY: HankRearden -> LinuxBox passwordless SSH (`ssh LinuxBox`). For complex
+  remote commands from PowerShell, use the base64 remote-exec pattern: build a bash script in
+  a single-quoted here-string, strip CR, base64-encode, run `ssh LinuxBox "echo <b64> | base64
+  -d | bash"`. (PowerShell->ssh->bash mangles quotes/heredocs otherwise.)
+- LinuxBox DDS: ~/.bashrc sets RMW_IMPLEMENTATION=rmw_cyclonedds_cpp + CYCLONEDDS_URI
+  (~/cyclonedds.xml: iface enp3s0f1, AllowMulticast false, unicast Peers .66/.99). A reduced
+  env that forgets these silently talks Fast DDS and discovers nothing. Ephemeral `ros2 topic
+  hz/echo` CLI nodes need ~10-15 s to discover over unicast — use long timeouts.
+- AWS small_house world (assets/worlds/small_house.sdf) is now a working sim target. Full
+  frontier-explorer stack runs HEADLESS: rsp + drive_sim(robot_world:=small_house, headless) +
+  RTAB-Map(MAPPING, 2D-locked) + Nav2 + scripts/map_relay.py + explore.launch.py. Spawn at the
+  door: initial_x:=6.0 initial_y:=-5.0 initial_yaw:=1.5708. See
+  NOTES-2026-10-18-house-explore-stack-force3dof.md for the full bring-up recipe.
+- THE Force3DoF LESSON: `Reg/Force3DoF` was never persisted anywhere in the repo — only ever
+  typed on the CLI in past sessions, so every fresh RTAB-Map run reverted to 6-DOF SLAM and
+  map->odom drifted in z (up to ~7 m), wrecking Nav2 localization (robot "stuck/trapped" on a
+  clear path). FIXED PERMANENTLY: launch/rtabmap.launch.py now always appends
+  `--Reg/Force3DoF true --Optimizer/Slam2D true` after the caller's rtabmap_args. Stingray is a
+  ground robot, so 2D is always correct. (articubot_one exploration 5bf48bf.)
+- Sim RTF is low: ~0.097 with the gz GUI, ~0.217 with `gz sim -s` headless (drive_sim now adds
+  -s). Controllers lose the 5 s startup race at low RTF -> `ros2 control set_controller_state
+  joint_broad/diff_cont active` after gz loads. The gz GUI never renders the spawned robot in
+  the house world (missing GzSceneManager was added, but we run headless anyway) — monitor in
+  RViz, which is correct.
+- OPEN ISSUES (sim): map SKEW persists because visual loop closures REJECT ("Not enough inliers
+  0/20") on the texture-poor 200x200 sim OAK-D; and the skew paints phantom content outside the
+  house that can't be retraced. Candidate next steps: lower Vis/MinInliers, use ICP/vis+ICP loop
+  closure, or raise sim camera res — OR pivot to the REAL robot in the REAL house (real texture
+  should make closures accept). Idea on the table: build a gz world of the REAL house from an
+  RTAB-Map scan (export textured mesh from ~/.ros/rtabmap.db).
