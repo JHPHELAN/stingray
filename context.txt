@@ -224,3 +224,40 @@ Safe recovery sequence after any crash:
   closure, or raise sim camera res — OR pivot to the REAL robot in the REAL house (real texture
   should make closures accept). Idea on the table: build a gz world of the REAL house from an
   RTAB-Map scan (export textured mesh from ~/.ros/rtabmap.db).
+===============================================================================
+2026-10-19 — FIRST real robot / real house RTAB-Map+Nav2+explore run; delocalized abort;
+             ROOT CAUSE = loose right-wheel setscrew
+===============================================================================
+- NEW real-robot explore recipe exists and is COMMITTED (articubot_one exploration ade00cc).
+  Split: Stingray runs hardware + Nav2; LinuxBox runs RTAB-Map + map_relay + explorer + RViz.
+  - robots/stingray/launch/stingray.hardware.launch.py (NEW): hardware-only bringup (rsp+drive+
+    sensors, NO localizer, NO Nav2) so an external RTAB-Map owns map->odom. (stingray.launch.py is
+    a FULL stack with slam_toolbox+Nav2 baked in and no disable flag — can't use it for this.)
+  - launch/rtabmap.launch.py: now forwards compressed/rgb_image_transport/depth_image_transport
+    to upstream rtabmap_launch (defaults off).
+  - robots/stingray/config/nav2_params_mapping.yaml (NEW): tuned nav2_params.yaml MINUS KeepoutFilter
+    (static keepout mask drifts while mapping), plus real-house TEST tuning inflation_radius 0.50->0.30
+    and oak_points dropped. `diff` proves it is otherwise identical to the house-tuned params (NOT generic).
+  - explore.yaml: use_sim_time true->false (see below), goal_timeout 180->60.
+  Full bring-up recipe + real topic names in NOTES-2026-10-19-real-house-rtabmap-nav2-explore-delocalized.md.
+- RAW IMAGES DON'T CROSS WiFi to a remote RTAB-Map. Feed RTAB-Map the COMPRESSED rgb and decompress
+  locally on LinuxBox (image_transport republish: in_transport=compressed out_transport=raw on
+  /oak/rgb/image_raw/compressed); depth raw crosses fine. Upstream `compressed:=true` can do both
+  rgb(compressed)+depth(compressedDepth) itself but needs a compressedDepth publisher we don't have.
+- explore.yaml use_sim_time:true (from the sim sessions) FREEZES the explorer on the real robot
+  (/clock has 0 publishers) -> "it just sits there". Must be false for real.
+- Nav2 indoor tuning: inflation_radius 0.50 too fat for ~0.8-1.0 m halls (MPPI dithers/retreats,
+  explorer rejects corridor paths) -> 0.30. "Non-existent obstacles" blocking paths = OAK-D stereo
+  oak_points PHANTOMS (grid is lidar-based so static map was clean) -> dropped oak_points, lidar-only.
+- THE INCIDENT + ROOT CAUSE: RTAB-Map DELOCALIZED mid-explore (local map skewed, lethal cell at the
+  robot, planner status 6, all frontiers rejected), then Stormy drove erratically and the RoboClaw
+  kill switch was pulled. Logs showed NOTHING crashed/faulted (all drivers + Nav2 clean, stopped only
+  on Ctrl-C). ROOT CAUSE, found after on a fresh normal-stack bringup: the RIGHT WHEEL SETSCREW was
+  LOOSE (wheel slipping on the shaft; joystick "forward" -> backward circle pivoting on the right
+  wheel). Encoders read the motor, not the slipping wheel -> odometry LIED -> RTAB-Map pose jumped ->
+  Nav2 drove erratically on a phantom pose. Software was fine; hardware fed false encoder data.
+- NEXT TIME (user decision): FIX THE WHEEL FIRST (tighten setscrew, blue Loctite; re-test straight
+  tracking — if it still arcs backward with a solid wheel, chase a right-side motor/encoder sign issue
+  in Motion Studio/roboclaw.yaml). Then: NO explore/autonomy — DRIVE BY HAND in a LIMITED area while
+  RTAB-Map maps; enable rtabmap FILE logging so any future delocalization is recorded. Normal stack
+  (stingray.launch.py, keepout ON) is untouched/available.
