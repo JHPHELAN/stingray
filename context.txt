@@ -80,10 +80,21 @@ Session rituals:
     ROS2 apt channel switched stable ros2 -> ros2-testing on 2026-10-05 to match Stormy
       (rtabmap now 0.23.13; full RTAB-Map stack installed for rtabmap_viz / rviz).
       A reboot into the new kernel (7.0.0-34) is pending.
+    apt: Software Updater auto-updates disabled; update manually with apt
+      (Mesa + plotjuggler may be held by Ubuntu phased updates).
+    DDS: ~/.bashrc sets RMW_IMPLEMENTATION=rmw_cyclonedds_cpp + CYCLONEDDS_URI=~/cyclonedds.xml
+      (iface enp3s0f1, AllowMulticast false, unicast Peers 192.168.68.66 / .99). A reduced env that
+      forgets these silently falls back to Fast DDS and discovers nothing. Ephemeral `ros2 topic
+      hz/echo` CLI nodes need ~10-15 s to discover over unicast -- use long timeouts.
+    articubot_one dev checkout on branch exploration.
   HankRearden the Windows laptop -- user's primary workstation
     Wired to Study Deco via TL-SG108 switch.
     Development / robot access:
       VSCode -- local, plus SSH remote into Stingray and LinuxBox (this AI session runs here).
+        Passwordless `ssh LinuxBox` and `ssh ubuntu@192.168.68.66` (Stingray) from here. For complex
+        remote commands from PowerShell, use the base64 remote-exec pattern: build a bash script in a
+        single-quoted here-string, strip CR, base64-encode, run `ssh HOST "echo <b64> | base64 -d | bash"`
+        (PowerShell -> ssh -> bash otherwise mangles quotes/heredocs).
       PuTTY -- alternate SSH into Stingray and LinuxBox.
       FileZilla -- file transfer to/from Stingray and LinuxBox.
       NoMachine -- virtual desktop into Stingray and LinuxBox.
@@ -170,94 +181,3 @@ Safe recovery sequence after any crash:
   5) Relaunch baseline only:
     source /opt/ros/jazzy/setup.bash && source /home/ubuntu/robot_ws/install/setup.bash && ros2 launch articubot_one stingray.launch.py
   6) Wait 45 seconds and verify no CRC/timeouts before any explorer/autonomy node.
-===============================================================================
-2026-10-09 — LinuxBox on `exploration`; RTAB-Map Gazebo sim (Stingray) wired up
-===============================================================================
-- LinuxBox dev machine now tracks branch `exploration` (was `jp`; jp had no unique
-  commits and is retired). Repo: JHPHELAN/articubot_new (renamed from articubot_one).
-- Stingray runs in Gazebo sim on LinuxBox. Bringup needs TWO sourced terminals:
-    ros2 launch articubot_one drive_sim.launch.py robot_model:=stingray
-    ros2 launch articubot_one rsp.launch.py robot_model:=stingray use_sim_time:=true
-  (drive_sim does NOT start robot_state_publisher by itself.)
-  TODO: add a combined stingray sim bringup launch (rsp + drive_sim).
-- Sim OAK-D now emits depth: co-located gz `depth` sensor in description/oakd.xacro
-  (gz_depth_camera -> /depth_camera via gz_ros_bridge.yaml), same optical frame/FOV/
-  resolution as RGB so depth is registered. Sim RGB-D topics: /camera, /camera_info,
-  /depth_camera. Odom: /odometry/local.
-- Fixed Gazebo mesh resolution: added package-share parent to GZ_SIM_RESOURCE_PATH in
-  launch/drive_sim.launch.py so package://articubot_one/... meshes render in Gazebo.
-- Next: run ported rtabmap.launch.py remapped to sim topics (see
-  NOTES-2026-10-09-rtabmap-sim-stingray-linuxbox.md) with use_sim_time:=true
-  approx_sync:=true, then rtabmap_viz.
-- LinuxBox: Software Updater auto-updates disabled; update manually with apt. Mesa +
-  plotjuggler currently held by Ubuntu phased updates.
-===============================================================================
-2026-10-18 — HankRearden drives LinuxBox directly; sim HOUSE explore stack; Force3DoF fix
-===============================================================================
-- NEW CAPABILITY: HankRearden -> LinuxBox passwordless SSH (`ssh LinuxBox`). For complex
-  remote commands from PowerShell, use the base64 remote-exec pattern: build a bash script in
-  a single-quoted here-string, strip CR, base64-encode, run `ssh LinuxBox "echo <b64> | base64
-  -d | bash"`. (PowerShell->ssh->bash mangles quotes/heredocs otherwise.)
-- LinuxBox DDS: ~/.bashrc sets RMW_IMPLEMENTATION=rmw_cyclonedds_cpp + CYCLONEDDS_URI
-  (~/cyclonedds.xml: iface enp3s0f1, AllowMulticast false, unicast Peers .66/.99). A reduced
-  env that forgets these silently talks Fast DDS and discovers nothing. Ephemeral `ros2 topic
-  hz/echo` CLI nodes need ~10-15 s to discover over unicast — use long timeouts.
-- AWS small_house world (assets/worlds/small_house.sdf) is now a working sim target. Full
-  frontier-explorer stack runs HEADLESS: rsp + drive_sim(robot_world:=small_house, headless) +
-  RTAB-Map(MAPPING, 2D-locked) + Nav2 + scripts/map_relay.py + explore.launch.py. Spawn at the
-  door: initial_x:=6.0 initial_y:=-5.0 initial_yaw:=1.5708. See
-  NOTES-2026-10-18-house-explore-stack-force3dof.md for the full bring-up recipe.
-- THE Force3DoF LESSON: `Reg/Force3DoF` was never persisted anywhere in the repo — only ever
-  typed on the CLI in past sessions, so every fresh RTAB-Map run reverted to 6-DOF SLAM and
-  map->odom drifted in z (up to ~7 m), wrecking Nav2 localization (robot "stuck/trapped" on a
-  clear path). FIXED PERMANENTLY: launch/rtabmap.launch.py now always appends
-  `--Reg/Force3DoF true --Optimizer/Slam2D true` after the caller's rtabmap_args. Stingray is a
-  ground robot, so 2D is always correct. (articubot_one exploration 5bf48bf.)
-- Sim RTF is low: ~0.097 with the gz GUI, ~0.217 with `gz sim -s` headless (drive_sim now adds
-  -s). Controllers lose the 5 s startup race at low RTF -> `ros2 control set_controller_state
-  joint_broad/diff_cont active` after gz loads. The gz GUI never renders the spawned robot in
-  the house world (missing GzSceneManager was added, but we run headless anyway) — monitor in
-  RViz, which is correct.
-- OPEN ISSUES (sim): map SKEW persists because visual loop closures REJECT ("Not enough inliers
-  0/20") on the texture-poor 200x200 sim OAK-D; and the skew paints phantom content outside the
-  house that can't be retraced. Candidate next steps: lower Vis/MinInliers, use ICP/vis+ICP loop
-  closure, or raise sim camera res — OR pivot to the REAL robot in the REAL house (real texture
-  should make closures accept). Idea on the table: build a gz world of the REAL house from an
-  RTAB-Map scan (export textured mesh from ~/.ros/rtabmap.db).
-===============================================================================
-2026-10-19 — FIRST real robot / real house RTAB-Map+Nav2+explore run; delocalized abort;
-             ROOT CAUSE = loose right-wheel setscrew
-===============================================================================
-- NEW real-robot explore recipe exists and is COMMITTED (articubot_one exploration ade00cc).
-  Split: Stingray runs hardware + Nav2; LinuxBox runs RTAB-Map + map_relay + explorer + RViz.
-  - robots/stingray/launch/stingray.hardware.launch.py (NEW): hardware-only bringup (rsp+drive+
-    sensors, NO localizer, NO Nav2) so an external RTAB-Map owns map->odom. (stingray.launch.py is
-    a FULL stack with slam_toolbox+Nav2 baked in and no disable flag — can't use it for this.)
-  - launch/rtabmap.launch.py: now forwards compressed/rgb_image_transport/depth_image_transport
-    to upstream rtabmap_launch (defaults off).
-  - robots/stingray/config/nav2_params_mapping.yaml (NEW): tuned nav2_params.yaml MINUS KeepoutFilter
-    (static keepout mask drifts while mapping), plus real-house TEST tuning inflation_radius 0.50->0.30
-    and oak_points dropped. `diff` proves it is otherwise identical to the house-tuned params (NOT generic).
-  - explore.yaml: use_sim_time true->false (see below), goal_timeout 180->60.
-  Full bring-up recipe + real topic names in NOTES-2026-10-19-real-house-rtabmap-nav2-explore-delocalized.md.
-- RAW IMAGES DON'T CROSS WiFi to a remote RTAB-Map. Feed RTAB-Map the COMPRESSED rgb and decompress
-  locally on LinuxBox (image_transport republish: in_transport=compressed out_transport=raw on
-  /oak/rgb/image_raw/compressed); depth raw crosses fine. Upstream `compressed:=true` can do both
-  rgb(compressed)+depth(compressedDepth) itself but needs a compressedDepth publisher we don't have.
-- explore.yaml use_sim_time:true (from the sim sessions) FREEZES the explorer on the real robot
-  (/clock has 0 publishers) -> "it just sits there". Must be false for real.
-- Nav2 indoor tuning: inflation_radius 0.50 too fat for ~0.8-1.0 m halls (MPPI dithers/retreats,
-  explorer rejects corridor paths) -> 0.30. "Non-existent obstacles" blocking paths = OAK-D stereo
-  oak_points PHANTOMS (grid is lidar-based so static map was clean) -> dropped oak_points, lidar-only.
-- THE INCIDENT + ROOT CAUSE: RTAB-Map DELOCALIZED mid-explore (local map skewed, lethal cell at the
-  robot, planner status 6, all frontiers rejected), then Stormy drove erratically and the RoboClaw
-  kill switch was pulled. Logs showed NOTHING crashed/faulted (all drivers + Nav2 clean, stopped only
-  on Ctrl-C). ROOT CAUSE, found after on a fresh normal-stack bringup: the RIGHT WHEEL SETSCREW was
-  LOOSE (wheel slipping on the shaft; joystick "forward" -> backward circle pivoting on the right
-  wheel). Encoders read the motor, not the slipping wheel -> odometry LIED -> RTAB-Map pose jumped ->
-  Nav2 drove erratically on a phantom pose. Software was fine; hardware fed false encoder data.
-- NEXT TIME (user decision): FIX THE WHEEL FIRST (tighten setscrew, blue Loctite; re-test straight
-  tracking — if it still arcs backward with a solid wheel, chase a right-side motor/encoder sign issue
-  in Motion Studio/roboclaw.yaml). Then: NO explore/autonomy — DRIVE BY HAND in a LIMITED area while
-  RTAB-Map maps; enable rtabmap FILE logging so any future delocalization is recorded. Normal stack
-  (stingray.launch.py, keepout ON) is untouched/available.
