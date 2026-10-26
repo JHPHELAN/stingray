@@ -131,14 +131,15 @@ Network:
     HankRearden (Windows laptop), wired.
     Stingray/Stormy, wired — only when in drydock (risky WiFi/driver work).
   WiFi coverage logging (wifi_logger_visualizer, Mike Wimble v2 = 2.0.0, installed 2026-10-26):
-    Package at /home/ubuntu/robot_ws/src/wifi_logger_visualizer. Remotes:
-      origin = JHPHELAN (backup), upstream = slgrobotics (Sergei fork),
-      wimble = wimblerobotics (Mike, v2 "map-aware coverage").
-    Branches: wimble-v2 = PRISTINE mirror of wimble/main (pull Mike's updates here,
-      never commit local edits); local/stingray-v2 = ACTIVE robot override layer
-      (2 added files only: launch/stingray_wifi.launch.py + config/stingray_wifi_params.yaml;
-      upstream launch/config left untouched so pulls stay clean);
-      local/stingray = OLD Sergei-fork version, preserved.
+    Package at /home/ubuntu/robot_ws/src/wifi_logger_visualizer. GitHub repo
+      JHPHELAN/wifi_logger_visualizer is a FORK of wimblerobotics (Mike) since 2026-10-26
+      (re-forked that day to drop the old slgrobotics/Sergei lineage). Remotes:
+      origin = JHPHELAN (your fork), upstream = wimblerobotics (Mike). No slgrobotics remote.
+    Branches: main = Mike's v2 (tracks upstream/main); local/stingray-v2 = ACTIVE robot
+      override layer (2 added files only: launch/stingray_wifi.launch.py +
+      config/stingray_wifi_params.yaml; Mike's launch/config left untouched so pulls stay
+      conflict-free); local/stingray = OLD Sergei-fork version, preserved as backup.
+    Pull Mike's updates: git fetch upstream && git checkout local/stingray-v2 && git merge upstream/main.
     Run (needs robot stack up so map->base_link TF exists):
       ros2 launch wifi_logger_visualizer stingray_wifi.launch.py [survey:=true]
       survey waits until robot is stationary; uses LinuxBox iperf3 -s (192.168.68.99).

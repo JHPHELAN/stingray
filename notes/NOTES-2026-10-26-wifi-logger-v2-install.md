@@ -122,3 +122,26 @@ The house map renders in the browser viewer (stored in the DB) even though RViz 
 - Report the two limitations to Mike (wimblerobotics); consider a scan-based coverage mode.
 - Browser viewer served fine bound to 0.0.0.0:8088 (open http://192.168.68.66:8088 from HankRearden);
   README recommends 127.0.0.1 + `ssh -L 8088:127.0.0.1:8088` for untrusted nets.
+
+## Repo re-forked onto Mike (2026-10-26 eve)
+Problem: JHPHELAN/wifi_logger_visualizer showed "forked from slgrobotics" (all 4 branches) because
+the GitHub fork PARENT was Sergei's repo. That label is repo-level metadata only — code already
+tracked Mike via the wimble remote — but we wanted provenance to read wimblerobotics.
+Constraint: GitHub allows ONE fork per upstream network per account, and our fork was already in
+Mike's network, so you cannot fork Mike's alongside it — the old fork must be DELETED first.
+Did:
+1. Safety first: `git bundle create --all` of the whole repo (all 4 branches) ->
+   /home/ubuntu/wifi_logger_visualizer_ALLBRANCHES_20261026_174011.bundle, verified "complete
+   history", and scp'd to HankRearden ...\Stingray\backups\ (also verified there). Pi working
+   clone still held every branch too.
+2. User deleted JHPHELAN/wifi_logger_visualizer, then Forked wimblerobotics/wifi_logger_visualizer
+   -> new JHPHELAN fork (now "forked from wimblerobotics"), default main = Mike 770089f.
+3. Re-pushed local/stingray-v2 (92a5c92) and local/stingray (501bb67) from the Pi clone to the new
+   origin (same URL, creds unchanged). Fixed remotes: removed slgrobotics 'upstream', renamed
+   'wimble' -> 'upstream' = wimblerobotics. Realigned local main to origin/main (Mike), deleted the
+   now-redundant wimble-v2 branch.
+Final: origin = JHPHELAN fork; upstream = wimblerobotics; branches main (Mike v2) /
+local/stingray-v2 (ACTIVE overrides) / local/stingray (old backup). Pi checked out local/stingray-v2.
+Pull Mike's updates: git fetch upstream && git checkout local/stingray-v2 && git merge upstream/main.
+(context.txt WiFi block updated to the new remote topology — that's permanent env info.)
+Backup bundle on HankRearden can be kept or deleted; repo + branches are consistent on GitHub.
