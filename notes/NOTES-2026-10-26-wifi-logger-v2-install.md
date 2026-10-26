@@ -69,8 +69,56 @@ sqlite3 is stdlib).
     --node-names ~/robot_logs/wifi/access_points.yaml --host 127.0.0.1 --port 8088
 
 ## Still parked / next
-- LOOSE RIGHT-WHEEL SETSCREW (from NOTES-2026-10-19): odometry lies -> pose jumps. FIX THE WHEEL
-  FIRST (tighten + blue Loctite, re-test straight tracking) before any mapping/coverage drive, because
-  v2 tags every WiFi reading to the map->base_link pose.
-- NEXT THIS SESSION: live run of v2 with the robot stack up (hand-drive while RTAB-Map localizes;
-  no autonomy), confirm cells populate in the DB / RViz / browser.
+- LOOSE RIGHT-WHEEL SETSCREW (from NOTES-2026-10-19): odometry lies -> pose jumps. Setscrew now
+  reported fixed; wheels tight. v2 still tags every WiFi reading to the map->base_link pose, so
+  localization quality gates data quality.
+- DONE THIS SESSION: live run completed (see below).
+
+## Live run + findings (2026-10-26 afternoon)
+### How to actually run it (map-first)
+Localize on a SAVED map FIRST with AMCL, THEN start the logger. Without a real map loaded the
+robot has "nothing to orient to" and delocalizes:
+  T1:  ros2 launch articubot_one stingray.launch.py localizer_type:=amcl \
+         map:=/home/ubuntu/robot_ws/src/articubot_one/assets/maps/Stormy_merged.yaml
+       (set 2D Pose Estimate in RViz; stack delays localizers ~18s, Nav2 ~35s)
+  T2:  ros2 launch wifi_logger_visualizer stingray_wifi.launch.py
+Fresh DB (archive the old one first):
+  D=/home/ubuntu/robot_logs/wifi/stingray_wifi.db; [ -f "$D" ] && \
+    mv "$D" "${D%.db}_$(date +%Y%m%d_%H%M%S).db.bak"; rm -f "$D-wal" "$D-shm"
+
+### WRONG MAP was the big gotcha
+First AMCL run used Stormy_house_merged_20260426_080607.yaml -> RViz showed "no map", only live
+scan + keepout; AMCL delocalized in the Dining Room (NOT the wheel). Cause: that file (and
+Stormy_house_extend_20260426_062914) is a SPARSE fragment — 228x114, only ~442 wall px, ~77%
+unknown, basically just the Study/dock corner. The COMPLETE house map is Stormy_merged.yaml
+(494x309, ~11k wall px, 92k free, origin [-3.475,-8.176]) — and it is the stingray.launch.py
+DEFAULT map. Also good: Stormy_blueprint.yaml (~9.9k wall px). Re-pinned v2 map_yaml_path ->
+Stormy_merged.yaml (commit 92a5c92). Lesson: GET FACTS FIRST (pixel-histogram the pgm), never guess.
+Map-server wiring is fine; map:= is honored (that's why the sparse map loaded + got stored in the DB).
+
+### Good run result
+Fresh DB on Stormy_merged: 294 cells over ~20 min, 3 APs heard (all 5 GHz):
+  Sewing 7b:c7 (166 cells), Study 7c:17 (72), Master Closet 7c:b3 (54), 2 null. Signal -37..-63 dBm.
+The house map renders in the browser viewer (stored in the DB) even though RViz didn't show it
+(RViz Map display was correctly transient-local; the sparse map just had ~nothing to draw).
+
+### TWO v2 limitations to flag to Mike
+1. PASSIVE = ASSOCIATED-AP ONLY. The logger reads `iw ... link` (the one associated AP), not a
+   scan of all APs in range. In a Deco mesh the Realtek wlxUSB is a STICKY client, so it maps
+   "attached AP", not "best AP per cell". Breakfast never logged even parked in front of it and
+   HEALTHY: its 5 GHz (7a:22:51:ee:92:7f) was heard at -65 dBm while the dongle stayed stuck on
+   Study (7c:17) at -42 dBm. Do NOT reset Breakfast — it's fine. True best-AP-per-cell would need
+   a SCAN-based logger (v2 deliberately does not scan). Forcing a roam = `sudo iw dev wlxUSB
+   disconnect`, but that briefly drops Stingray's only link (WiFi) + ROS comms.
+2. ZERO-DBM GLITCH. Some cells store signal_dbm=0 (invalid driver read; 35 of 294 this run).
+   v2 is supposed to reject invalid reads. Filter signal_dbm=0; judge coverage by the
+   access_point + link-rate browser layers, not raw signal, until fixed.
+
+### Open / next session
+- Decide whether "Stormy_merged.yaml is THE canonical full house map" should be promoted into
+  context.txt as permanent environment info (left out for now; it was a this-session finding).
+- Optional DB tidy: the first (bad-map) run's cells live under a separate map_id in an archived
+  .db.bak; the live DB is clean on Stormy_merged.
+- Report the two limitations to Mike (wimblerobotics); consider a scan-based coverage mode.
+- Browser viewer served fine bound to 0.0.0.0:8088 (open http://192.168.68.66:8088 from HankRearden);
+  README recommends 127.0.0.1 + `ssh -L 8088:127.0.0.1:8088` for untrusted nets.
