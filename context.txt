@@ -130,6 +130,25 @@ Network:
     LinuxBox WiFi wlp2s0 at 192.168.68.98 (rarely used).
     HankRearden (Windows laptop), wired.
     Stingray/Stormy, wired — only when in drydock (risky WiFi/driver work).
+  WiFi coverage logging (wifi_logger_visualizer, Mike Wimble v2 = 2.0.0, installed 2026-10-26):
+    Package at /home/ubuntu/robot_ws/src/wifi_logger_visualizer. Remotes:
+      origin = JHPHELAN (backup), upstream = slgrobotics (Sergei fork),
+      wimble = wimblerobotics (Mike, v2 "map-aware coverage").
+    Branches: wimble-v2 = PRISTINE mirror of wimble/main (pull Mike's updates here,
+      never commit local edits); local/stingray-v2 = ACTIVE robot override layer
+      (2 added files only: launch/stingray_wifi.launch.py + config/stingray_wifi_params.yaml;
+      upstream launch/config left untouched so pulls stay clean);
+      local/stingray = OLD Sergei-fork version, preserved.
+    Run (needs robot stack up so map->base_link TF exists):
+      ros2 launch wifi_logger_visualizer stingray_wifi.launch.py [survey:=true]
+      survey waits until robot is stationary; uses LinuxBox iperf3 -s (192.168.68.99).
+      Interface wlxUSB, 25 cm cells, no interpolation.
+    DB: ~/robot_logs/wifi/stingray_wifi.db (v2 schema maps/wifi_cells/wifi_surveys, SQLite WAL).
+    Browser viewer: ros2 run wifi_logger_visualizer web_viewer.py --db <db>
+      --node-names ~/robot_logs/wifi/access_points.yaml --host 127.0.0.1 --port 8088
+    AP friendly names: ~/robot_logs/wifi/access_points.yaml = 4 Deco units
+      (Master Closet, Study, Sewing, Breakfast; both bands), derived from ~/ap_map.yaml.
+      HOME ONLY: kept OUTSIDE git (contains home AP MACs) — not in this file or the repo.
 AI dialog:
   One Step At A Time
     Put code to be run in an 'allow' bash box.
