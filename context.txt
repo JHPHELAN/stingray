@@ -261,3 +261,17 @@ Safe recovery sequence after any crash:
   in Motion Studio/roboclaw.yaml). Then: NO explore/autonomy — DRIVE BY HAND in a LIMITED area while
   RTAB-Map maps; enable rtabmap FILE logging so any future delocalization is recorded. Normal stack
   (stingray.launch.py, keepout ON) is untouched/available.
+===============================================================================
+2026-10-26 — OAK-D tilt wedge: PETG fit test good; nubs widened 24 -> 25 mm
+===============================================================================
+- Local Windows CAD session (HankRearden), no robot. The OAK-D 25 deg tilt-wedge generator
+  (wedge.py) + render/section scripts + design draft NOTES-2026-10-14-oakd-tilt-wedge.md live in
+  Copilot session-state (session c3041b93-f85d-4750-940b-f94e1b7ab1bf, files/). Build output STEP+STL
+  go to the sibling ...\Stingray\CAD\ (NOT in a git repo); they regenerate from wedge.py, which is the
+  source of truth. Canonical handoff pushed here: notes/NOTES-2026-10-26-oakd-tilt-wedge-nub-spacing.md.
+- First physical print (PETG) fit-tested: good, handedness correct (FLIP_LR stays False). ONLY fix
+  needed: the two upper camera-stabilizing nubs needed ~1 mm more spacing. Moved each 0.5 mm out:
+  wedge.py NUB_Z_OFFSETS (7.0,-17.0) -> (7.5,-17.5) = 24 -> 25 mm apart. Regenerated STEP+STL,
+  watertight True ~30.9 cc. User reslicing/reprinting to re-test.
+- Robot-side items from 2026-10-19 (loose right-wheel setscrew root cause; fix wheel first, then
+  hand-drive map, no autonomy) are UNCHANGED/parked — not touched this session.
