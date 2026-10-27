@@ -575,7 +575,16 @@ fabrication.*
 
 ### Design journey
 
-The current PCB is Rev 3 - two IRLZ44N logic-level MOSFETs driven
+The entire fiasco need not have happened had I known then what I know now.
+A pair of off-the-shelf Dual MOSFET switched replaced the whole thing.
+
+<img src="images/Dual%20MOSFET%20Switches.png" width="500">
+
+<img src="images/MOSFET%20Dual%20High%20Power.png" width="500">
+
+<a href="https://www.amazon.com/High-Power-Adjustment-Electronic-Controller-Brightness/dp/B0FMJH3DML/">6 PCS Dual High-Power MOSFET Trigger Switch Drive Module</a>
+
+The prior PCB was Rev 3 - two IRLZ44N logic-level MOSFETs driven
 directly from Pi GPIO, no NPN inverter stage.  Two earlier revisions
 and a Flux.ai adventure preceded it.
 
