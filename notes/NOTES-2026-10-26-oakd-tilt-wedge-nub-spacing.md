@@ -1,4 +1,4 @@
-# NOTES 2026-10-26 — OAK-D tilt wedge: PETG fit test good; nubs widened 24 -> 25 mm
+# NOTES 2026-10-26 — OAK-D tilt wedge FINALIZED (fit-tested PERFECT): nubs 25 mm + flipped, 3rd insert, 9 mm counterbore
 
 Machine: HankRearden (Windows laptop), local VSCode window. This is LOCAL CAD work (no robot,
 no SSH). The OAK-D tilt-wedge generator and its draft note live in Copilot session-state
@@ -24,28 +24,55 @@ pushed handoff; the session-state copies are DRAFTS only.
 the lower edge of the vertical FOV off the ground and favor higher landmarks. Wedge robot face
 (flat, vertical) bolts to the robot front plate; OAK-D back presses on the 25 deg camera face.
 Held by one 1/4-20 into the OAK-D tripod hole (normal to the camera face, recessed washer
-counterbore square to the bolt on the robot side), 2x 6-32 heat-set inserts in the robot face
+counterbore square to the bolt on the robot side), 3x 6-32 heat-set inserts in the robot face
 (anti-rotation of the wedge), and 2x blunt tapered nubs that drop into the OAK-D cooling-fin
 channels at the two upper phillips screws (anti-rotation of the CAMERA about the 1/4-20).
 
-## This session's change (what + why)
-- FIT TEST: first physical print in PETG. Fit is good, handedness correct (FLIP_LR stays False).
-- The ONLY issue: the two upper camera-stabilizing nubs needed ~1 mm more spacing.
-- FIX: moved each nub 0.5 mm away from center. wedge.py NUB_Z_OFFSETS (7.0, -17.0) -> (7.5, -17.5),
-  i.e. nub width centers Z=32.0/8.0 -> Z=32.5/7.5 (tripod/center at Z=25). Now 24 -> 25 mm apart.
-- Regenerated the deliverables in place from wedge.py:
-    CAD\oakd_tilt_wedge_25deg.step  and  CAD\oakd_tilt_wedge_25deg.stl
-  (CAD folder is the sibling ...\Stingray\CAD, NOT inside this git repo; it regenerates from
-  wedge.py in session-state — the generator is the source of truth, the STEP/STL are build output.)
-- render.py check: watertight True, volume ~30.9 cc, bbox 24.98 x 45 x 50 mm. No other change.
-- NEXT: user will reslice + reprint the PETG wedge and re-test the nub fit.
+## OUTCOME: FINALIZED — wedge fit-tests PERFECT (user confirmed 2026-10-26 ~20:54)
+Took THREE PETG fit prints this session to converge. Final verified STL/STEP:
+CAD\oakd_tilt_wedge_25deg.stl (130984 bytes) / .step. Mesh-measured correct: nubs Z=17.5
+(left/closer) & 42.5 (right/further); all 3 inserts present (10,13),(40,13),(25,28); counterbore
+8.99 mm deep; watertight single body.
 
-## Toolchain (Windows, HankRearden)
-Python 3.13; packages cadquery 2.8.0 (+ cadquery-ocp), trimesh, numpy, scipy, pillow, matplotlib.
-Rebuild: python wedge.py  (writes STEP + STL).  Verify: python render.py ; python section.py.
-All dims are named parameters at the top of wedge.py. Full design rationale, measured OAK-D back
-values (calipers), and remaining open items are in the session-state draft
-NOTES-2026-10-14-oakd-tilt-wedge.md.
+## FINAL parameters (wedge.py)
+- WIDTH 50, HEIGHT 45, TILT 25 deg, TOP_THICKNESS 4; BASE_DEPTH auto 24.98.
+- TRIPOD 1/4-20 clear hole 7.0, centered width (Z=25), 21 mm up-slope; COUNTERBORE 19.5 dia x
+  9 deep coaxial/square to bolt (deepened 6->9 for a fatter-than-normal screw head; ~8.8 mm wall
+  left to camera face).
+- INSERTS 6-32: 5.16 dia x 6.5 deep. Two at 1/5 & 4/5 width (INSERT_Y 13) + a THIRD
+  (INSERT3_ENABLE True) centered Z=25 raised to Y=28 (isosceles apex toward the narrow top).
+- NUBS: NUB_Z_OFFSETS (7.5,-17.5) = 25 mm apart, FLIP_LR = TRUE -> centers Z=17.5 & 42.5, Y~38.3.
+  base 8.5 x 6 -> top 6 x 4, height 10, 21.25 mm above tripod.
+
+## What changed this session + the fixes (in order)
+1. Nubs too close (24 mm) -> widened to 25 mm (NUB_Z_OFFSETS 7/-17 -> 7.5/-17.5).
+2. Nubs MIRRORED -> FLIP_LR = True (left nub Z=17.5 closer to midline, right Z=42.5 further,
+   viewed from the robot-attach back with the narrow end up). Settled; leave True.
+3. Middle (3rd) heat-set insert MISSING -> restored (INSERT3_ENABLE True).
+4. Tripod screw head fatter than normal -> counterbore 6 -> 9 mm deep.
+
+## TWO LESSONS (don't repeat these)
+- DIVERGENT GENERATOR COPIES. wedge.py existed in 3 places (Copilot session-state files/,
+  CAD\wedge.py, CAD\src\wedge.py) and had silently diverged: the session copy I was editing had
+  only 2 inserts while the CAD copies had the 3rd. Regenerating from the stale session copy
+  DROPPED the middle insert. FIX: all three wedge.py are now byte-identical (verified by hash).
+  Treat them as ONE file; if you edit one, re-sync the others.
+- STALE SLICER PROJECTS (.3mf) EMBED THE MESH. Several bad prints happened because the slicer
+  re-opened/re-sent an OLD .3mf project (1026a/1026b/10.26c) whose embedded mesh predated the
+  fixes — the corrected STL on disk was never imported. A correct STL is not enough. ALWAYS:
+  start a NEW slicer project and File>Import the fresh CAD\oakd_tilt_wedge_25deg.stl; never
+  reprint an old .3mf. Those stale exports (CAD\Old Scans) were DELETED this session so none can
+  be re-sliced by accident.
+
+## Generator + toolchain (Windows, HankRearden)
+- Generator wedge.py (source of truth) is identical in Copilot session-state files/,
+  CAD\wedge.py, and CAD\src\wedge.py. Build output: CAD\oakd_tilt_wedge_25deg.step/.stl.
+  (CAD is the sibling ...\Stingray\CAD, NOT inside this git repo.)
+- Python 3.13; cadquery 2.8.0 (+ cadquery-ocp), trimesh, numpy, scipy, pillow, matplotlib, rtree.
+  Rebuild: python wedge.py. Verify: python render.py ; python section.py (watertight + previews),
+  or probe the STL with trimesh.contains for insert/counterbore/nub positions.
+- Full design rationale, calipered OAK-D back values, and open items are in the session-state
+  draft NOTES-2026-10-14-oakd-tilt-wedge.md.
 
 ## Still parked (robot side, from NOTES-2026-10-19) — NOT touched this session
 The real-house RTAB-Map/Nav2/explore delocalization was root-caused to a LOOSE RIGHT-WHEEL

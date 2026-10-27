@@ -66,7 +66,8 @@ Session rituals:
     LD19 LIDAR
     BNO085 IMU
       it is oriented orthogonal to the robot with x facing the front of the robot
-    OAK-D depthcamera
+    OAK-D depthcamera (tilted up 25 deg on a finalized 3D-printed wedge; design/build in
+      notes/NOTES-2026-10-26-oakd-tilt-wedge-nub-spacing.md, generator CAD/wedge.py)
     ROS2 apt channel: ros2-testing (candidate rtabmap 0.23.13).
       TODO (user request 2026-10-05): migrate Stingray to the stable ros2 channel.
       See NOTES-2026-10-05-rtabmap-launch-port-linuxbox-sync.md.
