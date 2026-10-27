@@ -74,6 +74,22 @@ CAD\oakd_tilt_wedge_25deg.stl (130984 bytes) / .step. Mesh-measured correct: nub
 - Full design rationale, calipered OAK-D back values, and open items are in the session-state
   draft NOTES-2026-10-14-oakd-tilt-wedge.md.
 
+## Also this session — repo housekeeping (GitHub pull + KiCAD upload + .gitignore)
+- PULLED to HankRearden the user's new schematic + Dual MOSFET switch work from GitHub
+  (README + images/Dual MOSFET Switches.png, MOSFET Dual High Power.png, Schematic Full
+  20261026.png). It arrived via a rebase over an incoming push; `git pull --ff-only` is clean.
+- UPLOADED updated KiCAD source into the repo kicad/ folder from the live WORKING COPY at
+  C:\Users\jhphe\OneDrive\Documents\KiCad\10.0\projects\Stingray. The only real content change
+  was Stingray.kicad_sch (dual MOSFET high-power switches) + Stingray.kicad_pro. The repo kicad/
+  tracks the Stingray project plus a Dual Power Input sub-project. KEEP that KiCad-10.0 working
+  copy and the repo kicad/ in sync — there are OLDER Stingray KiCAD projects under KiCad\8.0 and
+  9.0 and a stingray-builders-manual\kicad copy; the 10.0 one is the source of truth.
+- GITIGNORE: added *.kicad_prl and untracked the two committed .prl files (per-user UI state,
+  not design data; local copies kept). repo kicad/ now tracks only .kicad_pro/.sch/.pcb/.sym +
+  sym-lib-table.
+- GOTCHA: git autocrlf flips LF<->CRLF, so KiCAD .prl/.pro looked "modified" purely on line
+  endings until git normalized them; the real diffs were only Stingray.kicad_sch + .kicad_pro.
+
 ## Still parked (robot side, from NOTES-2026-10-19) — NOT touched this session
 The real-house RTAB-Map/Nav2/explore delocalization was root-caused to a LOOSE RIGHT-WHEEL
 SETSCREW (encoder reads the motor, wheel slipped -> odometry lied -> pose jumped). Next robot
