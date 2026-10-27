@@ -4,3 +4,6 @@
 
 # CorelDRAW auto-backup files
 Backup_of_*.cdr
+
+# KiCAD per-user project-local UI state (not design data)
+*.kicad_prl
