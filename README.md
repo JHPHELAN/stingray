@@ -4,7 +4,7 @@
 
 <img src="images/Schematic%20Full%2020261026.png" width="1000">
 
-**Download the editable KiCad 10.0 project:** [`kicad/`](kicad) — open [`Stingray.kicad_pro`](kicad/Stingray.kicad_pro) in KiCad 10.0. To grab the whole project, [download the repo as a ZIP](https://github.com/JHPHELAN/stingray/archive/refs/heads/main.zip) and open the `kicad/` folder.
+**Download the editable KiCad 10.0 project:** [`CAD/KiCAD/`](CAD/KiCAD) — open [`Stingray.kicad_pro`](CAD/KiCAD/Stingray.kicad_pro) in KiCad 10.0. To grab the whole project, [download the repo as a ZIP](https://github.com/JHPHELAN/stingray/archive/refs/heads/main.zip) and open the `CAD/KiCAD/` folder.
 
 <table>
 <tr>
@@ -518,6 +518,64 @@ Fisheye camera (historical alternate)
 Intel RealSense 455 (historical alternate)
 <br>
 <a href="https://www.amazon.com/dp/B08KJCRCGG">Product Link</a>
+</td>
+</tr>
+</table>
+
+### OAK-D 25° tilt wedge
+
+Created 25 deg wedge to tilt OAK-D upward ½ the vertical Field of View to minimize ground artifact
+
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="images/OAK-D%20view%20from%20dock%20straight.png" width="100%" style="max-width:320px">
+<br>
+Floor view from the dock — OAK-D level (no wedge)
+</td>
+<td width="50%" align="center">
+<img src="images/OAK-D%20view%20from%20dock%20wedged.png" width="100%" style="max-width:320px">
+<br>
+Floor view from the dock — OAK-D on 25° wedge
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="25%" align="center">
+<img src="images/OAK-D%20Wedge%20CAD.png" width="100%" style="max-width:200px">
+<br>
+Wedge CAD
+</td>
+<td width="25%" align="center">
+<img src="images/OAK-D%20wedge%20on%20printer.png" width="100%" style="max-width:200px">
+<br>
+Wedge on the 3D printer
+</td>
+<td width="25%" align="center">
+<img src="images/OAK-D%20wedge%20robot%20side.png" width="100%" style="max-width:200px">
+<br>
+Wedge — robot-facing side
+</td>
+<td width="25%" align="center">
+<img src="images/OAK-D%20wedge%20profile.png" width="100%" style="max-width:200px">
+<br>
+Wedge profile (25°)
+</td>
+</tr>
+</table>
+
+Adding the wedge made the original USB cable too short; switched to a longer right-angle cable:
+
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="images/USB%203.1%202ft%20right%20USB-C%20straight%20USB-A.png" width="100%" style="max-width:320px">
+<br>
+USB 3.1, 2 ft — right-angle USB-C to straight USB-A
+<br>
+<a href="https://www.amazon.com/gp/product/B0CLXZT6FT">Product Link (Amazon)</a>
 </td>
 </tr>
 </table>

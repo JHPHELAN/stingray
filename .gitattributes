@@ -1,0 +1,4 @@
+# CAD exports: store verbatim, no end-of-line conversion
+*.step binary
+*.stp  binary
+*.cdr  binary
