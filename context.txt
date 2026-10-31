@@ -6,6 +6,12 @@ NOTE (2026-10-17): CANONICAL COPY lives HERE, in the stingray repo
   Pi-side Remote-SSH sessions, not the master). Promoted out of articubot_one
   on 2026-10-17.
 
+SCOPE of this file: context.txt holds ONLY stable facts -- hardware, software,
+  environment, network, and standing procedures/rituals. Day-to-day activity,
+  session narrative, and work-in-progress belong in notes/NOTES-YYYY-MM-DD-*.md,
+  NOT here. Promote something into context.txt only once it has stabilized into a
+  permanent fact.
+
 computer name ubuntu@Stingray
 familiar name Stormy the Stingray
 Raspberry Pi 5b 8GB
@@ -20,7 +26,9 @@ Git repositories (2 separate GitHub repos, both owned by JHPHELAN):
     Session notes: canonical in the stingray repo notes/NOTES-YYYY-MM-DD-*.md;
       historically also robots/stingray/NOTES-*.md in articubot_one.
   stingray  (git@github.com:JHPHELAN/stingray.git)
-    Hardware / build documentation: README.md, images/, BOM, CAD (.cdr).
+    Hardware / build documentation: README.md, images/, BOM, and CAD/
+      (KiCAD/ = KiCad project; CorelDraw/ = laser-cut .cdr; 3D Print/ = .step).
+      CAD exports (*.step/*.stp/*.cdr) are marked binary in .gitattributes.
     CANONICAL home of this context.txt and of session notes (notes/).
     Primarily edited on HankRearden (Windows); photos staged from
       C:\Users\jhphe\OneDrive\Documents\My Downloads\Robotics\Parallax\Stingray\Photos
@@ -110,7 +118,7 @@ Session rituals:
         Day-to-day Rviz2 lives on LinuxBox.
       BasicMicro Motion Studio -- RoboClaw configuration.
       KiCAD 10.0 -- electronics (schematic / PCB). Live Stingray project at
-        Documents\KiCad\10.0\projects\Stingray; source committed to the stingray repo kicad/
+        Documents\KiCad\10.0\projects\Stingray; source committed to the stingray repo CAD/KiCAD/
         (Stingray project + Dual Power Input sub-project; *.kicad_prl is gitignored). Older
         KiCad\8.0 / 9.0 copies are archived.
       WordPerfect -- "Stingray Experience" running log.
