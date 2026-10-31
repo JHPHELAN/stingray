@@ -1,10 +1,12 @@
 <img src="images/Stormy%20Portrait%20angle.jpg" width="1000">
 
-**Stormy full schematic** (KiCad 10.0, 2026-10-14)
+## Stormy full schematic (KiCad 10.0, 2026-10-14)
 
 <img src="images/Schematic%20Full%2020261026.png" width="1000">
 
-**Download the editable KiCad 10.0 project:** [`CAD/KiCAD/`](CAD/KiCAD) — open [`Stingray.kicad_pro`](CAD/KiCAD/Stingray.kicad_pro) in KiCad 10.0. To grab the whole project, [download the repo as a ZIP](https://github.com/JHPHELAN/stingray/archive/refs/heads/main.zip) and open the `CAD/KiCAD/` folder.
+### Download the editable KiCad 10.0 project
+
+[`CAD/KiCAD/`](CAD/KiCAD) — open [`Stingray.kicad_pro`](CAD/KiCAD/Stingray.kicad_pro) in KiCad 10.0. To grab the whole project, [download the repo as a ZIP](https://github.com/JHPHELAN/stingray/archive/refs/heads/main.zip) and open the `CAD/KiCAD/` folder.
 
 <table>
 <tr>
@@ -179,24 +181,24 @@ cast acrylic sheet.  One 12" x 12" sheet is enough for a full set.
 </tr>
 </table>
 
-CorelDRAW 2018 CAD drawings for laser cutting:
+#### CorelDRAW 2018 CAD drawings for laser cutting
 
 <table>
 <tr>
 <td width="33%" align="center">
 <img src="images/Stingray%20Bottom%20Plate.jpg" width="100%" style="max-width:250px">
 <br>
-<a href="images/Stingray%20Bottom%20Plate.cdr">Bottom plate (.cdr)</a>
+<a href="CAD/CorelDraw/Stingray%20Bottom%20Plate.cdr">Bottom plate (.cdr)</a>
 </td>
 <td width="33%" align="center">
 <img src="images/Stingray%20Top%20Plate.jpg" width="100%" style="max-width:250px">
 <br>
-<a href="images/Stingray%20Top%20Plate.cdr">Top plate (.cdr)</a>
+<a href="CAD/CorelDraw/Stingray%20Top%20Plate.cdr">Top plate (.cdr)</a>
 </td>
 <td width="33%" align="center">
 <img src="images/Stingray%20Side%20Panel%20Blank.jpg" width="100%" style="max-width:250px">
 <br>
-<a href="images/Stingray%20Side%20Panel%20Blank.cdr">Side panel (.cdr)</a>
+<a href="CAD/CorelDraw/Stingray%20Side%20Panel%20Blank.cdr">Side panel (.cdr)</a>
 <br>
 <i>Blank example showing the fuse-holder hole</i>
 </td>
