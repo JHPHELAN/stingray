@@ -566,19 +566,7 @@ Wedge profile (25°)
 </tr>
 </table>
 
-Adding the wedge made the original USB cable too short; switched to a longer right-angle cable:
-
-<table>
-<tr>
-<td width="50%" align="center">
-<img src="images/USB%203.1%202ft%20right%20USB-C%20straight%20USB-A.png" width="100%" style="max-width:320px">
-<br>
-USB 3.1, 2 ft — right-angle USB-C to straight USB-A
-<br>
-<a href="https://www.amazon.com/gp/product/B0CLXZT6FT">Product Link (Amazon)</a>
-</td>
-</tr>
-</table>
+Adding the wedge made the original USB cable too short; switched to a longer right-angle cable — USB 3.1, 2 ft, right-angle USB-C to straight USB-A: <a href="https://www.amazon.com/gp/product/B0CLXZT6FT">Product Link (Amazon)</a>
 
 
 ## Indicators
