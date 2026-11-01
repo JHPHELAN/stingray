@@ -81,6 +81,14 @@ Session rituals:
     ROS2 apt channel: ros2-testing (candidate rtabmap 0.23.13).
       TODO (user request 2026-10-05): migrate Stingray to the stable ros2 channel.
       See NOTES-2026-10-05-rtabmap-launch-port-linuxbox-sync.md.
+    RTAB-Map run location matters. When rtabmap runs ON the Pi, launch
+      rtabmap.launch.py WITHOUT compressed:=true and feed the RAW topics directly
+      (rgb_topic:=/oak/rgb/image_rect depth_topic:=/oak/stereo/image_raw). compressed:=true
+      is ONLY for running rtabmap remotely on LinuxBox (images cross WiFi compressed);
+      on-Pi it inserts decompress republish nodes whose DEPTH side expects a nonexistent
+      /oak/stereo/image_raw/compressedDepth topic (the OAK publishes only .../compressed),
+      which starves the approx-sync and gives "did not receive data". See
+      NOTES-2026-10-31-rtabmap-wedge-rerun-optimizer-fail.md.
   LinuxBox the laptop
     Ubuntu 24.04
     ROS2 jazzy
