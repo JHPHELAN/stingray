@@ -116,6 +116,38 @@ GlobalClosure count to climb (>1) in rtabmap-info before trusting the map. Re-dr
 LIMITED area, gentle slow turns (5 Hz camera), pause at corners. Finalize + copy the db
 the same way.
 
+## >>> NEW FINDING: the 25 deg wedge is OVER-TILTED — decide new angle tomorrow <<<
+User observation after the drive: the 25 deg uptilt DOES kill ground clutter (goal met),
+BUT the camera now can't see the near floor — missing low ground obstacles and floor
+visual landmarks needed for driving. Lens is only ~95 mm off the floor.
+Geometry (user-measured, confirmed): RGB view's LOWER edge is ~10 cm off floor at the
+camera and ~20 cm off floor at ~40 cm ahead -> rises 10 cm over 40 cm -> atan(0.25) =
+~14 deg ABOVE horizontal. So the RGB bottom edge points 14 deg UP (never sees floor).
+Why: wedge_tilt=25 deg was sized as HALF the STEREO-DEPTH V-FOV (~50 deg), which puts the
+DEPTH bottom edge at the horizon (that is what removed depth clutter). But the RGB stream
+is much NARROWER (user's two points imply RGB V-FOV ~22 deg), so the RGB bottom edge sits
+~14 deg higher than the depth bottom edge. Not a miscal — wedge sized to the wide depth FOV.
+Core tradeoff (lens 95 mm up): cannot BOTH exclude near-floor clutter AND see near-floor
+landmarks/obstacles; wedge angle trades one for the other directly. At 95 mm, reducing the
+wedge to W deg gives depth-bottom-edge floor hit at 0.095/tan(25-W) and RGB-bottom-edge at
+(W-11) deg above horizon:
+  W=25 (now): depth floor at infinity; RGB 14 deg up  (the "blind to floor" state)
+  W=15:       depth floor from ~0.55 m; RGB 4 deg up
+  W=11:       depth floor from ~0.38 m; RGB bottom exactly at horizon (user's stated target)
+  W=8:        depth floor from ~0.31 m; RGB floor from ~1.8 m
+  W=0 (none): depth floor from ~0.20 m; RGB floor from ~0.49 m
+Reminder: the OAK-D depth was ADDED for LOW-obstacle detection below the lidar plane
+(NOTES-2026-10-03); 25 deg uptilt defeats that. A smaller wedge serves the depth's real
+job; leftover clutter should be handled by costmap height-filtering, not by blinding the sensor.
+DECISION NEEDED (sets the angle): optimize RGB floor view vs depth low-obstacle view, and
+target floor distance in front (~0.5 m? ~1 m?). Shim-test first (prop camera to a candidate
+angle / pull wedge for the 0 deg extreme, view live /oak + costmap) was deemed mechanically
+tricky by user — may just pick an angle and reprint. To change the angle: edit CAD/wedge.py
+(stingray repo) tilt, update wedge_tilt in articubot_one description/oakd_wedge.xacro, and
+re-export assets/meshes/oakd_wedge.stl + the CAD/3D Print/*.step. This SUPERSEDES/extends the
+floor-flatness-cal parked item below (the residual-pitch cal is moot until the wedge angle
+is resettled).
+
 ## Other parked (unchanged)
 - FLOOR-FLATNESS CAL (from NOTES-2026-10-28): re-probe clean floor with the physical 25 deg
   wedge mounted; re-add a small residual pitch to oakd_joint if the costmap sees a sloped floor.
