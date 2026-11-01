@@ -71,6 +71,12 @@ Session rituals:
     ros2 launch articubot_one stingray.launch.py
     RoboClaw 2x7a V5c firmware 4.2.8
     Pololu 50:1 12V 64 CPR encoder = 3200 count/revolution
+    RIGHT-WHEEL SETSCREW is a recurring weak point: the setscrew clamping the right wheel to
+      the Pololu motor shaft has worked loose 3x (delocalized 2026-10-19, retightened 10-28,
+      loose again 11-01). When loose the wheel slips / does not drive (robot pivots AROUND the
+      right wheel) BUT the motor-shaft encoder still counts, so odometry LIES and any map built
+      on it is garbage. Fix with blue Loctite 242 (friction alone does not hold it); verify the
+      wheel is seated flush on the shaft flat. Re-verify odom truthful after any retighten.
     LD19 LIDAR
     BNO085 IMU
       it is oriented orthogonal to the robot with x facing the front of the robot
@@ -80,6 +86,12 @@ Session rituals:
       blinded the camera to the near floor. Flat already lands the floor at the depth ~0.20 m
       min range (0.20*sin 25 deg ~= 8.5 cm ~= the 9 cm lens height), so no wedge is needed.
       See notes/NOTES-2026-11-01-*.md.
+    OAK-D USB: must be fully seated in a BLUE USB3 port (Pi 5 5000M bus). A half-seated or poor
+      cable makes the Movidius (lsusb VID 03e7) enumerate at full-speed on a USB2 bus and loop
+      enumerate -> "error -71" -> disconnect, so the /oak node comes up but streams 0 Hz (no
+      /oak/stereo/image_raw, no camera_info). Reseat firmly; healthy = lsusb 03e7:f63b on a 5000M
+      bus with /oak/rgb/image_rect ~4 Hz and /oak/stereo/image_raw ~5 Hz. The longer right-angle
+      cable is a known-good fallback (worked once fully seated).
     ROS2 apt channel: ros2-testing (candidate rtabmap 0.23.13).
       TODO (user request 2026-10-05): migrate Stingray to the stable ros2 channel.
       See NOTES-2026-10-05-rtabmap-launch-port-linuxbox-sync.md.
