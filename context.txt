@@ -74,10 +74,12 @@ Session rituals:
     LD19 LIDAR
     BNO085 IMU
       it is oriented orthogonal to the robot with x facing the front of the robot
-    OAK-D depthcamera (tilted up 25 deg on a finalized 3D-printed wedge; design/build in
-      notes/NOTES-2026-10-26-oakd-tilt-wedge-nub-spacing.md, generator CAD/wedge.py; wedge
-      modeled in the URDF as articubot_one description/oakd_wedge.xacro +
-      assets/meshes/oakd_wedge.stl)
+    OAK-D depthcamera (mounted FLAT to the chassis front plate, no tilt; modeled in the URDF
+      as a pure base_link->oakd joint with pitch=0, articubot_one robot.urdf.xacro). A 3D-printed
+      25 deg tilt wedge was tried 2026-10-26..10-31 and REMOVED 2026-11-01 — it over-tilted and
+      blinded the camera to the near floor. Flat already lands the floor at the depth ~0.20 m
+      min range (0.20*sin 25 deg ~= 8.5 cm ~= the 9 cm lens height), so no wedge is needed.
+      See notes/NOTES-2026-11-01-*.md.
     ROS2 apt channel: ros2-testing (candidate rtabmap 0.23.13).
       TODO (user request 2026-10-05): migrate Stingray to the stable ros2 channel.
       See NOTES-2026-10-05-rtabmap-launch-port-linuxbox-sync.md.

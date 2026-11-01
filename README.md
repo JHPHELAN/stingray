@@ -524,51 +524,38 @@ Intel RealSense 455 (historical alternate)
 </tr>
 </table>
 
-### OAK-D 25° tilt wedge
+### OAK-D mount — flat (a 25° tilt wedge was tried, then removed)
 
-Created 25 deg wedge to tilt OAK-D upward ½ the vertical Field of View to minimize ground artifact
+The OAK-D is bolted **flat** to the chassis front plate.  Before settling
+on that, a 3D-printed 25° tilt wedge was built and tested: the idea was to
+lift the lower edge of the stereo-depth vertical FOV off the floor (wedge
+angle = ½ the ~50° depth V-FOV) to cut ground clutter.  It cut the clutter
+but over-tilted the camera — the RGB stream's bottom edge ended up ~14°
+*above* horizontal, so the camera could no longer see the near floor,
+losing the low obstacles and floor landmarks the depth camera was added to
+catch.
+
+The flat mount turned out to already be the sweet spot.  The OAK-D depth
+can't range closer than ~0.20 m, and with the 50° depth V-FOV its bottom
+edge sits 25° below the (now level) optical axis; 0.20·sin 25° ≈ 8.5 cm of
+drop ≈ the 9 cm lens height, so the floor falls right at the camera's
+minimum range with no wedge at all.  The wedge was removed from the robot
+and from the URDF on 2026-11-01.
 
 <table>
 <tr>
 <td width="50%" align="center">
 <img src="images/OAK-D%20view%20from%20dock%20straight.png" width="100%" style="max-width:320px">
 <br>
-Floor view from the dock — OAK-D level (no wedge)
+Floor view from the dock — OAK-D flat (final mount)
 </td>
 <td width="50%" align="center">
 <img src="images/OAK-D%20view%20from%20dock%20wedged.png" width="100%" style="max-width:320px">
 <br>
-Floor view from the dock — OAK-D on 25° wedge
+Floor view from the dock — OAK-D on the 25° wedge (abandoned)
 </td>
 </tr>
 </table>
-
-<table>
-<tr>
-<td width="25%" align="center">
-<img src="images/OAK-D%20Wedge%20CAD.png" width="100%" style="max-width:200px">
-<br>
-Wedge CAD
-</td>
-<td width="25%" align="center">
-<img src="images/OAK-D%20wedge%20on%20printer.png" width="100%" style="max-width:200px">
-<br>
-Wedge on the 3D printer
-</td>
-<td width="25%" align="center">
-<img src="images/OAK-D%20wedge%20robot%20side.png" width="100%" style="max-width:200px">
-<br>
-Wedge — robot-facing side
-</td>
-<td width="25%" align="center">
-<img src="images/OAK-D%20wedge%20profile.png" width="100%" style="max-width:200px">
-<br>
-Wedge profile (25°)
-</td>
-</tr>
-</table>
-
-Adding the wedge made the original USB cable too short; switched to a longer right-angle cable — USB 3.1, 2 ft, right-angle USB-C to straight USB-A: <a href="https://www.amazon.com/gp/product/B0CLXZT6FT">Product Link (Amazon)</a>
 
 
 ## Indicators
