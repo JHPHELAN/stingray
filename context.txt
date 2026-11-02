@@ -72,11 +72,16 @@ Session rituals:
     RoboClaw 2x7a V5c firmware 4.2.8
     Pololu 50:1 12V 64 CPR encoder = 3200 count/revolution
     RIGHT-WHEEL SETSCREW is a recurring weak point: the setscrew clamping the right wheel to
-      the Pololu motor shaft has worked loose 3x (delocalized 2026-10-19, retightened 10-28,
-      loose again 11-01). When loose the wheel slips / does not drive (robot pivots AROUND the
-      right wheel) BUT the motor-shaft encoder still counts, so odometry LIES and any map built
-      on it is garbage. Fix with blue Loctite 242 (friction alone does not hold it); verify the
-      wheel is seated flush on the shaft flat. Re-verify odom truthful after any retighten.
+      the Pololu motor shaft has worked loose 2x (delocalized 2026-10-19, retightened 10-28).
+      When loose the wheel slips / does not drive (robot pivots AROUND the right wheel) BUT the
+      motor-shaft encoder still counts, so odometry LIES and any map built on it is garbage. Fix
+      with blue Loctite 242 (friction alone does not hold it); verify the wheel is seated flush
+      on the shaft flat. Re-verify odom truthful after any retighten.
+    UNDIAGNOSED "circling around the right wheel": a separate event aborted the first 11-01 run
+      (robot pivoted around the right wheel mid-drive). It was ASSUMED to be the setscrew, but the
+      wheels were later found TIGHT — so the setscrew was NOT the cause and no root cause was ever
+      found. Did NOT recur on the later 11-01 mapping run (odom truthful, map solved). Intermittent;
+      watch for it to return and diagnose then.
     LD19 LIDAR
     BNO085 IMU
       it is oriented orthogonal to the robot with x facing the front of the robot
