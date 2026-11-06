@@ -108,6 +108,30 @@ Session rituals:
       /oak/stereo/image_raw/compressedDepth topic (the OAK publishes only .../compressed),
       which starves the approx-sync and gives "did not receive data". See
       NOTES-2026-10-31-rtabmap-wedge-rerun-optimizer-fail.md.
+    RTAB-Map optimizer: use --Optimizer/Strategy 1 (g2o) in rtabmap_args. The default
+      GTSAM (Strategy 2) throws "Indeterminant linear system" under Reg/Force3DoF + IMU
+      gravity and rejects every loop closure (map never corrects). g2o solves it. Proven
+      2026-11-01. (Fallback if g2o ever fails: add --Optimizer/GravitySigma 0.)
+    RTAB-Map multi-session mapping (continue/EXPAND an existing map): relaunch with
+      delete_db_on_start:=false and localization:=false. It loads ~/.ros/rtabmap.db, adds a
+      NEW session (new map id), and FUSES it to the old map via cross-session loop closures
+      once the robot re-recognizes known space. Start each continue-run AT THE DOCK (most
+      loop-closed spot) and let it re-localize before driving into new area. Finalize = Ctrl-C
+      rtabmap to flush the SQLite db, THEN copy ~/.ros/rtabmap.db to a timestamped keeper
+      (~/rtabmap-final-YYYYMMDD-HHMMSS.db) before the next run. Proven 2026-11-05 (Study ->
+      hallway, 3 fused sessions, 708 WM nodes).
+    RTAB-Map loop-closure logging: ACCEPTED closures log at INFO ("Loop closure detected!
+      With id=N") and are SUPPRESSED at the Pi console's WARN level; only REJECTIONS (WARN,
+      "Loop closure a->b rejected!") show in the terminal. So an empty "closure" search in the
+      terminal does NOT mean closures aren't happening. To watch them live: rtabmap_viz GUI
+      (draws closure links + count), or `ros2 topic echo /rtabmap/info --field loop_closure_id`
+      (nonzero = a global closure that cycle; proximity_detection_id for proximity closures).
+      The db itself is ground truth: rtabmap-info Link counts (GlobalClosure / LocalSpaceClosure).
+    RTAB-Map GUI tools (need a display: NoMachine into the Pi is smoothest; X11-fwd also works):
+      rtabmap-databaseViewer <file.db> = OFFLINE inspection of a saved map (Graph View shows the
+      trajectory with loop-closure links; the default two-image screen shows a node pair with
+      yellow feature keypoints = what gets matched to close loops). rtabmap_viz = LIVE viewer,
+      run on LinuxBox in the /rtabmap namespace while the Pi's rtabmap node runs.
   LinuxBox the laptop
     Ubuntu 24.04
     ROS2 jazzy
